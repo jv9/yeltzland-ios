@@ -18,12 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         // Initial web page
-        let initialViewController = WebPageViewController()
-        initialViewController.homeUrl = NSURL(string:"http://www.ht-fc.com")
-        initialViewController.pageTitle = "Official Site"
-        let navigationController = UINavigationController(rootViewController:initialViewController)
-
-        self.window?.rootViewController = navigationController
+        let initialTabViewController = MainTabBarController()
+        self.window?.rootViewController = initialTabViewController
         self.window?.makeKeyAndVisible()
         
         return true
