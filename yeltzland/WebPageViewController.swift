@@ -84,8 +84,17 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.backButton.enabled = false
         self.forwardButton.enabled = false
         
-        navigationItem.leftBarButtonItems = [self.backButton, self.forwardButton]
-        navigationItem.rightBarButtonItems = [self.reloadButton, self.homeButton]
+        self.navigationItem.leftBarButtonItems = [self.backButton, self.forwardButton]
+        self.navigationItem.rightBarButtonItems = [self.reloadButton, self.homeButton]
+        
+        // Setup colors
+        self.navigationController!.navigationBar.barTintColor = AppColors.NavBarColor;
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: AppColors.NavBarTextColor]
+        
+        self.backButton.tintColor = AppColors.NavBarTintColor
+        self.forwardButton.tintColor = AppColors.NavBarTintColor
+        self.reloadButton.tintColor = AppColors.NavBarTintColor
+        self.homeButton.tintColor = AppColors.NavBarTintColor
         
         // Setup observation of web view events
         self.webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)

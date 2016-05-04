@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5211F7251CDA33670031496D /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 5211F7241CDA33670031496D /* icon120.png */; };
+		5211F7271CDA35CF0031496D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
 		5259F9041CDA1292009C2AA8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */; };
 		52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF761CD9FA78009F18BD /* AppDelegate.swift */; };
 		52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		4C88545FDA6AEF1058FE88CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5211F7241CDA33670031496D /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
+		5211F7261CDA35CF0031496D /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E3DF761CD9FA78009F18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				52E3DF7F1CD9FA78009F18BD /* LaunchScreen.storyboard */,
 				52E3DF821CD9FA78009F18BD /* Info.plist */,
 				5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */,
+				5211F7261CDA35CF0031496D /* AppColors.swift */,
 			);
 			path = yeltzland;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */,
+				5211F7271CDA35CF0031496D /* AppColors.swift in Sources */,
 				52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */,
 				5259F9041CDA1292009C2AA8 /* MainTabBarController.swift in Sources */,
 			);
