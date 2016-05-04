@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +17,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon120.png" highlightedImage="icon120.png" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-vh-7iu">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="W7z-3b-fPk"/>
+                                    <constraint firstAttribute="height" constant="120" id="ovY-vR-iqQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Another Brave Location App!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIH-fF-d7A">
+                                <rect key="frame" x="20" y="569" width="560" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" red="0.023529411760000001" green="0.34509803919999998" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeltzland lives on!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB4-nv-lRN">
+                                <rect key="frame" x="20" y="390" width="560" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" red="0.023529411764705882" green="0.34509803921568627" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zRc-vh-7iu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0ql-1x-NfG"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hIH-fF-d7A" secondAttribute="bottom" constant="16" id="AxQ-tJ-3pV"/>
+                            <constraint firstItem="zRc-vh-7iu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CRR-2o-ACf"/>
+                            <constraint firstItem="WB4-nv-lRN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="MnO-eo-HsU"/>
+                            <constraint firstItem="WB4-nv-lRN" firstAttribute="top" secondItem="zRc-vh-7iu" secondAttribute="bottom" constant="30" id="TdX-Sy-SAu"/>
+                            <constraint firstItem="WB4-nv-lRN" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="Wvo-Xq-tqs"/>
+                            <constraint firstItem="hIH-fF-d7A" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="bAV-rY-1Fd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hIH-fF-d7A" secondAttribute="trailing" id="c4u-ps-xgW"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +56,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon120.png" width="120" height="120"/>
+    </resources>
 </document>
