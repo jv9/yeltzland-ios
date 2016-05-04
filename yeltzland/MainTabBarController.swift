@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Font_Awesome_Swift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
@@ -22,15 +23,17 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let officialNavigationController = UINavigationController(rootViewController:officialViewController)
         
         let officialIcon = UITabBarItem(title: "Official Site", image: nil, selectedImage: nil)
+        officialIcon.setFAIcon(FAType.FABlackTie)
         officialNavigationController.tabBarItem = officialIcon
         
         // Forum
         let forumViewController = WebPageViewController()
         forumViewController.homeUrl = NSURL(string:"http://www.yeltz.co.uk/0/")
-        forumViewController.pageTitle = "Forum"
+        forumViewController.pageTitle = "Yeltz Forum"
         let forumNavigationController = UINavigationController(rootViewController:forumViewController)
         
-        let forumIcon = UITabBarItem(title: "Forum", image: nil, selectedImage: nil)
+        let forumIcon = UITabBarItem(title: "Yeltz Forum", image: nil, selectedImage: nil)
+        forumIcon.setFAIcon(FAType.FAUsers)
         forumNavigationController.tabBarItem = forumIcon
         
         // Yeltz TV
@@ -40,6 +43,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let tvNavigationController = UINavigationController(rootViewController:tvViewController)
         
         let tvIcon = UITabBarItem(title: "Yeltz TV", image: nil, selectedImage: nil)
+        tvIcon.setFAIcon(FAType.FATelevision)
         tvNavigationController.tabBarItem = tvIcon
         
         let controllers = [forumNavigationController, officialNavigationController, tvNavigationController]

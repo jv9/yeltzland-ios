@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Font_Awesome_Swift
 
 class WebPageViewController: UIViewController, WKNavigationDelegate {
     
@@ -48,10 +49,37 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         // Setup navigation
         self.navigationItem.title = self.pageTitle
         
-        self.reloadButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: #selector(WebPageViewController.reloadButtonTouchUp))
-        self.homeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: #selector(WebPageViewController.loadHomePage))
-        self.backButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Rewind, target: self, action: #selector(WebPageViewController.backButtonTouchUp))
-        self.forwardButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FastForward, target: self, action: #selector(WebPageViewController.forwardButtonTouchUp))
+        self.reloadButton = UIBarButtonItem(
+            title: "Reload",
+            style: .Plain,
+            target: self,
+            action: #selector(WebPageViewController.reloadButtonTouchUp)
+        )
+        self.reloadButton.FAIcon = FAType.FARefresh
+        
+        self.homeButton = UIBarButtonItem(
+            title: "Home",
+            style: .Plain,
+            target: self,
+            action: #selector(WebPageViewController.loadHomePage)
+        )
+        self.homeButton.FAIcon = FAType.FAHome
+        
+        self.backButton = UIBarButtonItem(
+            title: "Back",
+            style: .Plain,
+            target: self,
+            action: #selector(WebPageViewController.backButtonTouchUp)
+        )
+        self.backButton.FAIcon = FAType.FAAngleLeft
+        
+        self.forwardButton = UIBarButtonItem(
+            title: "Forward",
+            style: .Plain,
+            target: self,
+            action: #selector(WebPageViewController.forwardButtonTouchUp)
+        )
+        self.forwardButton.FAIcon = FAType.FAAngleRight
         
         self.backButton.enabled = false
         self.forwardButton.enabled = false
