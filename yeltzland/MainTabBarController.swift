@@ -50,8 +50,17 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         tvIcon.setFAIcon(FAType.FATelevision)
         tvNavigationController.tabBarItem = tvIcon
         
-        let controllers = [forumNavigationController, officialNavigationController, tvNavigationController]
+        // Twitter
+        let twitterViewController = TwitterUserTimelineViewController()
+        twitterViewController.userScreenName = "halesowentownfc"
+        let twitterNavigationController = UINavigationController(rootViewController:twitterViewController)
         
+        let twitterIcon = UITabBarItem(title: "Twitter", image: nil, selectedImage: nil)
+        twitterIcon.setFAIcon(FAType.FATwitter)
+        twitterNavigationController.tabBarItem = twitterIcon
+        
+        // Add controllers
+        let controllers = [forumNavigationController, officialNavigationController, tvNavigationController, twitterNavigationController]
         self.viewControllers = controllers
     }
     

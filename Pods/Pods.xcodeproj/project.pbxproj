@@ -10,41 +10,25 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>0282D5F964FBD8D3B385BE1CB69C7682</key>
+		<key>00D3CE9AB5010141A3C31D0D774F8E92</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E334F50B9CDCCC7FDF00BB61B295145A</string>
+			<string>778B6AF28B90463EF52EC1DD07297E00</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>02938954DBDD22110354930D381A9437</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5C29CC9161F6A7ADBA168C36E9FCD014</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>032A31DABD4A3F1BFF2E368EA4B15492</key>
+		<key>04BE117EE5018C3C86770FC25491A86A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>FAIcon.swift</string>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Source/FAIcon.swift</string>
+			<string>Font-Awesome-Swift.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>05047E8EB36C99F47231201B08872526</key>
-		<dict>
-			<key>fileRef</key>
-			<string>032A31DABD4A3F1BFF2E368EA4B15492</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>067D8582FC0CF16528AC3999E8E2A905</key>
 		<dict>
@@ -64,7 +48,7 @@
 		<key>0BF0C55071EA26207CD0459C2AD3F90F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7ABF9F6B91C1361B1D16AC646E875963</string>
+			<string>0D77BEE1D23203913C78EDFB86A7C459</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -81,16 +65,31 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>11F6DD07854210EAA3EED34B2899352E</key>
+		<key>0D77BEE1D23203913C78EDFB86A7C459</key>
 		<dict>
 			<key>isa</key>
-			<string>PBXTargetDependency</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
 			<key>name</key>
-			<string>Font-Awesome-Swift-Font-Awesome-Swift</string>
-			<key>target</key>
-			<string>2AFCC2AFEF9FF0E93FC691C4211ADBDF</string>
-			<key>targetProxy</key>
-			<string>2EE580D40391B6BCA06D25F2332FB7C4</string>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>0FC1BF3A518BAEF0A483B83B91ACCAC0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>86DFEF59ED5427DB8719CE4BF017E4F4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>122DA2E5084A4393C29BE363C764795C</key>
 		<dict>
@@ -102,32 +101,6 @@
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>137F6677900B22981A3E04B5FD2C5804</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0282D5F964FBD8D3B385BE1CB69C7682</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>1937B761C57211DF18C70172D336DA64</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FontAwesome.ttf</string>
-			<key>path</key>
-			<string>Source/FontAwesome.ttf</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -144,51 +117,73 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1EE9017E9E06526016EFAC5C47469475</key>
+		<key>21C52EC789C899818EE9F949BAAC945A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A2CCCC29E6CAA74C986FE9A74C575649</string>
+				<string>F277B11C66A82BE1D36E38575028CBCA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>TwitterKit</string>
+			<key>path</key>
+			<string>TwitterKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>22CFEE1FF379BA2B4AB1D00D902E074B</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array>
-				<string>05047E8EB36C99F47231201B08872526</string>
-				<string>02938954DBDD22110354930D381A9437</string>
-			</array>
+			<array/>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>2403F7A93B966162B057A8B45EE39094</key>
+		<key>27BA1A6728BA2C9CEF5AB69D782FC8A7</key>
 		<dict>
-			<key>fileRef</key>
-			<string>1937B761C57211DF18C70172D336DA64</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2AFCC2AFEF9FF0E93FC691C4211ADBDF</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>A9306414322B5197BD8E585F27748736</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F307B607C6AF576D675636A37891A91C</string>
-				<string>E29174E22FFE312E3481A5B1F86ADB52</string>
-				<string>EC6348CD66A5C16E37CDFD699C814051</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
 			<key>name</key>
-			<string>Font-Awesome-Swift-Font-Awesome-Swift</string>
-			<key>productName</key>
-			<string>Font-Awesome-Swift-Font-Awesome-Swift</string>
-			<key>productReference</key>
-			<string>E334F50B9CDCCC7FDF00BB61B295145A</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
+			<string>FAIcon.swift</string>
+			<key>path</key>
+			<string>Source/FAIcon.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>28BCC83C76DB7E82EAE52CF84B065CB2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E15FA73F42DD9B9933139ED8EDF19BE4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>28D49683E9DBF3EC01E705144ECEB536</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>703E96C4F61DD153C0ADC1DD05541CCD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2B2E8499D4E226BE38B0963632D24919</key>
 		<dict>
@@ -218,7 +213,59 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>2EE580D40391B6BCA06D25F2332FB7C4</key>
+		<key>3324E9915E1012CE444A2C019FFB0B4C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>679B09C89C307DCC369A792C64A21995</string>
+				<string>0D77BEE1D23203913C78EDFB86A7C459</string>
+				<string>778B6AF28B90463EF52EC1DD07297E00</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>35743E106B30CBC60880124A0D5DB6A4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C1F460ADF0CAFA5F9C353F9A5C02062E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>Font-Awesome-Swift</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3AA370F0CEA60E57DE52164A17A2C994</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Font-Awesome-Swift.bundle</string>
+			<key>path</key>
+			<string>Font-Awesome-Swift.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3C8421103C71AABB19F1F7D4940537CE</key>
 		<dict>
 			<key>containerPortal</key>
 			<string>D41D8CD98F00B204E9800998ECF8427E</string>
@@ -227,37 +274,9 @@
 			<key>proxyType</key>
 			<string>1</string>
 			<key>remoteGlobalIDString</key>
-			<string>2AFCC2AFEF9FF0E93FC691C4211ADBDF</string>
+			<string>6FB455A5DACC515816E76D12ABF362F0</string>
 			<key>remoteInfo</key>
 			<string>Font-Awesome-Swift-Font-Awesome-Swift</string>
-		</dict>
-		<key>304F1D00F0C31CB5E07287B8797D873A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreText.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreText.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>3324E9915E1012CE444A2C019FFB0B4C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>304F1D00F0C31CB5E07287B8797D873A</string>
-				<string>7ABF9F6B91C1361B1D16AC646E875963</string>
-				<string>6B50F3C7D4F0EC8ACAE15E8274A8B77E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>3F20569C5AE3E6DAFA0BA4C367B6A7F4</key>
 		<dict>
@@ -272,20 +291,16 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>41CA412B6D9E42FC2EFEE064048A460F</key>
+		<key>440A5E551E7FF0F261C9127EE712DC3A</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>740548B6DE09FB3A3106E3CAD67988D2</string>
-				<string>9B58BE858CAE40AE6D80E53C96A5A9A6</string>
-				<string>4F7D4D256BE9B520242445F0979FECC5</string>
-			</array>
 			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Font-Awesome-Swift-Font-Awesome-Swift</string>
+			<key>target</key>
+			<string>6FB455A5DACC515816E76D12ABF362F0</string>
+			<key>targetProxy</key>
+			<string>3C8421103C71AABB19F1F7D4940537CE</string>
 		</dict>
 		<key>490781807591AC95F2792D2384B5DC14</key>
 		<dict>
@@ -300,55 +315,52 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>4F2F735AAA9F1F40AE7BF70958168DDB</key>
+		<key>4DA35F4E87F0817E363C26246E657959</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>wrapper.framework</string>
 			<key>path</key>
-			<string>Font-Awesome-Swift-prefix.pch</string>
+			<string>TwitterKit.framework</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>4F7D4D256BE9B520242445F0979FECC5</key>
+		<key>4E1EFF6E4D97BFBE16A7E51B9F681908</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>8E5CB37522F818643F0E36FE7394D522</string>
+				<string>35743E106B30CBC60880124A0D5DB6A4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>4E7045691A30E72ED0EA97714CC24C29</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6B50F3C7D4F0EC8ACAE15E8274A8B77E</string>
+			<string>0D77BEE1D23203913C78EDFB86A7C459</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>4FA41C28007191E992955BC053103BD5</key>
+		<key>506291B06F0E2F1507808233A7448972</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>52EBF6E9718AE5AC2F16151B85797B24</string>
-				<string>7B5D47C7D90D52ED1E34D4B9FD495426</string>
-				<string>F79B88C90F7F646631C69C4DF02D44A6</string>
-				<string>5C29CC9161F6A7ADBA168C36E9FCD014</string>
-				<string>4F2F735AAA9F1F40AE7BF70958168DDB</string>
-				<string>BF34599DE5F166931C8B6EF56B1D5B7C</string>
-				<string>C59A8097C1873E1F41A89AEF596988DC</string>
+				<string>27BA1A6728BA2C9CEF5AB69D782FC8A7</string>
+				<string>28D49683E9DBF3EC01E705144ECEB536</string>
+				<string>F0E2706E850B9BC8C6A03D86F82CF637</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Support Files</string>
+			<string>Font-Awesome-Swift</string>
 			<key>path</key>
-			<string>../Target Support Files/Font-Awesome-Swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>52EBF6E9718AE5AC2F16151B85797B24</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Font-Awesome-Swift.modulemap</string>
+			<string>Font-Awesome-Swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -414,31 +426,33 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>5C29CC9161F6A7ADBA168C36E9FCD014</key>
+		<key>61E4855F53DF8B12C1198267953C0979</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BEEA0D5E2E1200ACBC7B600BB6830772</string>
+				<string>4E7045691A30E72ED0EA97714CC24C29</string>
+				<string>00D3CE9AB5010141A3C31D0D774F8E92</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>679B09C89C307DCC369A792C64A21995</key>
+		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Font-Awesome-Swift-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>68182AB9BD32CC0CD57ED766F4AC6818</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1937B761C57211DF18C70172D336DA64</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>wrapper.framework</string>
 			<key>name</key>
-			<string>Resources</string>
+			<string>CoreText.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreText.framework</string>
 			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>DEVELOPER_DIR</string>
 		</dict>
 		<key>6A2477F8D879E1B0CDC0918E800589FE</key>
 		<dict>
@@ -454,7 +468,7 @@
 			<array/>
 			<key>dependencies</key>
 			<array>
-				<string>F3F9C7F02D6AC8CBF3AF2F7649A66E37</string>
+				<string>C70C3729D965832700C86F41CDF822F2</string>
 			</array>
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
@@ -467,40 +481,111 @@
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>6B50F3C7D4F0EC8ACAE15E8274A8B77E</key>
+		<key>6D998680F24F42BE514D5E59672D9184</key>
 		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6F4F1294086CC1742863EAD9EEFEA301</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
+			<string>wrapper.plug-in</string>
 			<key>name</key>
-			<string>UIKit.framework</string>
+			<string>TwitterKitResources.bundle</string>
 			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework</string>
+			<string>TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle</string>
 			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6CA5F600013D9B4141C1887D9F28443B</key>
+		<key>6F614D774C44F5F0514E81CD7C581083</key>
 		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
+			<key>fileRef</key>
+			<string>F38F4F8FF0D2496E9C877709DEFEA0D7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6FB455A5DACC515816E76D12ABF362F0</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>4E1EFF6E4D97BFBE16A7E51B9F681908</string>
+			<key>buildPhases</key>
+			<array>
+				<string>22CFEE1FF379BA2B4AB1D00D902E074B</string>
+				<string>6D998680F24F42BE514D5E59672D9184</string>
+				<string>72A2CDB579E8D68411361C80E7000567</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Font-Awesome-Swift-Font-Awesome-Swift</string>
+			<key>productName</key>
+			<string>Font-Awesome-Swift-Font-Awesome-Swift</string>
+			<key>productReference</key>
+			<string>3AA370F0CEA60E57DE52164A17A2C994</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>700C6F968A7C916A1E9F3CB1D1290EDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>703E96C4F61DD153C0ADC1DD05541CCD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>703E96C4F61DD153C0ADC1DD05541CCD</key>
+		<dict>
 			<key>includeInIndex</key>
-			<string>0</string>
+			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Font_Awesome_Swift.framework</string>
+			<string>FontAwesome.ttf</string>
 			<key>path</key>
-			<string>Font_Awesome_Swift.framework</string>
+			<string>Source/FontAwesome.ttf</string>
 			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>740548B6DE09FB3A3106E3CAD67988D2</key>
+		<key>72A2CDB579E8D68411361C80E7000567</key>
 		<dict>
-			<key>fileRef</key>
-			<string>304F1D00F0C31CB5E07287B8797D873A</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>700C6F968A7C916A1E9F3CB1D1290EDF</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>72CF51393964DC9FDE2716B862849F96</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FC1BF3A518BAEF0A483B83B91ACCAC0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>TwitterCore</string>
+			<key>path</key>
+			<string>TwitterCore</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>75D98FF52E597A11900E131B6C4E1ADA</key>
 		<dict>
@@ -526,6 +611,46 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>75EFD524AD95C936619F97722444D36D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8AC06C5D23338CBF876F9A31B6B75912</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>77089E5784F26568A35ACBC5F6341D58</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>969BDE00A2ED61583BBE34FD6459CCF3</string>
+				<string>A9158F26D522C4F2227F060931F0CF55</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>778B6AF28B90463EF52EC1DD07297E00</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
 		<key>79A9DEDC89FE8336BF5FEDAAF75BF7FC</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -537,72 +662,35 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7ABF9F6B91C1361B1D16AC646E875963</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>7B5D47C7D90D52ED1E34D4B9FD495426</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Font-Awesome-Swift.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7BA98F5AC4F3BA0D1EF89CD270B92088</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D3530896ADD193980FC27032D470AC01</string>
-			<key>buildPhases</key>
-			<array>
-				<string>1EE9017E9E06526016EFAC5C47469475</string>
-				<string>41CA412B6D9E42FC2EFEE064048A460F</string>
-				<string>137F6677900B22981A3E04B5FD2C5804</string>
-				<string>FA5AA877DCB6DAFB1734F8EFCC28DE95</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>11F6DD07854210EAA3EED34B2899352E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Font-Awesome-Swift</string>
-			<key>productName</key>
-			<string>Font-Awesome-Swift</string>
-			<key>productReference</key>
-			<string>6CA5F600013D9B4141C1887D9F28443B</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
 		<key>7DB346D0F39D3F0E887471402A8071AB</key>
 		<dict>
 			<key>children</key>
 			<array>
 				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
 				<string>122DA2E5084A4393C29BE363C764795C</string>
-				<string>D7033BE5BFFDBD9D8C4DFAAAF9E1E11D</string>
+				<string>856DC5F14B5A193A2ED29CD548CB4622</string>
 				<string>CCA510CFBEA2D207524CDA0D73C3B561</string>
 				<string>B7B80995527643776607AFFA75B91E24</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>856DC5F14B5A193A2ED29CD548CB4622</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E62E03E8F91C8687F719021258A24A8F</string>
+				<string>DBDE1BE52F0C0A73D4CB6FBC61A41F22</string>
+				<string>506291B06F0E2F1507808233A7448972</string>
+				<string>72CF51393964DC9FDE2716B862849F96</string>
+				<string>21C52EC789C899818EE9F949BAAC945A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -618,6 +706,32 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>863C9D7D6336DBD3290A46BAE916154A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>86DFEF59ED5427DB8719CE4BF017E4F4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>TwitterCore.framework</string>
+			<key>path</key>
+			<string>iOS/TwitterCore.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>87B213035BAC5F75386F62D3C75D2342</key>
 		<dict>
@@ -646,19 +760,18 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>889BEF8AF648B4B2B77A77B30D335AB7</key>
+		<key>8AC06C5D23338CBF876F9A31B6B75912</key>
 		<dict>
-			<key>fileRef</key>
-			<string>BF34599DE5F166931C8B6EF56B1D5B7C</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Crashlytics.framework</string>
+			<key>path</key>
+			<string>iOS/Crashlytics.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8B231961B1719A989391C051ABD2527F</key>
 		<dict>
@@ -667,12 +780,142 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>9B58BE858CAE40AE6D80E53C96A5A9A6</key>
+		<key>8B53ACBD69749EFCA44E09C6074352D0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Font-Awesome-Swift-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E5CB37522F818643F0E36FE7394D522</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C1F460ADF0CAFA5F9C353F9A5C02062E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>Font-Awesome-Swift</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>8EBB09CF217C68E418D3C66E7239B8E0</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>E956BEE9BCE21C5F899B0B3A0D25DE2D</string>
+			<key>remoteInfo</key>
+			<string>Font-Awesome-Swift</string>
+		</dict>
+		<key>9067B7F49A47C9FFDEEBE2BE8E3B874E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7ABF9F6B91C1361B1D16AC646E875963</string>
+			<string>27BA1A6728BA2C9CEF5AB69D782FC8A7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>91192B422AC6E0C7C4F30227ED4F6229</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Font-Awesome-Swift.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>969BDE00A2ED61583BBE34FD6459CCF3</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C1F460ADF0CAFA5F9C353F9A5C02062E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1.4.7</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>$(CURRENT_PROJECT_VERSION)</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Font-Awesome-Swift/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>Font_Awesome_Swift</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A2CCCC29E6CAA74C986FE9A74C575649</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4DA35F4E87F0817E363C26246E657959</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>A70CDAD61F90AC503C7D04CC22DA2923</key>
 		<dict>
@@ -747,19 +990,74 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>A9306414322B5197BD8E585F27748736</key>
+		<key>A9158F26D522C4F2227F060931F0CF55</key>
 		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E7A7C3237388D3941936AD77422CBD10</string>
-				<string>E41EB51E8123EB89D3E4F23B559BB9E4</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
+			<key>baseConfigurationReference</key>
+			<string>C1F460ADF0CAFA5F9C353F9A5C02062E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1.4.7</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>$(CURRENT_PROJECT_VERSION)</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Font-Awesome-Swift/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>Font_Awesome_Swift</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
 			<key>isa</key>
-			<string>XCConfigurationList</string>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B00C4B9A866EFAA2A72740067613248C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Fabric.framework</string>
+			<key>path</key>
+			<string>iOS/Fabric.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>B7B80995527643776607AFFA75B91E24</key>
 		<dict>
@@ -791,18 +1089,12 @@
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
 		</dict>
-		<key>BF34599DE5F166931C8B6EF56B1D5B7C</key>
+		<key>BEEA0D5E2E1200ACBC7B600BB6830772</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>679B09C89C307DCC369A792C64A21995</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Font-Awesome-Swift-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>C0DFDC66581F3327CF9D5F6E768E79B8</key>
 		<dict>
@@ -864,72 +1156,29 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>C0E134E3DE5787692DF0620E57F88F6E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F79B88C90F7F646631C69C4DF02D44A6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1.4.7</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>$(CURRENT_PROJECT_VERSION)</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Font-Awesome-Swift/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>Font_Awesome_Swift</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C59A8097C1873E1F41A89AEF596988DC</key>
+		<key>C1F460ADF0CAFA5F9C353F9A5C02062E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Info.plist</string>
+			<string>Font-Awesome-Swift-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C4047C9ABBCAB99D1222FAECF3CEBF0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B00C4B9A866EFAA2A72740067613248C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -943,6 +1192,30 @@
 			<string>text.xcconfig</string>
 			<key>path</key>
 			<string>Pods.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C70C3729D965832700C86F41CDF822F2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Font-Awesome-Swift</string>
+			<key>target</key>
+			<string>E956BEE9BCE21C5F899B0B3A0D25DE2D</string>
+			<key>targetProxy</key>
+			<string>8EBB09CF217C68E418D3C66E7239B8E0</string>
+		</dict>
+		<key>CB8329FD35AC3D278DF8C41EE8E432EC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Font-Awesome-Swift-prefix.pch</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -963,8 +1236,8 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>E334F50B9CDCCC7FDF00BB61B295145A</string>
-				<string>6CA5F600013D9B4141C1887D9F28443B</string>
+				<string>3AA370F0CEA60E57DE52164A17A2C994</string>
+				<string>D673A09F3D16EC79E7171754864E575E</string>
 				<string>067D8582FC0CF16528AC3999E8E2A905</string>
 			</array>
 			<key>isa</key>
@@ -973,6 +1246,19 @@
 			<string>Products</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CE864063CCE1A39AE41A90EB85BB7592</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F5EDCDF5076C86661084DC8A35E3FD4C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>D0405803033A2A777B8E4DFA0C1800ED</key>
 		<dict>
@@ -986,78 +1272,6 @@
 			<string>Pods-acknowledgements.markdown</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D16AB1E762535BCA425D02DB074BE0A8</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F79B88C90F7F646631C69C4DF02D44A6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1.4.7</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>$(CURRENT_PROJECT_VERSION)</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Font-Awesome-Swift/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>Font_Awesome_Swift</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D3530896ADD193980FC27032D470AC01</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D16AB1E762535BCA425D02DB074BE0A8</string>
-				<string>C0E134E3DE5787692DF0620E57F88F6E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
 		</dict>
 		<key>D41D8CD98F00B204E9800998ECF8427E</key>
 		<dict>
@@ -1094,8 +1308,8 @@
 			<string></string>
 			<key>targets</key>
 			<array>
-				<string>7BA98F5AC4F3BA0D1EF89CD270B92088</string>
-				<string>2AFCC2AFEF9FF0E93FC691C4211ADBDF</string>
+				<string>E956BEE9BCE21C5F899B0B3A0D25DE2D</string>
+				<string>6FB455A5DACC515816E76D12ABF362F0</string>
 				<string>6A2477F8D879E1B0CDC0918E800589FE</string>
 			</array>
 		</dict>
@@ -1112,118 +1326,64 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D7033BE5BFFDBD9D8C4DFAAAF9E1E11D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E6A5E756F58BF9ECAD42A9D0585532F1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E283BDEA10A616B8EEEF23BE1D9239C3</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>7BA98F5AC4F3BA0D1EF89CD270B92088</string>
-			<key>remoteInfo</key>
-			<string>Font-Awesome-Swift</string>
-		</dict>
-		<key>E29174E22FFE312E3481A5B1F86ADB52</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E334F50B9CDCCC7FDF00BB61B295145A</key>
+		<key>D673A09F3D16EC79E7171754864E575E</key>
 		<dict>
 			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
+			<string>wrapper.framework</string>
 			<key>includeInIndex</key>
 			<string>0</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Font-Awesome-Swift.bundle</string>
+			<string>Font_Awesome_Swift.framework</string>
 			<key>path</key>
-			<string>Font-Awesome-Swift.bundle</string>
+			<string>Font_Awesome_Swift.framework</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>E41EB51E8123EB89D3E4F23B559BB9E4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F79B88C90F7F646631C69C4DF02D44A6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>Font-Awesome-Swift</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>E6A5E756F58BF9ECAD42A9D0585532F1</key>
+		<key>DBDE1BE52F0C0A73D4CB6FBC61A41F22</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>032A31DABD4A3F1BFF2E368EA4B15492</string>
-				<string>68182AB9BD32CC0CD57ED766F4AC6818</string>
-				<string>4FA41C28007191E992955BC053103BD5</string>
+				<string>C4047C9ABBCAB99D1222FAECF3CEBF0E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Font-Awesome-Swift</string>
+			<string>Fabric</string>
 			<key>path</key>
-			<string>Font-Awesome-Swift</string>
+			<string>Fabric</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E7A7C3237388D3941936AD77422CBD10</key>
+		<key>E15FA73F42DD9B9933139ED8EDF19BE4</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F79B88C90F7F646631C69C4DF02D44A6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>Font-Awesome-Swift</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
+			<key>fileRef</key>
+			<string>8B53ACBD69749EFCA44E09C6074352D0</string>
 			<key>isa</key>
-			<string>XCBuildConfiguration</string>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>E62E03E8F91C8687F719021258A24A8F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>75EFD524AD95C936619F97722444D36D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Debug</string>
+			<string>Crashlytics</string>
+			<key>path</key>
+			<string>Crashlytics</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>E7F21354943D9F42A70697D5A5EF72E9</key>
 		<dict>
@@ -1251,64 +1411,99 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>EC6348CD66A5C16E37CDFD699C814051</key>
+		<key>E956BEE9BCE21C5F899B0B3A0D25DE2D</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
+			<key>buildConfigurationList</key>
+			<string>77089E5784F26568A35ACBC5F6341D58</string>
+			<key>buildPhases</key>
 			<array>
-				<string>2403F7A93B966162B057A8B45EE39094</string>
+				<string>F6B612210F79CD6B0DA3BE2124C9BE5F</string>
+				<string>61E4855F53DF8B12C1198267953C0979</string>
+				<string>CE864063CCE1A39AE41A90EB85BB7592</string>
+				<string>28BCC83C76DB7E82EAE52CF84B065CB2</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>440A5E551E7FF0F261C9127EE712DC3A</string>
 			</array>
 			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F307B607C6AF576D675636A37891A91C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F3F9C7F02D6AC8CBF3AF2F7649A66E37</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
+			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>Font-Awesome-Swift</string>
-			<key>target</key>
-			<string>7BA98F5AC4F3BA0D1EF89CD270B92088</string>
-			<key>targetProxy</key>
-			<string>E283BDEA10A616B8EEEF23BE1D9239C3</string>
+			<key>productName</key>
+			<string>Font-Awesome-Swift</string>
+			<key>productReference</key>
+			<string>D673A09F3D16EC79E7171754864E575E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>F79B88C90F7F646631C69C4DF02D44A6</key>
+		<key>F0E2706E850B9BC8C6A03D86F82CF637</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>91192B422AC6E0C7C4F30227ED4F6229</string>
+				<string>04BE117EE5018C3C86770FC25491A86A</string>
+				<string>C1F460ADF0CAFA5F9C353F9A5C02062E</string>
+				<string>F38F4F8FF0D2496E9C877709DEFEA0D7</string>
+				<string>CB8329FD35AC3D278DF8C41EE8E432EC</string>
+				<string>8B53ACBD69749EFCA44E09C6074352D0</string>
+				<string>863C9D7D6336DBD3290A46BAE916154A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Font-Awesome-Swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F277B11C66A82BE1D36E38575028CBCA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6F4F1294086CC1742863EAD9EEFEA301</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F38F4F8FF0D2496E9C877709DEFEA0D7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>Font-Awesome-Swift-Private.xcconfig</string>
+			<string>Font-Awesome-Swift-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FA5AA877DCB6DAFB1734F8EFCC28DE95</key>
+		<key>F5EDCDF5076C86661084DC8A35E3FD4C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3AA370F0CEA60E57DE52164A17A2C994</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F6B612210F79CD6B0DA3BE2124C9BE5F</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>889BEF8AF648B4B2B77A77B30D335AB7</string>
+				<string>9067B7F49A47C9FFDEEBE2BE8E3B874E</string>
+				<string>6F614D774C44F5F0514E81CD7C581083</string>
 			</array>
 			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
+			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>

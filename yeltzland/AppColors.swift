@@ -20,4 +20,6 @@ class AppColors {
     static var TabBarColor: UIColor = UIColor.whiteColor()
     static var TabBarTextColor: UIColor = YeltzBlueColor
 
+    static var TwitterBackground: UIColor = UIColor.whiteColor()
+    static var TwitterSeparator: UIColor = UIColor.whiteColor()
 }

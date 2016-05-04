@@ -32,6 +32,10 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
+
+    deinit {
+        self.webView?.removeObserver(self, forKeyPath: "loading")
+    }
     
     override func loadView() {
         super.loadView()
@@ -129,6 +133,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    // MARK: - WKNavigationDelegate methods
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
