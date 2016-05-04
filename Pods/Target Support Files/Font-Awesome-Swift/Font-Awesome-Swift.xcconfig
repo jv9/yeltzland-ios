@@ -1,0 +1,1 @@
+FONT_AWESOME_SWIFT_OTHER_LDFLAGS = -framework "CoreText" -framework "UIKit"

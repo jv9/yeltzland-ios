@@ -1,0 +1,7 @@
+#include "Font-Awesome-Swift.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Font-Awesome-Swift" "${PODS_ROOT}/Headers/Public"
+OTHER_LDFLAGS = ${FONT_AWESOME_SWIFT_OTHER_LDFLAGS}
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES
