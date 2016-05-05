@@ -143,7 +143,10 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     
     // MARK: - WKNavigationDelegate methods
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
+        // Log the error and show a friendly alert
+        print("Web error occurred: ", error.localizedDescription)
+        
+        let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -159,6 +162,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation) {
+        // Mark the progress as done
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -168,15 +172,18 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(webView: WKWebView, navigation: WKNavigation, withError error: NSError) {
+        // Mark the progress as done
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        let alert:UIAlertController = UIAlertController(title: "Error", message: "Could not load webpage", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
         
-        presentViewController(alert, animated: true) {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        
+        // Log the error and show a friendly alert
+        print("Web error occurred: ", error.localizedDescription)
+        
+        let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 
