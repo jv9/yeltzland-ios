@@ -47,7 +47,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let tvNavigationController = UINavigationController(rootViewController:tvViewController)
         
         let tvIcon = UITabBarItem(title: "Yeltz TV", image: nil, selectedImage: nil)
-        tvIcon.setFAIcon(FAType.FATelevision)
+        tvIcon.setFAIcon(FAType.FAYoutubePlay)
         tvNavigationController.tabBarItem = tvIcon
         
         // Twitter

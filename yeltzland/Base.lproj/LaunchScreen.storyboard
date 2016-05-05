@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Halesowentown.png" highlightedImage="Halesowentown.png" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-vh-7iu">
-                                <rect key="frame" x="212" y="187" width="176" height="225"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Halesowentown.jpg" highlightedImage="Halesowentown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-vh-7iu">
+                                <rect key="frame" x="195" y="194.5" width="210" height="210"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="W7z-3b-fPk"/>
-                                    <constraint firstAttribute="height" constant="225" id="ovY-vR-iqQ"/>
+                                    <constraint firstAttribute="width" constant="210" id="W7z-3b-fPk"/>
+                                    <constraint firstAttribute="height" constant="210" id="ovY-vR-iqQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeltzland lives" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIH-fF-d7A">
@@ -47,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Halesowentown.png" width="176" height="225"/>
+        <image name="Halesowentown.jpg" width="210" height="210"/>
     </resources>
 </document>

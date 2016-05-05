@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52106DEC1CDB798C00C0504F /* Halesowentown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52106DEB1CDB798C00C0504F /* Halesowentown.jpg */; };
 		5211F7251CDA33670031496D /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 5211F7241CDA33670031496D /* icon120.png */; };
 		5211F7271CDA35CF0031496D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
 		5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */; };
 		5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */; };
-		5211F7371CDB41D50031496D /* Halesowentown.png in Resources */ = {isa = PBXBuildFile; fileRef = 5211F7361CDB41D50031496D /* Halesowentown.png */; };
 		5259F9041CDA1292009C2AA8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */; };
 		52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF761CD9FA78009F18BD /* AppDelegate.swift */; };
 		52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */; };
@@ -22,11 +22,11 @@
 
 /* Begin PBXFileReference section */
 		4C88545FDA6AEF1058FE88CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		52106DEB1CDB798C00C0504F /* Halesowentown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Halesowentown.jpg; sourceTree = "<group>"; };
 		5211F7241CDA33670031496D /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		5211F7261CDA35CF0031496D /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUserTimelineViewController.swift; sourceTree = "<group>"; };
 		5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLinksTableViewController.swift; sourceTree = "<group>"; };
-		5211F7361CDB41D50031496D /* Halesowentown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Halesowentown.png; sourceTree = "<group>"; };
 		5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E3DF761CD9FA78009F18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				5211F7241CDA33670031496D /* icon120.png */,
-				5211F7361CDB41D50031496D /* Halesowentown.png */,
+				52106DEB1CDB798C00C0504F /* Halesowentown.jpg */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 			files = (
 				52E3DF811CD9FA78009F18BD /* LaunchScreen.storyboard in Resources */,
 				52E3DF7E1CD9FA78009F18BD /* Assets.xcassets in Resources */,
-				5211F7371CDB41D50031496D /* Halesowentown.png in Resources */,
+				52106DEC1CDB798C00C0504F /* Halesowentown.jpg in Resources */,
 				5211F7251CDA33670031496D /* icon120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
