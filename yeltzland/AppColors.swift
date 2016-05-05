@@ -18,6 +18,9 @@ class AppColors {
     static var NavBarColor: UIColor = UIColor.whiteColor()
     static var NavBarTextColor: UIColor = YeltzBlueColor
     static var NavBarTintColor: UIColor = YeltzBlueColor
+    
+    static var ProgressBar: UIColor = YeltzBlueColor
+    static var WebBackground: UIColor = UIColor.whiteColor()
 
     static var TabBarColor: UIColor = UIColor.whiteColor()
     static var TabBarTextColor: UIColor = YeltzBlueColor

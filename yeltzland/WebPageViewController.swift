@@ -22,7 +22,8 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     var forwardButton: UIBarButtonItem!
     
     // reference to WebView control we will instantiate
-    var webView: WKWebView!
+    let webView = WKWebView()
+    let progressBar = UIProgressView(progressViewStyle: .Bar)
 
     // Initializers
     required init(coder aDecoder: NSCoder) {
@@ -34,20 +35,35 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     }
 
     deinit {
-        self.webView?.removeObserver(self, forKeyPath: "loading")
-    }
-    
-    override func loadView() {
-        super.loadView()
-        
-        self.webView = WKWebView()
-        self.webView.navigationDelegate = self
-        
-        self.view = self.webView!
+        self.webView.removeObserver(self, forKeyPath: "loading")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Calculate position on screen of elements
+        let progressBarHeight = CGFloat(2.0)
+        let topPosition = (self.navigationController?.navigationBar.frame.size.height)! + CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        
+        let webViewHeight = CGRectGetHeight(view.frame) -
+            (topPosition + progressBarHeight + CGRectGetHeight((self.tabBarController?.tabBar.frame)!));
+        
+        NSLog("topPosition: \(topPosition): webViewHeight: \(webViewHeight)")
+
+        // Add elements to view
+        self.webView.frame = CGRect(x: 0, y: topPosition + progressBarHeight, width: view.frame.width, height: webViewHeight)
+        self.webView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.webView.navigationDelegate = self
+        
+        self.progressBar.frame = CGRect(x: 0, y: topPosition, width: view.frame.width, height: progressBarHeight)
+        self.progressBar.alpha = 0
+        self.progressBar.tintColor = AppColors.ProgressBar
+        self.progressBar.autoresizingMask = .FlexibleWidth
+        
+        self.view.addSubview(self.progressBar)
+        self.view.addSubview(self.webView)
+        self.view.backgroundColor = AppColors.WebBackground
+
         self.loadHomePage()
         
         // Setup navigation
@@ -106,8 +122,10 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     
     // Nav bar actions
     func reloadButtonTouchUp() {
+        progressBar.setProgress(0, animated: false)
+        
         let req = NSURLRequest(URL:self.webView.URL!)
-        self.webView!.loadRequest(req)
+        self.webView.loadRequest(req)
         NSLog("Reloading page: %@", self.webView.URL!)
     }
     
@@ -120,8 +138,9 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     }
     
     func loadHomePage() {
+        progressBar.setProgress(0, animated: false)
         let req = NSURLRequest(URL:self.homeUrl)
-        self.webView!.loadRequest(req)
+        self.webView.loadRequest(req)
         NSLog("Loading page: %@", self.homeUrl)
     }
     
@@ -138,6 +157,34 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation) {
+        self.progressBar.setProgress(0, animated: false)
+        UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 1 }, completion: nil)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    
+    func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation){
+        progressBar.setProgress(Float(webView.estimatedProgress), animated: true)
+    }
+    
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation) {
+        progressBar.setProgress(1, animated: true)
+        UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    func webView(webView: WKWebView, navigation: WKNavigation, withError error: NSError) {
+        progressBar.setProgress(1, animated: true)
+        UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        let alert:UIAlertController = UIAlertController(title: "Error", message: "Could not load webpage", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        
+        presentViewController(alert, animated: true) {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 }
 
