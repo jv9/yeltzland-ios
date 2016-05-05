@@ -12,6 +12,8 @@
 		5211F7271CDA35CF0031496D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
 		5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */; };
 		5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */; };
+		5257E8BD1CDB953400157CED /* yeltzlandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257E8BC1CDB953400157CED /* yeltzlandUITests.swift */; };
+		5257E8C51CDB978700157CED /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257E8C41CDB978700157CED /* SnapshotHelper.swift */; };
 		5259F9041CDA1292009C2AA8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */; };
 		52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF761CD9FA78009F18BD /* AppDelegate.swift */; };
 		52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */; };
@@ -20,6 +22,16 @@
 		78C59529AC571F40487D26CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6F5775F3F24493B838AC89 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5257E8BF1CDB953400157CED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52E3DF6B1CD9FA78009F18BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E3DF721CD9FA78009F18BD;
+			remoteInfo = yeltzland;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4C88545FDA6AEF1058FE88CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		52106DEB1CDB798C00C0504F /* Halesowentown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Halesowentown.jpg; sourceTree = "<group>"; };
@@ -27,6 +39,10 @@
 		5211F7261CDA35CF0031496D /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUserTimelineViewController.swift; sourceTree = "<group>"; };
 		5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLinksTableViewController.swift; sourceTree = "<group>"; };
+		5257E8BA1CDB953400157CED /* yeltzlandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yeltzlandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5257E8BC1CDB953400157CED /* yeltzlandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yeltzlandUITests.swift; sourceTree = "<group>"; };
+		5257E8BE1CDB953400157CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5257E8C41CDB978700157CED /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E3DF761CD9FA78009F18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +55,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5257E8B71CDB953400157CED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52E3DF701CD9FA78009F18BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,11 +82,22 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		5257E8BB1CDB953400157CED /* yeltzlandUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5257E8BC1CDB953400157CED /* yeltzlandUITests.swift */,
+				5257E8C41CDB978700157CED /* SnapshotHelper.swift */,
+				5257E8BE1CDB953400157CED /* Info.plist */,
+			);
+			path = yeltzlandUITests;
+			sourceTree = "<group>";
+		};
 		52E3DF6A1CD9FA78009F18BD = {
 			isa = PBXGroup;
 			children = (
 				5211F7231CDA33580031496D /* images */,
 				52E3DF751CD9FA78009F18BD /* yeltzland */,
+				5257E8BB1CDB953400157CED /* yeltzlandUITests */,
 				52E3DF741CD9FA78009F18BD /* Products */,
 				BD3F6F48EC1DD96CA8DE80F7 /* Pods */,
 				D15072796B891DCF46FC1DA6 /* Frameworks */,
@@ -74,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				52E3DF731CD9FA78009F18BD /* yeltzland.app */,
+				5257E8BA1CDB953400157CED /* yeltzlandUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +149,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5257E8B91CDB953400157CED /* yeltzlandUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5257E8C31CDB953400157CED /* Build configuration list for PBXNativeTarget "yeltzlandUITests" */;
+			buildPhases = (
+				5257E8B61CDB953400157CED /* Sources */,
+				5257E8B71CDB953400157CED /* Frameworks */,
+				5257E8B81CDB953400157CED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5257E8C01CDB953400157CED /* PBXTargetDependency */,
+			);
+			name = yeltzlandUITests;
+			productName = yeltzlandUITests;
+			productReference = 5257E8BA1CDB953400157CED /* yeltzlandUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		52E3DF721CD9FA78009F18BD /* yeltzland */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E3DF851CD9FA79009F18BD /* Build configuration list for PBXNativeTarget "yeltzland" */;
@@ -145,6 +198,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "John Pollard";
 				TargetAttributes = {
+					5257E8B91CDB953400157CED = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 52E3DF721CD9FA78009F18BD;
+					};
 					52E3DF721CD9FA78009F18BD = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -164,11 +221,19 @@
 			projectRoot = "";
 			targets = (
 				52E3DF721CD9FA78009F18BD /* yeltzland */,
+				5257E8B91CDB953400157CED /* yeltzlandUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5257E8B81CDB953400157CED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52E3DF711CD9FA78009F18BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +309,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5257E8B61CDB953400157CED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5257E8BD1CDB953400157CED /* yeltzlandUITests.swift in Sources */,
+				5257E8C51CDB978700157CED /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52E3DF6F1CD9FA78009F18BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +333,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5257E8C01CDB953400157CED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E3DF721CD9FA78009F18BD /* yeltzland */;
+			targetProxy = 5257E8BF1CDB953400157CED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		52E3DF7F1CD9FA78009F18BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -271,6 +353,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5257E8C11CDB953400157CED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = yeltzlandUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.yeltzlandUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = yeltzland;
+			};
+			name = Debug;
+		};
+		5257E8C21CDB953400157CED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = yeltzlandUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.yeltzlandUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = yeltzland;
+			};
+			name = Release;
+		};
 		52E3DF831CD9FA79009F18BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -384,6 +488,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5257E8C31CDB953400157CED /* Build configuration list for PBXNativeTarget "yeltzlandUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5257E8C11CDB953400157CED /* Debug */,
+				5257E8C21CDB953400157CED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		52E3DF6E1CD9FA78009F18BD /* Build configuration list for PBXProject "yeltzland" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
