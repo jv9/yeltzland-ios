@@ -33,10 +33,6 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-
-    deinit {
-        self.webView.removeObserver(self, forKeyPath: "loading")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,8 +112,8 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.reloadButton.tintColor = AppColors.NavBarTintColor
         self.homeButton.tintColor = AppColors.NavBarTintColor
         
-        // Setup observation of web view events
-        self.webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
+        // Swipe gestures automatically supported
+        self.webView.allowsBackForwardNavigationGestures = true
     }
     
     // Nav bar actions
@@ -144,13 +140,6 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         NSLog("Loading page: %@", self.homeUrl)
     }
     
-    // WebView observer
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if (keyPath == "loading") {
-            self.backButton.enabled = webView.canGoBack
-            self.forwardButton.enabled = webView.canGoForward
-        }
-    }
     
     // MARK: - WKNavigationDelegate methods
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
@@ -173,6 +162,9 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        
+        self.backButton.enabled = webView.canGoBack
+        self.forwardButton.enabled = webView.canGoForward
     }
     
     func webView(webView: WKWebView, navigation: WKNavigation, withError error: NSError) {
