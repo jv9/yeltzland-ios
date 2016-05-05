@@ -24,7 +24,7 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
         self.tweetViewDelegate = self
         
         // Setup navigation
-        self.navigationItem.title = "Twitter"
+        self.navigationItem.title = "@\(self.userScreenName)"
         
         // Setup colors
         self.navigationController!.navigationBar.barTintColor = AppColors.NavBarColor;
