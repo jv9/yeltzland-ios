@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon120.png" highlightedImage="icon120.png" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-vh-7iu">
-                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Halesowentown.png" highlightedImage="Halesowentown.png" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-vh-7iu">
+                                <rect key="frame" x="212" y="187.5" width="176" height="225"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="W7z-3b-fPk"/>
-                                    <constraint firstAttribute="height" constant="120" id="ovY-vR-iqQ"/>
+                                    <constraint firstAttribute="width" constant="176" id="W7z-3b-fPk"/>
+                                    <constraint firstAttribute="height" constant="225" id="ovY-vR-iqQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Another Brave Location App!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIH-fF-d7A">
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeltzland lives on!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB4-nv-lRN">
-                                <rect key="frame" x="20" y="390" width="560" height="14.5"/>
+                                <rect key="frame" x="20" y="442.5" width="560" height="14.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.023529411764705882" green="0.34509803921568627" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -57,6 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon120.png" width="120" height="120"/>
+        <image name="Halesowentown.png" width="176" height="225"/>
     </resources>
 </document>
