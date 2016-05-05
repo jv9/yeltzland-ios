@@ -59,14 +59,14 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             break
         case 3:
             cell.textLabel?.text = "Another Brave Location App!"
-            cell.imageView?.image = nil;
+            let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.BraveLocation, backgroundColor: UIColor.clearColor())
+            cell.imageView?.image = cellImage
 
             let infoDictionary = NSBundle.mainBundle().infoDictionary!
             let version = infoDictionary["CFBundleShortVersionString"]
             let build = infoDictionary["CFBundleVersion"]
             
             cell.detailTextLabel?.text = "Current version: \(version!).\(build!)"
-            cell.imageView?.image = nil;
         default:
             break
         }

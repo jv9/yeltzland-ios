@@ -13,6 +13,7 @@ let YeltzBlueColor = UIColor(red: 6.0/255.0, green: 88.0/255.0, blue: 188.0/255.
 let LightBlueColor = UIColor(red: 223.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
 let StourbridgeRedColor = UIColor(red: 158.0/255.0, green: 0.0/255.0, blue: 26.0/255.0, alpha: 1.0)
 let EvostickRedColor = UIColor(red: 252.0/255.0, green: 0.0/255.0, blue: 6.0/255.0, alpha: 1.0)
+let BraveLocationRedColor = UIColor(red: 170.0/255.0, green: 60.0/255.0, blue: 79.0/255.0, alpha: 1.0)
 
 class AppColors {
     static var NavBarColor: UIColor = UIColor.whiteColor()
@@ -34,5 +35,6 @@ class AppColors {
     static var Evostick: UIColor = EvostickRedColor
     static var Fantasy: UIColor = YeltzBlueColor
     static var Stour: UIColor = StourbridgeRedColor
+    static var BraveLocation: UIColor = BraveLocationRedColor
 
 }
