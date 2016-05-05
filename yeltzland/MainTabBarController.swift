@@ -59,14 +59,22 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         twitterIcon.setFAIcon(FAType.FATwitter)
         twitterNavigationController.tabBarItem = twitterIcon
         
+        // Other Links
+        let otherViewController = OtherLinksTableViewController()
+        let otherNavigationController = UINavigationController(rootViewController:otherViewController)
+        
+        let otherIcon = UITabBarItem(title: "More", image: nil, selectedImage: nil)
+        otherIcon.setFAIcon(FAType.FAEllipsisH)
+        otherNavigationController.tabBarItem = otherIcon
+
         // Add controllers
-        let controllers = [forumNavigationController, officialNavigationController, tvNavigationController, twitterNavigationController]
+        let controllers = [forumNavigationController, officialNavigationController, tvNavigationController, twitterNavigationController, otherNavigationController]
         self.viewControllers = controllers
     }
     
     // Delegate methods
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        print("Should select viewController: \(viewController.title) ?")
+        //print("Should select viewController: \(viewController.title) ?")
         return true;
     }
 }
