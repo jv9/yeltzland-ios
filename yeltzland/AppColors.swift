@@ -23,6 +23,7 @@ class AppColors {
     
     static var ProgressBar: UIColor = YeltzBlueColor
     static var WebBackground: UIColor = UIColor.whiteColor()
+    static var WebErrorBackground: UIColor = YeltzBlueColor
 
     static var TabBarColor: UIColor = UIColor.whiteColor()
     static var TabBarTextColor: UIColor = YeltzBlueColor

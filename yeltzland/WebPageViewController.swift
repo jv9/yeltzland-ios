@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import Font_Awesome_Swift
+import Whisper
 
 class WebPageViewController: UIViewController, WKNavigationDelegate {
     
@@ -170,13 +171,12 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     
     // MARK: - WKNavigationDelegate methods
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
-        // Log the error and show a friendly alert
-        print("didFailProvisionalNavigation error occurred: ", error.localizedDescription, ":", error.code)
-        
+        // Show brief error message
         if (error.code != NSURLErrorCancelled) {
-            let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            print("didFailProvisionalNavigation error occurred: ", error.localizedDescription, ":", error.code)
+            
+            let message = Message(title: "Couldn't connect to the website right now", backgroundColor: AppColors.WebErrorBackground)
+            Whisper(message, to: self.navigationController!)
         }
     }
     
@@ -204,16 +204,14 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         // Mark the progress as done
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
-        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         
-        // Log the error and show a friendly alert
-        print("navigation error occurred: ", error.localizedDescription)
-        
+        // Show brief error message
         if (error.code != NSURLErrorCancelled) {
-            let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            print("Navigation error occurred: ", error.localizedDescription)
+
+            let message = Message(title: "Couldn't connect to the website right now", backgroundColor: AppColors.WebErrorBackground)
+            Whisper(message, to: self.navigationController!)
         }
     }
 }

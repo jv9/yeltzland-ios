@@ -53,7 +53,9 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Font_Awesome_Swift.framework'
+  install_framework 'Pods/Whisper.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Font_Awesome_Swift.framework'
+  install_framework 'Pods/Whisper.framework'
 fi
