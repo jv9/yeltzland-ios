@@ -171,11 +171,13 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     // MARK: - WKNavigationDelegate methods
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
         // Log the error and show a friendly alert
-        print("Web error occurred: ", error.localizedDescription)
+        print("didFailProvisionalNavigation error occurred: ", error.localizedDescription, ":", error.code)
         
-        let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        if (error.code != NSURLErrorCancelled) {
+            let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation) {
@@ -206,11 +208,13 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         
         // Log the error and show a friendly alert
-        print("Web error occurred: ", error.localizedDescription)
+        print("navigation error occurred: ", error.localizedDescription)
         
-        let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        if (error.code != NSURLErrorCancelled) {
+            let alert = UIAlertController(title: "Error", message: "Couldn't connect to the website right now", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }
 
