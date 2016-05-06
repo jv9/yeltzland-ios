@@ -12,8 +12,18 @@ import Font_Awesome_Swift
 
 class WebPageViewController: UIViewController, WKNavigationDelegate {
     
+    var pageUrl: NSURL!
     // Properties
-    var homeUrl: NSURL!
+    
+    var homeUrl: NSURL! {
+        set {
+            self.pageUrl = newValue;
+            self.loadHomePage()
+        }
+        get {
+            return self.pageUrl
+        }
+    }
     var pageTitle: String!
     
     var homeButton: UIBarButtonItem!
@@ -25,6 +35,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     // reference to WebView control we will instantiate
     let webView = WKWebView()
     let progressBar = UIProgressView(progressViewStyle: .Bar)
+    
 
     // Initializers
     required init(coder aDecoder: NSCoder) {
@@ -33,6 +44,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.loadHomePage()
     }
     
     override func viewDidLoad() {
@@ -44,8 +56,6 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         
         let webViewHeight = CGRectGetHeight(view.frame) -
             (topPosition + progressBarHeight + CGRectGetHeight((self.tabBarController?.tabBar.frame)!));
-        
-        NSLog("topPosition: \(topPosition): webViewHeight: \(webViewHeight)")
 
         // Add elements to view
         self.webView.frame = CGRect(x: 0, y: topPosition + progressBarHeight, width: view.frame.width, height: webViewHeight)
@@ -61,7 +71,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.view.addSubview(self.webView)
         self.view.backgroundColor = AppColors.WebBackground
 
-        self.loadHomePage()
+        //self.loadHomePage()
         
         // Setup navigation
         self.navigationItem.title = self.pageTitle
