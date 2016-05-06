@@ -17,9 +17,10 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     var pageTitle: String!
     
     var homeButton: UIBarButtonItem!
-    var reloadButton: UIBarButtonItem!
     var backButton: UIBarButtonItem!
     var forwardButton: UIBarButtonItem!
+    var reloadButton: UIBarButtonItem!
+    var safariButton: UIBarButtonItem!
     
     // reference to WebView control we will instantiate
     let webView = WKWebView()
@@ -71,7 +72,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
             target: self,
             action: #selector(WebPageViewController.reloadButtonTouchUp)
         )
-        self.reloadButton.FAIcon = FAType.FARefresh
+        self.reloadButton.FAIcon = FAType.FARotateRight
         
         self.homeButton = UIBarButtonItem(
             title: "Home",
@@ -96,12 +97,20 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
             action: #selector(WebPageViewController.forwardButtonTouchUp)
         )
         self.forwardButton.FAIcon = FAType.FAAngleRight
-        
+
+        self.safariButton = UIBarButtonItem(
+            title: "Safari",
+            style: .Plain,
+            target: self,
+            action: #selector(WebPageViewController.safariButtonTouchUp)
+        )
+        self.safariButton.FAIcon = FAType.FASafari
+
         self.backButton.enabled = false
         self.forwardButton.enabled = false
         
-        self.navigationItem.leftBarButtonItems = [self.backButton, self.forwardButton]
-        self.navigationItem.rightBarButtonItems = [self.reloadButton, self.homeButton]
+        self.navigationItem.leftBarButtonItems = [self.homeButton, self.backButton, self.forwardButton]
+        self.navigationItem.rightBarButtonItems = [self.reloadButton, self.safariButton]
         
         // Setup colors
         self.navigationController!.navigationBar.barTintColor = AppColors.NavBarColor;
@@ -111,18 +120,21 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.forwardButton.tintColor = AppColors.NavBarTintColor
         self.reloadButton.tintColor = AppColors.NavBarTintColor
         self.homeButton.tintColor = AppColors.NavBarTintColor
+        self.safariButton.tintColor = AppColors.NavBarTintColor
         
         // Swipe gestures automatically supported
         self.webView.allowsBackForwardNavigationGestures = true
     }
     
-    // Nav bar actions
+    // MARK: - Nav bar actions
     func reloadButtonTouchUp() {
         progressBar.setProgress(0, animated: false)
-        
-        let req = NSURLRequest(URL:self.webView.URL!)
-        self.webView.loadRequest(req)
-        NSLog("Reloading page: %@", self.webView.URL!)
+
+        if let requestUrl = self.webView.URL {
+            let req = NSURLRequest(URL: requestUrl)
+            self.webView.loadRequest(req)
+            NSLog("Reloading page: %@", self.webView.URL!)
+        }
     }
     
     func backButtonTouchUp() {
@@ -135,9 +147,18 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     
     func loadHomePage() {
         progressBar.setProgress(0, animated: false)
-        let req = NSURLRequest(URL:self.homeUrl)
-        self.webView.loadRequest(req)
-        NSLog("Loading page: %@", self.homeUrl)
+        
+        if let requestUrl = self.homeUrl {
+            let req = NSURLRequest(URL: requestUrl)
+            self.webView.loadRequest(req)
+            NSLog("Loading page: %@", self.homeUrl)
+        }
+    }
+    
+    func safariButtonTouchUp() {
+        if let requestUrl = self.webView.URL {
+            UIApplication.sharedApplication().openURL(requestUrl)
+        }
     }
     
     

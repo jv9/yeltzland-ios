@@ -63,8 +63,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let otherViewController = OtherLinksTableViewController()
         let otherNavigationController = UINavigationController(rootViewController:otherViewController)
         
-        let otherIcon = UITabBarItem(title: "More", image: nil, selectedImage: nil)
-        otherIcon.setFAIcon(FAType.FAEllipsisH)
+        let otherIcon = UITabBarItem(tabBarSystemItem: .More, tag: 0)
         otherNavigationController.tabBarItem = otherIcon
 
         // Add controllers
