@@ -129,12 +129,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     // MARK: - Nav bar actions
     func reloadButtonTouchUp() {
         progressBar.setProgress(0, animated: false)
-
-        if let requestUrl = self.webView.URL {
-            let req = NSURLRequest(URL: requestUrl)
-            self.webView.loadRequest(req)
-            NSLog("Reloading page: %@", self.webView.URL!)
-        }
+        self.webView.reloadFromOrigin()
     }
     
     func backButtonTouchUp() {
@@ -146,6 +141,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     }
     
     func loadHomePage() {
+        self.webView.stopLoading()
         progressBar.setProgress(0, animated: false)
         
         if let requestUrl = self.homeUrl {
