@@ -36,7 +36,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     // reference to WebView control we will instantiate
     let webView = WKWebView()
     let progressBar = UIProgressView(progressViewStyle: .Bar)
-    
+    var spinner: UIActivityIndicatorView!
 
     // Initializers
     required init(coder aDecoder: NSCoder) {
@@ -71,8 +71,6 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.view.addSubview(self.progressBar)
         self.view.addSubview(self.webView)
         self.view.backgroundColor = AppColors.WebBackground
-
-        //self.loadHomePage()
         
         // Setup navigation
         self.navigationItem.title = self.pageTitle
@@ -165,6 +163,25 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    func showSpinner() {
+        if (self.spinner != nil) {
+            self.hideSpinner()
+        }
+        
+        let overlayPosition = CGRectMake(0, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height)
+        self.spinner = UIActivityIndicatorView(frame:overlayPosition)
+        self.spinner.color = AppColors.SpinnerColor
+        self.view.addSubview(self.spinner)
+        self.spinner.startAnimating()
+    }
+    
+    func hideSpinner() {
+        if (self.spinner != nil) {
+            self.spinner.stopAnimating()
+            self.spinner.removeFromSuperview()
+            self.spinner = nil;
+        }
+    }
     
     // MARK: - WKNavigationDelegate methods
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
@@ -178,17 +195,22 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation) {
+        self.showSpinner()
         self.progressBar.setProgress(0, animated: false)
         UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 1 }, completion: nil)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
     func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation){
+        if (webView.estimatedProgress > 0) {
+           self.hideSpinner()
+        }
         progressBar.setProgress(Float(webView.estimatedProgress), animated: true)
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation) {
         // Mark the progress as done
+        self.hideSpinner()
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -199,6 +221,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     
     func webView(webView: WKWebView, navigation: WKNavigation, withError error: NSError) {
         // Mark the progress as done
+        self.hideSpinner()
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
