@@ -21,18 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Nav bar colors
         UINavigationBar.appearance().barTintColor = AppColors.NavBarColor;
-        
-        let bodyDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleHeadline);
+
         UINavigationBar.appearance().titleTextAttributes = [
             NSForegroundColorAttributeName: AppColors.NavBarTextColor,
-            NSFontAttributeName: UIFont(name: "AmericanTypewriter", size:bodyDescriptor.pointSize)!
+            NSFontAttributeName: UIFont(name: AppColors.AppFontName, size: AppColors.NavBarTextSize)!
         ]
         
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        // Tab bar font
+        UITabBarItem.appearance().setTitleTextAttributes([
+            NSFontAttributeName: UIFont(name: AppColors.AppFontName, size: AppColors.TabBarTextSize)!
+        ], forState: .Normal)
         
+        // Setup Fabric
         Fabric.with([Crashlytics.self, Twitter.self])
         
         // Initial web page
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let initialTabViewController = MainTabBarController()
         self.window?.rootViewController = initialTabViewController
         self.window?.makeKeyAndVisible()

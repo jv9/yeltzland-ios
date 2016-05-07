@@ -82,6 +82,10 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         
         cell.selectionStyle = .Default;
         cell.accessoryType = .DisclosureIndicator
+
+        // Set fonts
+        cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
+        cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
         
         return cell
     }
@@ -133,11 +137,9 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.contentView.backgroundColor = AppColors.OtherSectionBackground
         header.textLabel!.textColor = AppColors.OtherSectionText
+        header.textLabel!.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherSectionTextSize)!
     }
     
-    
-
-
     // MARK: - SFSafariViewControllerDelegate methods
     func safariViewControllerDidFinish(controller: SFSafariViewController)
     {
