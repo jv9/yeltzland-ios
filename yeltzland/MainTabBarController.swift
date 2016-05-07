@@ -15,7 +15,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         
         // Colors
-        self.tabBar.barTintColor = AppColors.TabBarColor
+        self.tabBar.barTintColor = AppColors.TabBarTintColor
         self.tabBar.tintColor = AppColors.TabBarTextColor
     }
     

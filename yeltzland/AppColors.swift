@@ -17,16 +17,16 @@ let EvostickRedColor = UIColor(red: 252.0/255.0, green: 0.0/255.0, blue: 6.0/255
 let BraveLocationRedColor = UIColor(red: 170.0/255.0, green: 60.0/255.0, blue: 79.0/255.0, alpha: 1.0)
 
 class AppColors {
-    static var NavBarColor: UIColor = UIColor.whiteColor()
-    static var NavBarTextColor: UIColor = YeltzBlueColor
-    static var NavBarTintColor: UIColor = YeltzBlueColor
+    static var NavBarColor: UIColor = YeltzBlueColor
+    static var NavBarTextColor: UIColor = UIColor.whiteColor()
+    static var NavBarTintColor: UIColor = UIColor.whiteColor()
     
     static var ProgressBar: UIColor = YeltzBlueColor
     static var WebBackground: UIColor = UIColor.whiteColor()
     static var WebErrorBackground: UIColor = YeltzBlueColor
 
-    static var TabBarColor: UIColor = UIColor.whiteColor()
     static var TabBarTextColor: UIColor = YeltzBlueColor
+    static var TabBarTintColor: UIColor = UIColor.whiteColor()
     
     static var TwitterBackground: UIColor = UIColor.whiteColor()
     static var TwitterSeparator: UIColor = UIColor.whiteColor()
