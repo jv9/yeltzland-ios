@@ -121,7 +121,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.forwardButton.enabled = false
         
         self.navigationItem.leftBarButtonItems = [self.homeButton, self.backButton, self.forwardButton]
-        self.navigationItem.rightBarButtonItems = [self.reloadButton, self.safariButton]
+        self.navigationItem.rightBarButtonItems = [self.safariButton, self.reloadButton]
         
         // Setup colors
         self.navigationController!.navigationBar.barTintColor = AppColors.NavBarColor;
