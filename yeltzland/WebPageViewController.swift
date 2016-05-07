@@ -234,5 +234,14 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
             Whisper(message, to: self.navigationController!)
         }
     }
+    
+    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        if (navigationAction.targetFrame == nil) {
+            print("Redirecting link to another frame: \(navigationAction.request.URL!)")
+            webView.loadRequest(navigationAction.request)
+        }
+        
+        decisionHandler(WKNavigationActionPolicy.Allow)
+    }
 }
 
