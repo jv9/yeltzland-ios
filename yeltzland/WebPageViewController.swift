@@ -124,9 +124,6 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.navigationItem.rightBarButtonItems = [self.safariButton, self.reloadButton]
         
         // Setup colors
-        self.navigationController!.navigationBar.barTintColor = AppColors.NavBarColor;
-        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: AppColors.NavBarTextColor]
-        
         self.backButton.tintColor = AppColors.NavBarTintColor
         self.forwardButton.tintColor = AppColors.NavBarTintColor
         self.reloadButton.tintColor = AppColors.NavBarTintColor

@@ -18,10 +18,6 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         // Setup navigation
         self.navigationItem.title = "Odds and Sods"
         
-        // Setup colors
-        self.navigationController!.navigationBar.barTintColor = AppColors.NavBarColor;
-        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: AppColors.NavBarTextColor]
-        
         self.view.backgroundColor = AppColors.OtherBackground
         self.tableView.separatorColor = AppColors.OtherSeparator
         
