@@ -60,5 +60,6 @@ Carthage/Build
 # https://github.com/fastlane/fastlane/blob/master/docs/Gitignore.md
 
 report.xml
-screenshots/*
+screenshots/README.txt
+screenshots/screenshots.html
 
