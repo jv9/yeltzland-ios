@@ -26,7 +26,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +34,8 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         {
             return 4
         } else if (section == 1) {
+            return 2
+        } else if (section == 2) {
             return 1
         }
         
@@ -69,6 +71,21 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
                 break
             }
         } else if (indexPath.section == 1) {
+            switch (indexPath.row) {
+            case 0:
+                cell.textLabel?.text = "Yeltz Archives"
+                let cellImage = UIImage(icon: FAType.FAArchive, size: CGSize(width: 100, height: 100), textColor: AppColors.Archive, backgroundColor: UIColor.clearColor())
+                cell.imageView?.image = cellImage
+                break
+            case 1:
+                cell.textLabel?.text = "Yeltzland News Archive"
+                let cellImage = UIImage(icon: FAType.FANewspaperO, size: CGSize(width: 100, height: 100), textColor: AppColors.Archive, backgroundColor: UIColor.clearColor())
+                cell.imageView?.image = cellImage
+                break
+            default:
+                break
+            }
+        } else if (indexPath.section == 2) {
             cell.textLabel?.text = "Another Brave Location App!"
             let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.BraveLocation, backgroundColor: UIColor.clearColor())
             cell.imageView?.image = cellImage
@@ -85,6 +102,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
 
         // Set fonts
         cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
         
         return cell
@@ -107,6 +125,17 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
                 break
             }
         } else if (indexPath.section == 1) {
+            switch (indexPath.row) {
+            case 0:
+                url = NSURL(string: "http://www.yeltzarchives.com")
+                break
+            case 1:
+                url = NSURL(string: "http://www.yeltzland.net/news.html")
+                break
+            default:
+                break
+            }
+        } else if (indexPath.section == 2) {
             url = NSURL(string: "http://bravelocation.com/apps")
         }
         
@@ -127,6 +156,8 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         case 0:
             return "Other websites"
         case 1:
+            return "Know Your History"
+        case 2:
             return "About the app"
         default:
             return ""

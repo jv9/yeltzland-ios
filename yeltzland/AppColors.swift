@@ -52,6 +52,7 @@ class AppColors {
     static var Stour: UIColor = StourbridgeRedColor
     static var BraveLocation: UIColor = BraveLocationRedColor
     static var Facebook: UIColor = FacebookBlueColor
+    static var Archive: UIColor = YeltzBlueColor
     
     static var SpinnerColor = YeltzBlueColor
 
