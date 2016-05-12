@@ -10,10 +10,9 @@
 		5211F7271CDA35CF0031496D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
 		5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */; };
 		5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */; };
+		523C841E1CE47F06006F1865 /* HTFC2016LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 523C841D1CE47F06006F1865 /* HTFC2016LOGO.png */; };
 		5257E8BD1CDB953400157CED /* yeltzlandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257E8BC1CDB953400157CED /* yeltzlandUITests.swift */; };
 		5257E8C51CDB978700157CED /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257E8C41CDB978700157CED /* SnapshotHelper.swift */; };
-		5257E8CB1CDC7EB700157CED /* HalesowenTownInverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257E8CA1CDC7EB700157CED /* HalesowenTownInverted.png */; };
-		5257E8CC1CDC7EE700157CED /* HalesowenTownInverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257E8CA1CDC7EB700157CED /* HalesowenTownInverted.png */; };
 		5259F9041CDA1292009C2AA8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */; };
 		52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF761CD9FA78009F18BD /* AppDelegate.swift */; };
 		52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */; };
@@ -37,11 +36,11 @@
 		5211F7261CDA35CF0031496D /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUserTimelineViewController.swift; sourceTree = "<group>"; };
 		5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLinksTableViewController.swift; sourceTree = "<group>"; };
+		523C841D1CE47F06006F1865 /* HTFC2016LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HTFC2016LOGO.png; sourceTree = "<group>"; };
 		5257E8BA1CDB953400157CED /* yeltzlandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yeltzlandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5257E8BC1CDB953400157CED /* yeltzlandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yeltzlandUITests.swift; sourceTree = "<group>"; };
 		5257E8BE1CDB953400157CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5257E8C41CDB978700157CED /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
-		5257E8CA1CDC7EB700157CED /* HalesowenTownInverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HalesowenTownInverted.png; sourceTree = "<group>"; };
 		5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E3DF761CD9FA78009F18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +74,7 @@
 		5211F7231CDA33580031496D /* images */ = {
 			isa = PBXGroup;
 			children = (
-				5257E8CA1CDC7EB700157CED /* HalesowenTownInverted.png */,
+				523C841D1CE47F06006F1865 /* HTFC2016LOGO.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -229,7 +228,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5257E8CB1CDC7EB700157CED /* HalesowenTownInverted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5257E8CC1CDC7EE700157CED /* HalesowenTownInverted.png in Resources */,
 				52E3DF811CD9FA78009F18BD /* LaunchScreen.storyboard in Resources */,
+				523C841E1CE47F06006F1865 /* HTFC2016LOGO.png in Resources */,
 				52E3DF7E1CD9FA78009F18BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

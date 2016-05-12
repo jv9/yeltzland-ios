@@ -17,21 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HalesowenTownInverted.png" highlightedImage="HalesowenTownInverted.png" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-vh-7iu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeltzland is alive!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIH-fF-d7A">
+                                <rect key="frame" x="20" y="570" width="560" height="14"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HTFC2016LOGO.png" highlightedImage="HTFC2016LOGO.png" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-vh-7iu">
                                 <rect key="frame" x="195" y="195" width="210" height="210"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="W7z-3b-fPk"/>
                                     <constraint firstAttribute="height" constant="210" id="ovY-vR-iqQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeltzland is alive!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIH-fF-d7A">
-                                <rect key="frame" x="20" y="569" width="560" height="14.5"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.023529411760000001" green="0.34509803919999998" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.21568627450980393" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zRc-vh-7iu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0ql-1x-NfG"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hIH-fF-d7A" secondAttribute="bottom" constant="16" id="AxQ-tJ-3pV"/>
@@ -47,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HalesowenTownInverted.png" width="210" height="210"/>
+        <image name="HTFC2016LOGO.png" width="954" height="954"/>
     </resources>
 </document>
