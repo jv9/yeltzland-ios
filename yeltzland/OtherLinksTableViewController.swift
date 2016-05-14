@@ -141,6 +141,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         
         if (url != nil) {
             let svc = SFSafariViewController(URL: url!)
+            svc.delegate = self
             self.presentViewController(svc, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Really?", message: "Computer says no", preferredStyle: .Alert)
@@ -175,5 +176,17 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
     func safariViewControllerDidFinish(controller: SFSafariViewController)
     {
         controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func safariViewController(controller: SFSafariViewController,
+                                activityItemsForURL URL: NSURL,
+                                                    title: String?) -> [UIActivity] {
+        let chromeActivity = ChromeActivity(currentUrl: URL)
+        
+        if (chromeActivity.canOpenChrome()) {
+            return [chromeActivity];
+        }
+        
+        return [];
     }
 }
