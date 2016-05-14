@@ -1,3 +1,3 @@
-New logo! The club has a new badge design, so the app does too.
+A very minor change based on user feedback - added an “Open in Chrome” option to the share extension when the “More…” links are opened
 
-Also added a couple more links to the "More ..." section for your enjoyment
+If people have any suggestions on extra features, definitely let me know.
