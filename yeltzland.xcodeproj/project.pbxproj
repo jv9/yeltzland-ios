@@ -211,6 +211,15 @@
 					};
 					52E3DF721CD9FA78009F18BD = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W8B3V597R9;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
