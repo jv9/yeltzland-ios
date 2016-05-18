@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481F530A2194ABBB0E4F3078 /* Pods_yeltzland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE281ED4B32969698046889 /* Pods_yeltzland.framework */; };
 		5211F7271CDA35CF0031496D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
 		5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */; };
 		5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */; };
@@ -19,7 +20,6 @@
 		52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */; };
 		52E3DF7E1CD9FA78009F18BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E3DF7D1CD9FA78009F18BD /* Assets.xcassets */; };
 		52E3DF811CD9FA78009F18BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E3DF7F1CD9FA78009F18BD /* LaunchScreen.storyboard */; };
-		78C59529AC571F40487D26CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6F5775F3F24493B838AC89 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C88545FDA6AEF1058FE88CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5211F7261CDA35CF0031496D /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUserTimelineViewController.swift; sourceTree = "<group>"; };
 		5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLinksTableViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +49,9 @@
 		52E3DF7D1CD9FA78009F18BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52E3DF801CD9FA78009F18BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52E3DF821CD9FA78009F18BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A882BB1FE682773EEEC0EF79 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6C2886E0C6D579332BF2A5A8 /* Pods-yeltzland.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yeltzland.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yeltzland/Pods-yeltzland.debug.xcconfig"; sourceTree = "<group>"; };
+		9BE281ED4B32969698046889 /* Pods_yeltzland.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yeltzland.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C11AF69119A85B889C5CADB2 /* Pods-yeltzland.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yeltzland.release.xcconfig"; path = "Pods/Target Support Files/Pods-yeltzland/Pods-yeltzland.release.xcconfig"; sourceTree = "<group>"; };
 		FA6F5775F3F24493B838AC89 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,13 +67,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78C59529AC571F40487D26CD /* Pods.framework in Frameworks */,
+				481F530A2194ABBB0E4F3078 /* Pods_yeltzland.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094D27B64A778A50E38BC04C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C2886E0C6D579332BF2A5A8 /* Pods-yeltzland.debug.xcconfig */,
+				C11AF69119A85B889C5CADB2 /* Pods-yeltzland.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5211F7231CDA33580031496D /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +108,8 @@
 				52E3DF751CD9FA78009F18BD /* yeltzland */,
 				5257E8BB1CDB953400157CED /* yeltzlandUITests */,
 				52E3DF741CD9FA78009F18BD /* Products */,
-				BD3F6F48EC1DD96CA8DE80F7 /* Pods */,
 				D15072796B891DCF46FC1DA6 /* Frameworks */,
+				094D27B64A778A50E38BC04C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,19 +139,11 @@
 			path = yeltzland;
 			sourceTree = "<group>";
 		};
-		BD3F6F48EC1DD96CA8DE80F7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A882BB1FE682773EEEC0EF79 /* Pods.debug.xcconfig */,
-				4C88545FDA6AEF1058FE88CA /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		D15072796B891DCF46FC1DA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				FA6F5775F3F24493B838AC89 /* Pods.framework */,
+				9BE281ED4B32969698046889 /* Pods_yeltzland.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,13 +173,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E3DF851CD9FA79009F18BD /* Build configuration list for PBXNativeTarget "yeltzland" */;
 			buildPhases = (
-				DB10AC2F0DB6E9FE8E797138 /* Check Pods Manifest.lock */,
+				71ADE6DF9E407B473C7C01FD /* 📦 Check Pods Manifest.lock */,
 				52E3DF6F1CD9FA78009F18BD /* Sources */,
 				52E3DF701CD9FA78009F18BD /* Frameworks */,
 				52E3DF711CD9FA78009F18BD /* Resources */,
-				54D6C29ED6D493908263684B /* Embed Pods Frameworks */,
-				27EE48A7DCB98DC254CBD901 /* Copy Pods Resources */,
 				5211F7281CDA51EC0031496D /* ShellScript */,
+				A105CF8EDA0A39E089673162 /* 📦 Embed Pods Frameworks */,
+				63BB4CBBF5413A6045855209 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,21 +249,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		27EE48A7DCB98DC254CBD901 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5211F7281CDA51EC0031496D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,34 +262,49 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n\"${PODS_ROOT}/Fabric/run\" de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566";
 		};
-		54D6C29ED6D493908263684B /* Embed Pods Frameworks */ = {
+		63BB4CBBF5413A6045855209 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yeltzland/Pods-yeltzland-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DB10AC2F0DB6E9FE8E797138 /* Check Pods Manifest.lock */ = {
+		71ADE6DF9E407B473C7C01FD /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A105CF8EDA0A39E089673162 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yeltzland/Pods-yeltzland-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -462,7 +464,7 @@
 		};
 		52E3DF861CD9FA79009F18BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A882BB1FE682773EEEC0EF79 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 6C2886E0C6D579332BF2A5A8 /* Pods-yeltzland.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -476,7 +478,7 @@
 		};
 		52E3DF871CD9FA79009F18BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C88545FDA6AEF1058FE88CA /* Pods.release.xcconfig */;
+			baseConfigurationReference = C11AF69119A85B889C5CADB2 /* Pods-yeltzland.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = yeltzland/Info.plist;
