@@ -54,6 +54,9 @@ class AppColors {
     static var Facebook: UIColor = FacebookBlueColor
     static var Archive: UIColor = YeltzBlueColor
     
+    static var ActiveAlertBackground: UIColor = YeltzBlueColor
+    static var ActiveAlertText: UIColor = UIColor.whiteColor()
+    
     static var SpinnerColor = YeltzBlueColor
 
 }

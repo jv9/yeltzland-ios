@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import TwitterKit
+import Whisper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     
     let registrationKey = "onRegistrationCompleted"
     let messageKey = "onMessageReceived"
-    let subscriptionTopic = "/topics/matchdaytweets"
+    let subscriptionTopic = "/topics/gametimetweets"
     
     let sandboxMode = true
 
@@ -52,16 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
         // Configure the Google context: parses the GoogleService-Info.plist, and initializes
         // the services that have entries in the file
-
         var configureError:NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
         self.gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
 
-        
         // Register for remote notifications
-        let settings: UIUserNotificationSettings =
-            UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
+        let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
 
@@ -81,8 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     }
     
     func subscribeToTopic() {
-        // If the app has a registration token and is connected to GCM, proceed to subscribe to the
-        // topic
+        // If the app has a registration token and is connected to GCM, proceed to subscribe to the topic
         if(self.registrationToken != nil && self.connectedToGCM) {
             GCMPubSub.sharedInstance().subscribeWithToken(self.registrationToken, topic: self.subscriptionTopic,
                                                           options: nil, handler: {(error:NSError?) -> Void in
@@ -168,6 +165,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
         NSNotificationCenter.defaultCenter().postNotificationName(self.messageKey, object: nil,
                                                                   userInfo: userInfo)
+        
+        // If app in foreground, show a whisper
+        if (application.applicationState == .Active) {
+            if let aps = userInfo["aps"] as? NSDictionary {
+                if let alert = aps["alert"] as? NSDictionary {
+                    if let body = alert["body"] as? NSString {
+                        let message = Message(title: body as String, backgroundColor: AppColors.ActiveAlertBackground, textColor: AppColors.ActiveAlertText)
+                        
+                        // Show and hide a message after delay
+                        if (self.window != nil && self.window?.rootViewController != nil) {
+                            if let tabController : UITabBarController? = (self.window?.rootViewController as! UITabBarController) {
+                                if let navigationController : UINavigationController? = tabController!.viewControllers![0] as? UINavigationController {
+                                    Whisper(message, to: navigationController!, action: .Show)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
         handler(UIBackgroundFetchResult.NoData);
     }
     
@@ -193,24 +211,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(self.gcmSenderID,
                                                                  scope: kGGLInstanceIDScopeGCM, options: self.registrationOptions, handler: registrationHandler)
     }
-    
-    func willSendDataMessageWithID(messageID: String!, error: NSError!) {
-        if (error != nil) {
-            // Failed to send the message.
-        } else {
-            // Will send message, you can save the messageID to track the message
-        }
-    }
-    
-    func didSendDataMessageWithID(messageID: String!) {
-        // Did successfully send message identified by messageID
-    }
-    
-    func didDeleteMessagesOnServer() {
-        // Some messages sent to this device were deleted on the GCM server before reception, likely
-        // because the TTL expired. The client should notify the app server of this, so that the app
-        // server can resend those messages.
-    }
-
 }
 
