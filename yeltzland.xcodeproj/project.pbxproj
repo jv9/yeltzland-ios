@@ -44,6 +44,7 @@
 		5257E8BE1CDB953400157CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5257E8C41CDB978700157CED /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5259F9031CDA1292009C2AA8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		52BE38261CEC65BD00B62068 /* yeltzland-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yeltzland-Bridging-Header.h"; sourceTree = "<group>"; };
 		52BE38271CEC664800B62068 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E3DF761CD9FA78009F18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 				5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */,
 				5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */,
 				523C841F1CE70806006F1865 /* ChromeActivity.swift */,
+				52BE38261CEC65BD00B62068 /* yeltzland-Bridging-Header.h */,
 				52BE38271CEC664800B62068 /* GoogleService-Info.plist */,
 			);
 			path = yeltzland;
@@ -486,6 +488,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.yeltzland;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./yeltzland/yeltzland-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -499,6 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.yeltzland;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./yeltzland/yeltzland-Bridging-Header.h";
 			};
 			name = Release;
 		};

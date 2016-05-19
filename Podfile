@@ -9,5 +9,5 @@ target 'yeltzland' do
   pod 'TwitterKit'
   pod 'TwitterCore'
   pod 'Whisper'
-  pod 'Firebase/Messaging'
+  pod 'Google/CloudMessaging'
 end 

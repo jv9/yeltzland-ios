@@ -9,22 +9,6 @@ Fabric: Copyright 2015 Twitter, Inc. All Rights Reserved. Use of this software i
 
 Fabric: Copyright 2015 Twitter, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms. OSS: http://get.fabric.io/terms/opensource.txt
 
-## Firebase
-
-Copyright 2016 Google Inc.
-
-## FirebaseAnalytics
-
-Copyright 2016 Google Inc.
-
-## FirebaseInstanceID
-
-Copyright 2016 Google Inc.
-
-## FirebaseMessaging
-
-Copyright 2016 Google Inc.
-
 ## Font-Awesome-Swift
 
 The MIT License (MIT)
@@ -49,11 +33,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## GGLInstanceID
+
+Copyright 2015 Google Inc.
+
+## Google
+
+Copyright 2015 Google Inc.
+
+## GoogleCloudMessaging
+
+Copyright 2015 Google Inc.
+
 ## GoogleIPhoneUtilities
 
 Copyright 2015 Google Inc.
 
 ## GoogleInterchangeUtilities
+
+Copyright 2015 Google Inc.
+
+## GoogleNetworkingUtilities
 
 Copyright 2015 Google Inc.
 
