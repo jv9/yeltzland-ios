@@ -58,6 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = initialTabViewController
         self.window?.makeKeyAndVisible()
         
+        // If came from alert press, switch to Twitter tab
+        if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [String: AnyObject] != nil {
+            initialTabViewController.selectedIndex = 3
+        }
+        
         return true
     }
     
