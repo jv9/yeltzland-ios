@@ -16,6 +16,7 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
     
     var userScreenName: String!
     var spinner: UIActivityIndicatorView!
+    var reloadButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,19 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
         
         // Setup navigation
         self.navigationItem.title = "@\(self.userScreenName)"
-                
+        
+        self.reloadButton = UIBarButtonItem(
+            title: "Reload",
+            style: .Plain,
+            target: self,
+            action: #selector(TwitterUserTimelineViewController.reloadButtonTouchUp)
+        )
+        self.reloadButton.FAIcon = FAType.FARotateRight
+        self.reloadButton.tintColor = AppColors.NavBarTintColor
+        
+        self.navigationItem.rightBarButtonItems = [self.reloadButton]
+        
+        
         self.view.backgroundColor = AppColors.TwitterBackground
         self.tableView.separatorColor = AppColors.TwitterSeparator
         self.showSpinner()
@@ -67,6 +80,11 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
         self.presentViewController(svc, animated: true, completion: nil)
     }
     
+    // MARK: - Nav bar actions
+    func reloadButtonTouchUp() {
+        showSpinner()
+        self.refresh()
+    }
     
     // MARK: - SFSafariViewControllerDelegate methods
     func safariViewControllerDidFinish(controller: SFSafariViewController)
