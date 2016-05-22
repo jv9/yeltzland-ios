@@ -12,24 +12,24 @@
 		1AB54D7A27A3E49A6EADFF86450A61E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */; };
 		23DB73A2A4B2027A7212BE0C148632BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */; };
 		336C5FEC4B4BBF89B4DB514889FA78A7 /* Font-Awesome-Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE44685B5A6BBDF335CE1689B5795887 /* Font-Awesome-Swift.bundle */; };
-		422C7168824CA3A050060471BBAA8F8A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6C61D0A947656D0B237AE4B47DFDF76 /* FontAwesome.ttf */; };
+		422C7168824CA3A050060471BBAA8F8A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BEE9E45AC099A29A6A9E8A980B00D4F /* FontAwesome.ttf */; };
 		4DA9A631B8217C04FCEF731798E1323F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */; };
-		4F758AEFBA807C8BF1C2CDF453C6593F /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C9515930F437A9DDEE09279EA44F57 /* FAIcon.swift */; };
-		51223273A94D9F4F0748EAABFA58E9E0 /* ShoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3CA6A7FA74336ACB57D0676813E3F8 /* ShoutFactory.swift */; };
-		5F0F3AB11ACA57B68DDF05E13632083B /* Font-Awesome-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3759DA0797D6B17D6D83A909FD20DB9F /* Font-Awesome-Swift-dummy.m */; };
-		76563834F17F8D04B8C3DB575F17A3E0 /* Font-Awesome-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C01DC3E6E0AA94ED37EB924483776820 /* Font-Awesome-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F758AEFBA807C8BF1C2CDF453C6593F /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3CBD0A7978CA0B156056A1DD2442B4 /* FAIcon.swift */; };
+		51223273A94D9F4F0748EAABFA58E9E0 /* ShoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E6DB66B7AF9D70B8C29274E878DD6B /* ShoutFactory.swift */; };
+		5F0F3AB11ACA57B68DDF05E13632083B /* Font-Awesome-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD3B2D69F9CBDFC605C6D727A76747 /* Font-Awesome-Swift-dummy.m */; };
+		76563834F17F8D04B8C3DB575F17A3E0 /* Font-Awesome-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB58DDCE623FF2320AF52CA0B9293C2 /* Font-Awesome-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83DEDC497EBB97D0FFA988AD8C599758 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E08379A0DC830C1B585DFE85C4E677 /* UIKit.framework */; };
-		8455DB548232E902D27D01A673413C85 /* FontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5038A03B9C77B1619FE5E6405D9802 /* FontList.swift */; };
+		8455DB548232E902D27D01A673413C85 /* FontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FE7B7AD9258F476328AFCC57F37222 /* FontList.swift */; };
 		A6DA2039F6AC79B35902AFD916955856 /* Pods-yeltzland-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8DDCE09656863C8CA67828401B0121 /* Pods-yeltzland-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C165EB084370EC4B6FF5651B30C453FA /* WhisperFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE26A6B8FD04C09E54A8B88DE822AD /* WhisperFactory.swift */; };
-		C8CA6EEDE3EAE4E60FF96C2E4A495D53 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E885E7C86F5C2547E5A183B29E0032A /* Config.swift */; };
-		CD1F501C9DAB13B1E1E5720D93C5008A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836901851B8C9C0E5A50FE6341B8D710 /* Message.swift */; };
-		DAD55449CE08F190889D23669EF8D628 /* WhistleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC849A30B9A44B99BBE8A16300DD92 /* WhistleFactory.swift */; };
+		C165EB084370EC4B6FF5651B30C453FA /* WhisperFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127E541936249E54FFB491B1D439179 /* WhisperFactory.swift */; };
+		C8CA6EEDE3EAE4E60FF96C2E4A495D53 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD30D4674C5A6B73F338D0C0D9FC506 /* Config.swift */; };
+		CD1F501C9DAB13B1E1E5720D93C5008A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6036971F0D8575646ABF2DEFA7746A81 /* Message.swift */; };
+		DAD55449CE08F190889D23669EF8D628 /* WhistleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95FF4FBB0D191F019D2FF9F9CE32CF /* WhistleFactory.swift */; };
 		DCF77050AE45B69672AA5B6F67FC4715 /* Pods-yeltzland-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA99C225CC331F50BAAAA1DF56307 /* Pods-yeltzland-dummy.m */; };
-		E18B1FDDAB85972352A5AF9F7CFE2C75 /* Whisper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06CB0EC23C5CCC7C25798780D05BD217 /* Whisper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4F289D1A9B74F57813966D8CEF341D1 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94B1D1E50519F9BC4724E5CA55ED24 /* ColorList.swift */; };
-		F2866563538E74B14AAE1F680985027F /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC63DEC13B937D2F50AE957542AABE /* WhisperView.swift */; };
-		FDD46B2BF8389C97E220683CE0AB6572 /* Whisper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8DBC2C5EF7E5EF3077D18095DD4A49 /* Whisper-dummy.m */; };
+		E18B1FDDAB85972352A5AF9F7CFE2C75 /* Whisper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2E3FFD62B1E25CFEAFFF0FE8E73746B /* Whisper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4F289D1A9B74F57813966D8CEF341D1 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA186F5F0A6DDDD8BB457281A200F2 /* ColorList.swift */; };
+		F2866563538E74B14AAE1F680985027F /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5B42D59C2E40CAB09BE2F35A432E6 /* WhisperView.swift */; };
+		FDD46B2BF8389C97E220683CE0AB6572 /* Whisper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC08ACFBB7BA16A0B541159749E3BDFB /* Whisper-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,61 +57,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01C9515930F437A9DDEE09279EA44F57 /* FAIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FAIcon.swift; path = Source/FAIcon.swift; sourceTree = "<group>"; };
+		012BF3A7450969D57618D8F3EBA91269 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03400C0CD6ED48B34D5902A1A473F402 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		06CB0EC23C5CCC7C25798780D05BD217 /* Whisper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whisper-umbrella.h"; sourceTree = "<group>"; };
-		0E885E7C86F5C2547E5A183B29E0032A /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Source/Config.swift; sourceTree = "<group>"; };
-		1419A2A86B4C61E70B8BA64E08A1740C /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		04FA186F5F0A6DDDD8BB457281A200F2 /* ColorList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorList.swift; path = Source/Configuration/ColorList.swift; sourceTree = "<group>"; };
+		1008FF01B6C076B0B47E7D5E91A9DE28 /* Whisper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whisper-prefix.pch"; sourceTree = "<group>"; };
 		17E08379A0DC830C1B585DFE85C4E677 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		238C419EF2AAF5A004356D3AA2974FBE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		241809D4DCEF2E5F2168F97CE7ADC67E /* Whisper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Whisper.modulemap; sourceTree = "<group>"; };
-		29027E5C50972B3D55644E3AA9895E35 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		2940B3B1515B49FECB3373EB2601721B /* Pods-yeltzland-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-yeltzland-acknowledgements.plist"; sourceTree = "<group>"; };
+		2AAE64433F07C2FB298739958F3D9110 /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		2B807EE898605B10CE80ECEFA7F6E0CB /* Whisper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Whisper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		343D8DA45C7D64400AC84CC52BB8A674 /* Whisper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whisper.xcconfig; sourceTree = "<group>"; };
-		35BC849A30B9A44B99BBE8A16300DD92 /* WhistleFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhistleFactory.swift; path = Source/WhistleFactory.swift; sourceTree = "<group>"; };
 		36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3759DA0797D6B17D6D83A909FD20DB9F /* Font-Awesome-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Font-Awesome-Swift-dummy.m"; sourceTree = "<group>"; };
 		3BEBBB852D71AC5EDD221545829DFF91 /* Pods-yeltzland-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yeltzland-resources.sh"; sourceTree = "<group>"; };
-		3E36A53EB1F7A75297BD8A2A41C8D6A6 /* Font-Awesome-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Font-Awesome-Swift.xcconfig"; sourceTree = "<group>"; };
+		40FE7B7AD9258F476328AFCC57F37222 /* FontList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontList.swift; path = Source/Configuration/FontList.swift; sourceTree = "<group>"; };
 		46BAA99C225CC331F50BAAAA1DF56307 /* Pods-yeltzland-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-yeltzland-dummy.m"; sourceTree = "<group>"; };
-		4B94B1D1E50519F9BC4724E5CA55ED24 /* ColorList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorList.swift; path = Source/Configuration/ColorList.swift; sourceTree = "<group>"; };
+		4792AC368C09985AE6F4C1DF5521DEDE /* Whisper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Whisper.modulemap; sourceTree = "<group>"; };
+		47E6DB66B7AF9D70B8C29274E878DD6B /* ShoutFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShoutFactory.swift; path = Source/ShoutFactory.swift; sourceTree = "<group>"; };
+		4CD30D4674C5A6B73F338D0C0D9FC506 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Source/Config.swift; sourceTree = "<group>"; };
+		4D05C9EF4D232D6AA20EAB5CFCEBF107 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
+		5127E541936249E54FFB491B1D439179 /* WhisperFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhisperFactory.swift; path = Source/WhisperFactory.swift; sourceTree = "<group>"; };
 		5C8DDCE09656863C8CA67828401B0121 /* Pods-yeltzland-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-yeltzland-umbrella.h"; sourceTree = "<group>"; };
-		735684015940913BB7A8AF8EDBDBE566 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		75A659EE1605E459BC24951E15AC48B8 /* GoogleIPhoneUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleIPhoneUtilities.framework; path = Frameworks/GoogleIPhoneUtilities.framework; sourceTree = "<group>"; };
-		787B2E316F9DB1A9B098A9A5DCBBE2F0 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		6036971F0D8575646ABF2DEFA7746A81 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Source/Message.swift; sourceTree = "<group>"; };
+		6BB8A3ADC5A5B9BFD1F9DDD4FCAED128 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		769886051880CAB29FCD592281E70EE5 /* ResourceBundle-Font-Awesome-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Font-Awesome-Swift-Info.plist"; sourceTree = "<group>"; };
 		7BC7C8CA6488189B830378772D943005 /* Pods-yeltzland-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yeltzland-frameworks.sh"; sourceTree = "<group>"; };
-		7D5038A03B9C77B1619FE5E6405D9802 /* FontList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontList.swift; path = Source/Configuration/FontList.swift; sourceTree = "<group>"; };
-		81BE2EC36A18FA8F3C16E80FCA258743 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		836901851B8C9C0E5A50FE6341B8D710 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Source/Message.swift; sourceTree = "<group>"; };
-		90B97610BA7FE3F265FC422C9EDAE9E6 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		91585394030C4811671C5D02C66032B5 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		7D3CBD0A7978CA0B156056A1DD2442B4 /* FAIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FAIcon.swift; path = Source/FAIcon.swift; sourceTree = "<group>"; };
+		7E95FF4FBB0D191F019D2FF9F9CE32CF /* WhistleFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhistleFactory.swift; path = Source/WhistleFactory.swift; sourceTree = "<group>"; };
+		7EBD3B2D69F9CBDFC605C6D727A76747 /* Font-Awesome-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Font-Awesome-Swift-dummy.m"; sourceTree = "<group>"; };
 		929516D04C4B0B5773C9187A461B233F /* Pods_yeltzland.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yeltzland.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96566007CF67B13C1371AA947232D012 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
-		984FCC5749CB49B7372D3EA73207DC77 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseMessaging.framework; path = Frameworks/FirebaseMessaging.framework; sourceTree = "<group>"; };
+		977667976FE89EC8CE2A5587977955A4 /* Font-Awesome-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Font-Awesome-Swift.xcconfig"; sourceTree = "<group>"; };
 		99038209F70EAF74CF35BCECBAEE416A /* Pods-yeltzland-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-yeltzland-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9E3CA6A7FA74336ACB57D0676813E3F8 /* ShoutFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShoutFactory.swift; path = Source/ShoutFactory.swift; sourceTree = "<group>"; };
-		A91C049041196989CCA2E7EA1075B6FD /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		A9A3775E4E0F9D966FEF4299CDADF3A5 /* FIRMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessaging.h; path = Headers/Public/FIRMessaging.h; sourceTree = "<group>"; };
+		9BEE9E45AC099A29A6A9E8A980B00D4F /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
+		A8C1E7A88E348B8EAF98A4BB7122C7A3 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		ABD50929A4855EA9323B03E9AC7A2AA3 /* Pods-yeltzland.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-yeltzland.modulemap"; sourceTree = "<group>"; };
 		AD417A83AAF4500418052CCFEF2B4C5C /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B065F60FA9043350C17DC69781BD004D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		B1C05B803486C122BDE25E1AB6631083 /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
-		B6C61D0A947656D0B237AE4B47DFDF76 /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
-		BA8DBC2C5EF7E5EF3077D18095DD4A49 /* Whisper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Whisper-dummy.m"; sourceTree = "<group>"; };
-		BBEC63DEC13B937D2F50AE957542AABE /* WhisperView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhisperView.swift; path = Source/WhisperView.swift; sourceTree = "<group>"; };
-		C01DC3E6E0AA94ED37EB924483776820 /* Font-Awesome-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-umbrella.h"; sourceTree = "<group>"; };
-		C33A2706D31B35CE77347C925CE8D736 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		C4DD1628B2EDB1C2AED7A4308D31F747 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		CB845442E0DB2CAEDE7F5E8958268013 /* ResourceBundle-Font-Awesome-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Font-Awesome-Swift-Info.plist"; sourceTree = "<group>"; };
+		AEB58DDCE623FF2320AF52CA0B9293C2 /* Font-Awesome-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-umbrella.h"; sourceTree = "<group>"; };
+		AFF7CE90D051F2EA6E7710A44E50DF72 /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
+		B2E3FFD62B1E25CFEAFFF0FE8E73746B /* Whisper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whisper-umbrella.h"; sourceTree = "<group>"; };
+		CC08ACFBB7BA16A0B541159749E3BDFB /* Whisper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Whisper-dummy.m"; sourceTree = "<group>"; };
 		CC38B64CFFE3C1E1E2A0C0FB50FA109E /* Pods-yeltzland.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yeltzland.release.xcconfig"; sourceTree = "<group>"; };
-		DC05B69912FF0E213A90D4E584099690 /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
+		CE374FB9F16CD586E40F50F69EF35818 /* Whisper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whisper.xcconfig; sourceTree = "<group>"; };
+		CEC5B42D59C2E40CAB09BE2F35A432E6 /* WhisperView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhisperView.swift; path = Source/WhisperView.swift; sourceTree = "<group>"; };
+		DAFFE4F28818401D0B4D26044911F6E8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		E5C03B27F6D4450EE74D7AC5EED60757 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		E6C6D1B9E50AD8FF8B3C3EDC376230B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9FE26A6B8FD04C09E54A8B88DE822AD /* WhisperFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhisperFactory.swift; path = Source/WhisperFactory.swift; sourceTree = "<group>"; };
-		EAB384A190FCDBFD034F013C69359D48 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
 		EBCA11658DDC2299B2B73A9828E16AC6 /* Pods-yeltzland.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yeltzland.debug.xcconfig"; sourceTree = "<group>"; };
-		F96CA9A1C62CA41C58AF3601F1947016 /* Whisper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whisper-prefix.pch"; sourceTree = "<group>"; };
+		F4F416EB5A080285F74EB2FB45EF2716 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		FE44685B5A6BBDF335CE1689B5795887 /* Font-Awesome-Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Font-Awesome-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,12 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0689A4AF06E0B441E99CA52813156DE1 /* Crashlytics */ = {
+		04921172B83934483A3CC9EA8E6179BC /* Font-Awesome-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				F3E0AD3E6DE757D7D086A198EE715213 /* Frameworks */,
+				7D3CBD0A7978CA0B156056A1DD2442B4 /* FAIcon.swift */,
+				48329FAC731C5A1A6C3C527FEC639AD3 /* Resources */,
+				870101EE232FEF79577C2A42EE6699C5 /* Support Files */,
 			);
-			path = Crashlytics;
+			path = "Font-Awesome-Swift";
 			sourceTree = "<group>";
 		};
 		07C458BBD7D9146EAEDF34B5766A1FC2 /* Products */ = {
@@ -172,10 +164,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0B6ECFEB3181C8A8E88D00618BE2017A /* Frameworks */ = {
+		0EC9D880BA80053549104FBB6CE28B4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B065F60FA9043350C17DC69781BD004D /* Fabric.framework */,
+				DAFFE4F28818401D0B4D26044911F6E8 /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0FBC4C829B1FF2F3C71BBA29E78D6ED2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D05C9EF4D232D6AA20EAB5CFCEBF107 /* TwitterCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,28 +198,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		197A13A50F99AC1FDD33CBBC2C3F0F06 /* Frameworks */ = {
+		1BF5E3F0799E4F5C923CE4765BD4323D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C4DD1628B2EDB1C2AED7A4308D31F747 /* FirebaseInstanceID.framework */,
+				A8C1E7A88E348B8EAF98A4BB7122C7A3 /* TwitterKitResources.bundle */,
 			);
-			name = Frameworks;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		2A208CEC6F183F2B0566B094B2E6EE93 /* Frameworks */ = {
+		25A23646EE3C1E93C4FB697047593072 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				75A659EE1605E459BC24951E15AC48B8 /* GoogleIPhoneUtilities.framework */,
+				862432288893CEDF6B002B299DEEB4C6 /* Crashlytics */,
+				5679E8807BDE11BB3DEEE0F8AC672C7B /* Fabric */,
+				04921172B83934483A3CC9EA8E6179BC /* Font-Awesome-Swift */,
+				CF313D25AB7CB8282DF5DDD05E510193 /* TwitterCore */,
+				C9C884DC4CB1CCE24B5B6E4AC30090EE /* TwitterKit */,
+				47A4AD29ACA7206F0CA7C1E00FEDBE7F /* Whisper */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		2E633B21B6C1D7E2E4DACC8534700BA5 /* FirebaseAnalytics */ = {
+		47A4AD29ACA7206F0CA7C1E00FEDBE7F /* Whisper */ = {
 			isa = PBXGroup;
 			children = (
-				56001A8CB3BC0E0C953EEA65EC9A488A /* Frameworks */,
+				04FA186F5F0A6DDDD8BB457281A200F2 /* ColorList.swift */,
+				4CD30D4674C5A6B73F338D0C0D9FC506 /* Config.swift */,
+				40FE7B7AD9258F476328AFCC57F37222 /* FontList.swift */,
+				6036971F0D8575646ABF2DEFA7746A81 /* Message.swift */,
+				47E6DB66B7AF9D70B8C29274E878DD6B /* ShoutFactory.swift */,
+				5127E541936249E54FFB491B1D439179 /* WhisperFactory.swift */,
+				CEC5B42D59C2E40CAB09BE2F35A432E6 /* WhisperView.swift */,
+				7E95FF4FBB0D191F019D2FF9F9CE32CF /* WhistleFactory.swift */,
+				823570CA39D7B6B8A96BC63DC918DEDE /* Support Files */,
 			);
-			path = FirebaseAnalytics;
+			path = Whisper;
+			sourceTree = "<group>";
+		};
+		48329FAC731C5A1A6C3C527FEC639AD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BEE9E45AC099A29A6A9E8A980B00D4F /* FontAwesome.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		4C786EE60D1C1856F217A265FAE7D5F5 /* Targets Support Files */ = {
@@ -230,71 +251,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		503BE735DEEF667392257CDBDB2CCFAB /* FirebaseInstanceID */ = {
+		5679E8807BDE11BB3DEEE0F8AC672C7B /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				EAB384A190FCDBFD034F013C69359D48 /* FIRInstanceID.h */,
-				197A13A50F99AC1FDD33CBBC2C3F0F06 /* Frameworks */,
+				A01F65EA5C317B694FEBC1A94506EB6A /* Frameworks */,
 			);
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		56001A8CB3BC0E0C953EEA65EC9A488A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				787B2E316F9DB1A9B098A9A5DCBBE2F0 /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		607390DD4151E9B09321D8610161BF7A /* Whisper */ = {
-			isa = PBXGroup;
-			children = (
-				4B94B1D1E50519F9BC4724E5CA55ED24 /* ColorList.swift */,
-				0E885E7C86F5C2547E5A183B29E0032A /* Config.swift */,
-				7D5038A03B9C77B1619FE5E6405D9802 /* FontList.swift */,
-				836901851B8C9C0E5A50FE6341B8D710 /* Message.swift */,
-				9E3CA6A7FA74336ACB57D0676813E3F8 /* ShoutFactory.swift */,
-				E9FE26A6B8FD04C09E54A8B88DE822AD /* WhisperFactory.swift */,
-				BBEC63DEC13B937D2F50AE957542AABE /* WhisperView.swift */,
-				35BC849A30B9A44B99BBE8A16300DD92 /* WhistleFactory.swift */,
-				D56C244A3F14D56F5E311593D5E50B3D /* Support Files */,
-			);
-			path = Whisper;
-			sourceTree = "<group>";
-		};
-		62404C1AB105B35EE95D82A338E47906 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				BD2B1A96293AD08BE0B1896905DBC9AD /* Analytics */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		63E85CEF0C47DEBAE071B8CF915F347D /* Font-Awesome-Swift */ = {
-			isa = PBXGroup;
-			children = (
-				01C9515930F437A9DDEE09279EA44F57 /* FAIcon.swift */,
-				B2FB90ED7756BD2641A61756525A60E3 /* Resources */,
-				CBFF010F96E6ABF31679004BE3EF7718 /* Support Files */,
-			);
-			path = "Font-Awesome-Swift";
-			sourceTree = "<group>";
-		};
-		6479C1E19A1FF58EA39C6502851D797F /* GoogleSymbolUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				8E7AD31CB74D2D724A899093122F634A /* Frameworks */,
-			);
-			path = GoogleSymbolUtilities;
-			sourceTree = "<group>";
-		};
-		7319B0CBA3FD5D0B0D999A65EBA32224 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1419A2A86B4C61E70B8BA64E08A1740C /* GoogleUtilities.framework */,
-			);
-			name = Frameworks;
+			path = Fabric;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -302,173 +264,80 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				C43D726E7F2C0DDA7CACB534EFD0B2A7 /* Pods */,
+				25A23646EE3C1E93C4FB697047593072 /* Pods */,
 				07C458BBD7D9146EAEDF34B5766A1FC2 /* Products */,
 				4C786EE60D1C1856F217A265FAE7D5F5 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8AABBDF195A04919F5DA4E6F9894A06A /* TwitterKit */ = {
+		823570CA39D7B6B8A96BC63DC918DEDE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D7E1B3944073E66CBCAACD0F6BAAD338 /* Frameworks */,
-				9B6D5D01EC3401D3E40F15C100B8E41A /* Resources */,
-			);
-			path = TwitterKit;
-			sourceTree = "<group>";
-		};
-		8D85D524E9DFF931C814E438CED258B1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				90B97610BA7FE3F265FC422C9EDAE9E6 /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8E7AD31CB74D2D724A899093122F634A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				735684015940913BB7A8AF8EDBDBE566 /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8E9A3C835DEB8382D8A78506582F5A5D /* TwitterCore */ = {
-			isa = PBXGroup;
-			children = (
-				D877103933102A58407D3C292D90F465 /* Frameworks */,
-			);
-			path = TwitterCore;
-			sourceTree = "<group>";
-		};
-		947047F63F10B6D1D14C91350F5C6C24 /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				0B6ECFEB3181C8A8E88D00618BE2017A /* Frameworks */,
-			);
-			path = Fabric;
-			sourceTree = "<group>";
-		};
-		9B6D5D01EC3401D3E40F15C100B8E41A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A91C049041196989CCA2E7EA1075B6FD /* TwitterKitResources.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		B2FB90ED7756BD2641A61756525A60E3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B6C61D0A947656D0B237AE4B47DFDF76 /* FontAwesome.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		BB5F66A51425569AE99057302EC7EEF8 /* GoogleIPhoneUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				2A208CEC6F183F2B0566B094B2E6EE93 /* Frameworks */,
-			);
-			path = GoogleIPhoneUtilities;
-			sourceTree = "<group>";
-		};
-		BD2B1A96293AD08BE0B1896905DBC9AD /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				91585394030C4811671C5D02C66032B5 /* Firebase.h */,
-			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		C43D726E7F2C0DDA7CACB534EFD0B2A7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0689A4AF06E0B441E99CA52813156DE1 /* Crashlytics */,
-				947047F63F10B6D1D14C91350F5C6C24 /* Fabric */,
-				62404C1AB105B35EE95D82A338E47906 /* Firebase */,
-				2E633B21B6C1D7E2E4DACC8534700BA5 /* FirebaseAnalytics */,
-				503BE735DEEF667392257CDBDB2CCFAB /* FirebaseInstanceID */,
-				EB59D46CCC4D36F98E36FF543CD7C8AF /* FirebaseMessaging */,
-				63E85CEF0C47DEBAE071B8CF915F347D /* Font-Awesome-Swift */,
-				E64F063781C887E42962326B37A1FBD3 /* GoogleInterchangeUtilities */,
-				BB5F66A51425569AE99057302EC7EEF8 /* GoogleIPhoneUtilities */,
-				6479C1E19A1FF58EA39C6502851D797F /* GoogleSymbolUtilities */,
-				CA4A2717C24827A2AE9086342C223540 /* GoogleUtilities */,
-				8E9A3C835DEB8382D8A78506582F5A5D /* TwitterCore */,
-				8AABBDF195A04919F5DA4E6F9894A06A /* TwitterKit */,
-				607390DD4151E9B09321D8610161BF7A /* Whisper */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C619A72C601C6C89E3FBFA36B1928B09 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				984FCC5749CB49B7372D3EA73207DC77 /* FirebaseMessaging.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CA4A2717C24827A2AE9086342C223540 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				7319B0CBA3FD5D0B0D999A65EBA32224 /* Frameworks */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		CBFF010F96E6ABF31679004BE3EF7718 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DC05B69912FF0E213A90D4E584099690 /* Font-Awesome-Swift.modulemap */,
-				3E36A53EB1F7A75297BD8A2A41C8D6A6 /* Font-Awesome-Swift.xcconfig */,
-				3759DA0797D6B17D6D83A909FD20DB9F /* Font-Awesome-Swift-dummy.m */,
-				B1C05B803486C122BDE25E1AB6631083 /* Font-Awesome-Swift-prefix.pch */,
-				C01DC3E6E0AA94ED37EB924483776820 /* Font-Awesome-Swift-umbrella.h */,
-				81BE2EC36A18FA8F3C16E80FCA258743 /* Info.plist */,
-				CB845442E0DB2CAEDE7F5E8958268013 /* ResourceBundle-Font-Awesome-Swift-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Font-Awesome-Swift";
-			sourceTree = "<group>";
-		};
-		D56C244A3F14D56F5E311593D5E50B3D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				238C419EF2AAF5A004356D3AA2974FBE /* Info.plist */,
-				241809D4DCEF2E5F2168F97CE7ADC67E /* Whisper.modulemap */,
-				343D8DA45C7D64400AC84CC52BB8A674 /* Whisper.xcconfig */,
-				BA8DBC2C5EF7E5EF3077D18095DD4A49 /* Whisper-dummy.m */,
-				F96CA9A1C62CA41C58AF3601F1947016 /* Whisper-prefix.pch */,
-				06CB0EC23C5CCC7C25798780D05BD217 /* Whisper-umbrella.h */,
+				012BF3A7450969D57618D8F3EBA91269 /* Info.plist */,
+				4792AC368C09985AE6F4C1DF5521DEDE /* Whisper.modulemap */,
+				CE374FB9F16CD586E40F50F69EF35818 /* Whisper.xcconfig */,
+				CC08ACFBB7BA16A0B541159749E3BDFB /* Whisper-dummy.m */,
+				1008FF01B6C076B0B47E7D5E91A9DE28 /* Whisper-prefix.pch */,
+				B2E3FFD62B1E25CFEAFFF0FE8E73746B /* Whisper-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Whisper";
 			sourceTree = "<group>";
 		};
-		D7E1B3944073E66CBCAACD0F6BAAD338 /* Frameworks */ = {
+		862432288893CEDF6B002B299DEEB4C6 /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				29027E5C50972B3D55644E3AA9895E35 /* TwitterKit.framework */,
+				0EC9D880BA80053549104FBB6CE28B4F /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		870101EE232FEF79577C2A42EE6699C5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFF7CE90D051F2EA6E7710A44E50DF72 /* Font-Awesome-Swift.modulemap */,
+				977667976FE89EC8CE2A5587977955A4 /* Font-Awesome-Swift.xcconfig */,
+				7EBD3B2D69F9CBDFC605C6D727A76747 /* Font-Awesome-Swift-dummy.m */,
+				2AAE64433F07C2FB298739958F3D9110 /* Font-Awesome-Swift-prefix.pch */,
+				AEB58DDCE623FF2320AF52CA0B9293C2 /* Font-Awesome-Swift-umbrella.h */,
+				6BB8A3ADC5A5B9BFD1F9DDD4FCAED128 /* Info.plist */,
+				769886051880CAB29FCD592281E70EE5 /* ResourceBundle-Font-Awesome-Swift-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Font-Awesome-Swift";
+			sourceTree = "<group>";
+		};
+		A01F65EA5C317B694FEBC1A94506EB6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5C03B27F6D4450EE74D7AC5EED60757 /* Fabric.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D877103933102A58407D3C292D90F465 /* Frameworks */ = {
+		C82179D9C7709B771956DE4560879F8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				96566007CF67B13C1371AA947232D012 /* TwitterCore.framework */,
+				F4F416EB5A080285F74EB2FB45EF2716 /* TwitterKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E64F063781C887E42962326B37A1FBD3 /* GoogleInterchangeUtilities */ = {
+		C9C884DC4CB1CCE24B5B6E4AC30090EE /* TwitterKit */ = {
 			isa = PBXGroup;
 			children = (
-				8D85D524E9DFF931C814E438CED258B1 /* Frameworks */,
+				C82179D9C7709B771956DE4560879F8F /* Frameworks */,
+				1BF5E3F0799E4F5C923CE4765BD4323D /* Resources */,
 			);
-			path = GoogleInterchangeUtilities;
+			path = TwitterKit;
+			sourceTree = "<group>";
+		};
+		CF313D25AB7CB8282DF5DDD05E510193 /* TwitterCore */ = {
+			isa = PBXGroup;
+			children = (
+				0FBC4C829B1FF2F3C71BBA29E78D6ED2 /* Frameworks */,
+			);
+			path = TwitterCore;
 			sourceTree = "<group>";
 		};
 		E70773121340E6D0172B9A70A0C44753 /* Pods-yeltzland */ = {
@@ -487,23 +356,6 @@
 			);
 			name = "Pods-yeltzland";
 			path = "Target Support Files/Pods-yeltzland";
-			sourceTree = "<group>";
-		};
-		EB59D46CCC4D36F98E36FF543CD7C8AF /* FirebaseMessaging */ = {
-			isa = PBXGroup;
-			children = (
-				A9A3775E4E0F9D966FEF4299CDADF3A5 /* FIRMessaging.h */,
-				C619A72C601C6C89E3FBFA36B1928B09 /* Frameworks */,
-			);
-			path = FirebaseMessaging;
-			sourceTree = "<group>";
-		};
-		F3E0AD3E6DE757D7D086A198EE715213 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C33A2706D31B35CE77347C925CE8D736 /* Crashlytics.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -723,7 +575,7 @@
 /* Begin XCBuildConfiguration section */
 		04FB4510C2018683F968EEF6B470615C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E36A53EB1F7A75297BD8A2A41C8D6A6 /* Font-Awesome-Swift.xcconfig */;
+			baseConfigurationReference = 977667976FE89EC8CE2A5587977955A4 /* Font-Awesome-Swift.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Font-Awesome-Swift";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -740,7 +592,7 @@
 		};
 		135EC547F6B7336E68F7688D85CB6AE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 343D8DA45C7D64400AC84CC52BB8A674 /* Whisper.xcconfig */;
+			baseConfigurationReference = CE374FB9F16CD586E40F50F69EF35818 /* Whisper.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -812,7 +664,7 @@
 		};
 		6DD5B4C28A9A968CCBD7676D76DF9314 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 343D8DA45C7D64400AC84CC52BB8A674 /* Whisper.xcconfig */;
+			baseConfigurationReference = CE374FB9F16CD586E40F50F69EF35818 /* Whisper.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -841,7 +693,7 @@
 		};
 		86563E610FFF73C231BC4F1609C32558 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E36A53EB1F7A75297BD8A2A41C8D6A6 /* Font-Awesome-Swift.xcconfig */;
+			baseConfigurationReference = 977667976FE89EC8CE2A5587977955A4 /* Font-Awesome-Swift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -871,7 +723,7 @@
 		};
 		9E30AD16A6CA1E4E2DCEE8AA0E87864B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E36A53EB1F7A75297BD8A2A41C8D6A6 /* Font-Awesome-Swift.xcconfig */;
+			baseConfigurationReference = 977667976FE89EC8CE2A5587977955A4 /* Font-Awesome-Swift.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Font-Awesome-Swift";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -993,7 +845,7 @@
 		};
 		F1F1D440B378A86F791A155E682534D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E36A53EB1F7A75297BD8A2A41C8D6A6 /* Font-Awesome-Swift.xcconfig */;
+			baseConfigurationReference = 977667976FE89EC8CE2A5587977955A4 /* Font-Awesome-Swift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

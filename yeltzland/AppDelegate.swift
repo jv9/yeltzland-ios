@@ -11,15 +11,15 @@ import Fabric
 import Crashlytics
 import TwitterKit
 import Whisper
-import Firebase
-import FirebaseInstanceID
-import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let gameTimeTopic = "/topics/gametimetweets"
+    
+    let hubName = "yeltzlandiospush"
+    let hubListenAccess = "Endpoint=sb://yeltzlandiospush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=A8Lb23v0p0gI8KO2Vh6mjN6Qqe621Pwu8C8k5S8u7hQ="
+
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -40,15 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self, Twitter.self])
         
         // Notifications registration
-        let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
-        
-        FIRApp.configure()
-        
-        // Add observer for InstanceID token refresh callback.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.tokenRefreshNotification),
-                                                         name: kFIRInstanceIDTokenRefreshNotification, object: nil)
         
         // Initial web page
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -62,17 +56,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
-        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Unknown)
+        // Register with Azure Hub
+        let hub = SBNotificationHub(connectionString: self.hubListenAccess, notificationHubPath: self.hubName)
         
-        print("Set APNS token: \(deviceToken)")
-        
-        if let token = FIRInstanceID.instanceID().token() {
-            print("FCM token: \(token)")
-            
-            // Subscribe to topic
-            FIRMessaging.messaging().subscribeToTopic(self.gameTimeTopic)
-            print("Subscribed to topic \(self.gameTimeTopic)")
+        do {
+            try hub.registerNativeWithDeviceToken(deviceToken, tags: nil);
+            print("Registered with hub")
         }
+        catch {
+            print("Error registering with hub")
+        }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Device token for push notifications: FAIL -- ")
+        print(error.description)
     }
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
@@ -93,53 +91,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // If app in foreground, show a whisper
         if (application.applicationState == .Active) {
-            
-            if let notification = userInfo["notification"] as? NSDictionary {
-                if let body = notification["body"] as? NSString {
-                    let message = Message(title: body as String, backgroundColor: AppColors.ActiveAlertBackground, textColor: AppColors.ActiveAlertText)
-                    
-                    // Show and hide a message after delay
-                    if (self.window != nil && self.window?.rootViewController != nil) {
-                        if let tabController : UITabBarController? = (self.window?.rootViewController as! UITabBarController) {
-                            if let navigationController : UINavigationController? = tabController!.viewControllers![0] as? UINavigationController {
-                                Whisper(message, to: navigationController!, action: .Show)
+            if let aps = userInfo["aps"] as? NSDictionary {
+                if let alert = aps["alert"] as? NSDictionary {
+                    if let body = alert["body"] as? NSString {
+                        let message = Message(title: body as String, backgroundColor: AppColors.ActiveAlertBackground, textColor: AppColors.ActiveAlertText)
+                        
+                        // Show and hide a message after delay
+                        if (self.window != nil && self.window?.rootViewController != nil) {
+                            if let tabController : UITabBarController? = (self.window?.rootViewController as! UITabBarController) {
+                                if let navigationController : UINavigationController? = tabController!.viewControllers![0] as? UINavigationController {
+                                    Whisper(message, to: navigationController!, action: .Show)
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-    
-    func tokenRefreshNotification(notification: NSNotification) {
-        if let refreshedToken = FIRInstanceID.instanceID().token() {
-            print("InstanceID token: \(refreshedToken)")
-            
-            // Connect to FCM since connection may have failed when attempted before having a token.
-            self.connectToFcm()
-
-        } else {
-            print("Token refresh - no token");
-        }
-    }
-    
-    func connectToFcm() {
-        FIRMessaging.messaging().connectWithCompletion { (error) in
-            if (error != nil) {
-                print("Unable to connect with FCM. \(error)")
-            } else {
-                print("Connected to FCM.")
-            }
-        }
-    }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        connectToFcm()
-    }
-    
-    func applicationDidEnterBackground(application: UIApplication) {
-        FIRMessaging.messaging().disconnect()
-        print("Disconnected from FCM.")
     }
 }
 

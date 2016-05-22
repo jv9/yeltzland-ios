@@ -30,38 +30,6 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright 2016 Google Inc.</string>
-			<key>Title</key>
-			<string>Firebase</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2016 Google Inc.</string>
-			<key>Title</key>
-			<string>FirebaseAnalytics</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2016 Google Inc.</string>
-			<key>Title</key>
-			<string>FirebaseInstanceID</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2016 Google Inc.</string>
-			<key>Title</key>
-			<string>FirebaseMessaging</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
 Copyright (c) 2015 Patrik Vaberer
@@ -85,38 +53,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</string>
 			<key>Title</key>
 			<string>Font-Awesome-Swift</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2015 Google Inc.</string>
-			<key>Title</key>
-			<string>GoogleIPhoneUtilities</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2015 Google Inc.</string>
-			<key>Title</key>
-			<string>GoogleInterchangeUtilities</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2015 Google Inc.</string>
-			<key>Title</key>
-			<string>GoogleSymbolUtilities</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2015 Google Inc.</string>
-			<key>Title</key>
-			<string>GoogleUtilities</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
