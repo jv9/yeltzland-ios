@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let hubName = "yeltzlandiospush"
     let hubListenAccess = "Endpoint=sb://yeltzlandiospush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=A8Lb23v0p0gI8KO2Vh6mjN6Qqe621Pwu8C8k5S8u7hQ="
-
+    let tagNames:Set<NSObject> = ["gametimealerts"]
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let hub = SBNotificationHub(connectionString: self.hubListenAccess, notificationHubPath: self.hubName)
         
         do {
-            try hub.registerNativeWithDeviceToken(deviceToken, tags: nil);
+            try hub.registerNativeWithDeviceToken(deviceToken, tags: self.tagNames);
             print("Registered with hub")
         }
         catch {
