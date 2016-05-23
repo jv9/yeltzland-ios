@@ -17,6 +17,9 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
     var userScreenName: String!
     var spinner: UIActivityIndicatorView!
     var reloadButton: UIBarButtonItem!
+    var timer: NSTimer!
+    
+    let TIMER_INTERVAL = 60.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,17 +35,20 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
             title: "Reload",
             style: .Plain,
             target: self,
-            action: #selector(TwitterUserTimelineViewController.reloadButtonTouchUp)
+            action: #selector(TwitterUserTimelineViewController.reloadData)
         )
         self.reloadButton.FAIcon = FAType.FARotateRight
         self.reloadButton.tintColor = AppColors.NavBarTintColor
         
         self.navigationItem.rightBarButtonItems = [self.reloadButton]
         
-        
         self.view.backgroundColor = AppColors.TwitterBackground
         self.tableView.separatorColor = AppColors.TwitterSeparator
-        self.showSpinner()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.reloadData()
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -81,9 +87,17 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
     }
     
     // MARK: - Nav bar actions
-    func reloadButtonTouchUp() {
-        showSpinner()
+    func reloadData() {
+        self.showSpinner()
         self.refresh()
+        
+        // Set a timer to refresh the data after interval period
+        if (self.timer != nil) {
+            self.timer.invalidate()
+        }
+
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(self.TIMER_INTERVAL, target: (self as AnyObject), selector: #selector(UITableView.reloadData), userInfo: nil, repeats: false)
+        NSLog("Reset refresh timer")
     }
     
     // MARK: - SFSafariViewControllerDelegate methods
