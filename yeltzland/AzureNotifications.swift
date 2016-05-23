@@ -11,7 +11,7 @@ import UIKit
 public class AzureNotifications {
     let hubName = "yeltzlandiospush"
     let hubListenAccess = "Endpoint=sb://yeltzlandiospush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=A8Lb23v0p0gI8KO2Vh6mjN6Qqe621Pwu8C8k5S8u7hQ="
-    let tagNames:Set<NSObject> = ["gametimealerts"]
+    var tagNames:Set<NSObject> = []
     let defaults = NSUserDefaults.standardUserDefaults()
 
     var enabled: Bool {
@@ -27,6 +27,14 @@ public class AzureNotifications {
                 self.setupNotifications(true)
             }
         }
+    }
+    
+    init() {
+        #if DEBUG
+            self.tagNames = ["gametimealerts", "testmessages"]
+        #else
+            self.tagNames = ["gametimealerts"]
+        #endif
     }
     
     func setupNotifications(forceSetup: Bool) {
@@ -46,7 +54,7 @@ public class AzureNotifications {
         if (self.enabled) {
             do {
                 try hub.registerNativeWithDeviceToken(deviceToken, tags: self.tagNames)
-                print("Registered with hub")
+                print("Registered with hub: \(self.tagNames)")
             }
             catch {
                 print("Error registering with hub")

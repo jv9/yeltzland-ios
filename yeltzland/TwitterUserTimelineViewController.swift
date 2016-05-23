@@ -97,7 +97,6 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
         }
 
         self.timer = NSTimer.scheduledTimerWithTimeInterval(self.TIMER_INTERVAL, target: (self as AnyObject), selector: #selector(UITableView.reloadData), userInfo: nil, repeats: false)
-        NSLog("Reset refresh timer")
     }
     
     // MARK: - SFSafariViewControllerDelegate methods
