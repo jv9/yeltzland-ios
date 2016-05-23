@@ -10,6 +10,17 @@ import UIKit
 import Font_Awesome_Swift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+    
+    init(initialTab: Int) {
+        super.init(nibName: nil, bundle: nil)
+        self.addChildViewControllers()
+        self.selectedIndex = initialTab
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -19,7 +30,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.tintColor = AppColors.TabBarTextColor
     }
     
-    override func viewWillAppear(animated: Bool) {
+    func addChildViewControllers() {
         // Official Site
         let officialViewController = WebPageViewController()
         officialViewController.homeUrl = NSURL(string:"http://www.ht-fc.com")
