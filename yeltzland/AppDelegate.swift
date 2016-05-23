@@ -16,10 +16,7 @@ import Whisper
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    let hubName = "yeltzlandiospush"
-    let hubListenAccess = "Endpoint=sb://yeltzlandiospush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=A8Lb23v0p0gI8KO2Vh6mjN6Qqe621Pwu8C8k5S8u7hQ="
-    let tagNames:Set<NSObject> = ["gametimealerts"]
+    let azureNotifications = AzureNotifications()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -39,10 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup Fabric
         Fabric.with([Crashlytics.self, Twitter.self])
         
-        // Notifications registration
-        let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
+        // Setup notifications
+        self.azureNotifications.setupNotifications(false)
         
         // Initial web page
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -55,17 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
     func application(application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        
-        // Register with Azure Hub
-        let hub = SBNotificationHub(connectionString: self.hubListenAccess, notificationHubPath: self.hubName)
-        
-        do {
-            try hub.registerNativeWithDeviceToken(deviceToken, tags: self.tagNames);
-            print("Registered with hub")
-        }
-        catch {
-            print("Error registering with hub")
-        }
+        self.azureNotifications.register(deviceToken)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

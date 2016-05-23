@@ -12,6 +12,8 @@ import Font_Awesome_Swift
 
 class OtherLinksTableViewController: UITableViewController, SFSafariViewControllerDelegate {
 
+    let azureNotifications = AzureNotifications()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,11 +24,12 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         self.tableView.separatorColor = AppColors.OtherSeparator
         
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "SettingsCell")
     }
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,35 +40,55 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             return 2
         } else if (section == 2) {
             return 1
+        } else if (section == 3) {
+            return 1
         }
         
         return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        var cell: UITableViewCell? = nil
+        
+        if (indexPath.section == 2 && indexPath.row == 0) {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SettingsCell")
+            cell!.selectionStyle = .None
+            cell!.accessoryType = .None
+            
+            let switchView = UISwitch(frame: CGRectZero)
+            cell!.accessoryView = switchView
+            
+            switchView.on = self.azureNotifications.enabled
+            switchView.addTarget(self, action: #selector(OtherLinksTableViewController.notificationsSwitchChanged), forControlEvents: UIControlEvents.ValueChanged)
+            switchView.onTintColor = AppColors.SettingsSwitch
+            
+        } else {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+            cell!.selectionStyle = .Default
+            cell!.accessoryType = .DisclosureIndicator
+        }
         
         if (indexPath.section == 0) {
             switch (indexPath.row) {
             case 0:
-                cell.textLabel?.text = "HTFC on Facebook"
+                cell!.textLabel?.text = "HTFC on Facebook"
                 let cellImage = UIImage(icon: FAType.FAFacebookSquare, size: CGSize(width: 100, height: 100), textColor: AppColors.Facebook, backgroundColor: UIColor.clearColor())
-                cell.imageView?.image = cellImage
+                cell!.imageView?.image = cellImage
                 break
             case 1:
-                cell.textLabel?.text = "NPL site"
+                cell!.textLabel?.text = "NPL site"
                 let cellImage = UIImage(icon: FAType.FASoccerBallO, size: CGSize(width: 100, height: 100), textColor: AppColors.Evostick, backgroundColor: UIColor.clearColor())
-                cell.imageView?.image = cellImage
+                cell!.imageView?.image = cellImage
                 break
             case 2:
-                cell.textLabel?.text = "Fantasy Island"
+                cell!.textLabel?.text = "Fantasy Island"
                 let cellImage = UIImage(icon: FAType.FAPlane, size: CGSize(width: 100, height: 100), textColor: AppColors.Fantasy, backgroundColor: UIColor.clearColor())
-                cell.imageView?.image = cellImage
+                cell!.imageView?.image = cellImage
                 break
             case 3:
-                cell.textLabel?.text = "Stourbridge Town FC"
+                cell!.textLabel?.text = "Stourbridge Town FC"
                 let cellImage = UIImage(icon: FAType.FAThumbsODown, size: CGSize(width: 100, height: 100), textColor: AppColors.Stour, backgroundColor: UIColor.clearColor())
-                cell.imageView?.image = cellImage
+                cell!.imageView?.image = cellImage
                 break
             default:
                 break
@@ -73,39 +96,43 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         } else if (indexPath.section == 1) {
             switch (indexPath.row) {
             case 0:
-                cell.textLabel?.text = "Yeltz Archives"
+                cell!.textLabel?.text = "Yeltz Archives"
                 let cellImage = UIImage(icon: FAType.FAArchive, size: CGSize(width: 100, height: 100), textColor: AppColors.Archive, backgroundColor: UIColor.clearColor())
-                cell.imageView?.image = cellImage
+                cell!.imageView?.image = cellImage
                 break
             case 1:
-                cell.textLabel?.text = "Yeltzland News Archive"
+                cell!.textLabel?.text = "Yeltzland News Archive"
                 let cellImage = UIImage(icon: FAType.FANewspaperO, size: CGSize(width: 100, height: 100), textColor: AppColors.Archive, backgroundColor: UIColor.clearColor())
-                cell.imageView?.image = cellImage
+                cell!.imageView?.image = cellImage
                 break
             default:
                 break
             }
         } else if (indexPath.section == 2) {
-            cell.textLabel?.text = "Another Brave Location App!"
+            cell!.textLabel?.text = "Game time tweets"
+            let cellImage = UIImage(icon: FAType.FATwitter, size: CGSize(width: 100, height: 100), textColor: AppColors.TwitterIcon, backgroundColor: UIColor.clearColor())
+
+            cell!.imageView?.image = cellImage
+
+            cell!.detailTextLabel?.text = "Enable notifications"
+        } else if (indexPath.section == 3) {
+            cell!.textLabel?.text = "Another Brave Location App!"
             let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.BraveLocation, backgroundColor: UIColor.clearColor())
-            cell.imageView?.image = cellImage
+            cell!.imageView?.image = cellImage
             
             let infoDictionary = NSBundle.mainBundle().infoDictionary!
             let version = infoDictionary["CFBundleShortVersionString"]
             let build = infoDictionary["CFBundleVersion"]
             
-            cell.detailTextLabel?.text = "Current version: \(version!).\(build!)"
+            cell!.detailTextLabel?.text = "v\(version!).\(build!)"
         }
-        
-        cell.selectionStyle = .Default;
-        cell.accessoryType = .DisclosureIndicator
 
         // Set fonts
-        cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
-        cell.textLabel?.adjustsFontSizeToFitWidth = true
-        cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
+        cell!.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
+        cell!.textLabel?.adjustsFontSizeToFitWidth = true
+        cell!.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
         
-        return cell
+        return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -135,7 +162,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             default:
                 break
             }
-        } else if (indexPath.section == 2) {
+        } else if (indexPath.section == 3) {
             url = NSURL(string: "http://bravelocation.com/apps")
         }
         
@@ -143,7 +170,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             let svc = SFSafariViewController(URL: url!)
             svc.delegate = self
             self.presentViewController(svc, animated: true, completion: nil)
-        } else {
+        } else if (indexPath.section == 0 && indexPath.row == 3) {
             let alert = UIAlertController(title: "Really?", message: "Computer says no", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -159,6 +186,8 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         case 1:
             return "Know Your History"
         case 2:
+            return "Options"
+        case 3:
             return "About the app"
         default:
             return ""
@@ -170,6 +199,12 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         header.contentView.backgroundColor = AppColors.OtherSectionBackground
         header.textLabel!.textColor = AppColors.OtherSectionText
         header.textLabel!.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherSectionTextSize)!
+    }
+    
+    // MARK: - Event handler for switch
+    func notificationsSwitchChanged(sender: AnyObject) {
+        let switchControl = sender as! UISwitch
+        self.azureNotifications.enabled = switchControl.on
     }
     
     // MARK: - SFSafariViewControllerDelegate methods

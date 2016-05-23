@@ -15,10 +15,12 @@ let FacebookBlueColor = UIColor(red: 71.0/255.0, green: 96.0/255.0, blue: 159.0/
 let StourbridgeRedColor = UIColor(red: 158.0/255.0, green: 0.0/255.0, blue: 26.0/255.0, alpha: 1.0)
 let EvostickRedColor = UIColor(red: 252.0/255.0, green: 0.0/255.0, blue: 6.0/255.0, alpha: 1.0)
 let BraveLocationRedColor = UIColor(red: 170.0/255.0, green: 60.0/255.0, blue: 79.0/255.0, alpha: 1.0)
+let TwitterColor = UIColor(red: 66.0/255.0, green: 148.0/255.0, blue: 254.0/255.0, alpha: 1.0)
+let ComplimentaryGreen = UIColor(red: 127.0/255.0, green: 153.0/255.0, blue: 89.0/255.0, alpha: 1.0)
 
-let headlineDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleHeadline);
-let bodyDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody);
-let footnoteDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleFootnote);
+let headlineDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleHeadline)
+let bodyDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+let footnoteDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleFootnote)
 
 class AppColors {
     static var AppFontName = "AmericanTypewriter"
@@ -53,6 +55,8 @@ class AppColors {
     static var BraveLocation: UIColor = BraveLocationRedColor
     static var Facebook: UIColor = FacebookBlueColor
     static var Archive: UIColor = YeltzBlueColor
+    static var TwitterIcon: UIColor = TwitterColor
+    static var SettingsSwitch: UIColor = ComplimentaryGreen
     
     static var ActiveAlertBackground: UIColor = YeltzBlueColor
     static var ActiveAlertText: UIColor = UIColor.whiteColor()
