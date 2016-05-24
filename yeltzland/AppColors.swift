@@ -62,5 +62,4 @@ class AppColors {
     static var ActiveAlertText: UIColor = UIColor.whiteColor()
     
     static var SpinnerColor = YeltzBlueColor
-
 }

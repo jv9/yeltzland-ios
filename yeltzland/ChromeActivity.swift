@@ -65,7 +65,6 @@ class ChromeActivity: UIActivity {
         return nil
     }
     
-    
     override func performActivity() {
         print("Perform activity")
         
