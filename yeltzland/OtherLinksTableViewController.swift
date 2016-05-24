@@ -60,7 +60,6 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             
             switchView.on = self.azureNotifications.enabled
             switchView.addTarget(self, action: #selector(OtherLinksTableViewController.notificationsSwitchChanged), forControlEvents: UIControlEvents.ValueChanged)
-            switchView.onTintColor = AppColors.SettingsSwitch
             
         } else {
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
