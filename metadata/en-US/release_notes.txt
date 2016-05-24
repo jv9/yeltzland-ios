@@ -1,3 +1,7 @@
-A very minor change based on user feedback - added an “Open in Chrome” option to the share extension when the “More…” links are opened
+1. I've added a new "game time tweets" option. 
 
-If people have any suggestions on extra features, definitely let me know.
+This will send you notifications whenever there is a new Twitter post just before/during/just after a game.
+
+It's off by default, so you've have to turn it on if you want to see the alerts. Obviously you won't actually see any until the new season starts in August!
+
+2. I've also added a refresh button to the Twitter page to make it easier to update (and it refreshes itself every minute now anyway)
