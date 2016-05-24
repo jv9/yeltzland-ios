@@ -9,8 +9,14 @@
 import UIKit
 
 public class AzureNotifications {
-    let hubName = "yeltzlandiospush"
-    let hubListenAccess = "Endpoint=sb://yeltzlandiospush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=A8Lb23v0p0gI8KO2Vh6mjN6Qqe621Pwu8C8k5S8u7hQ="
+    #if DEBUG
+        let hubName = "yeltzlandiospushsandbox"
+        let hubListenAccess = "Endpoint=sb://yeltzlandiospushsandbox.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=l+/LW0kWPo/XgZGKj78do/AyAxpEEUhLuORhyBRMgzM="
+    #else
+        let hubName = "yeltzlandiospush"
+        let hubListenAccess = "Endpoint=sb://yeltzlandiospush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=A8Lb23v0p0gI8KO2Vh6mjN6Qqe621Pwu8C8k5S8u7hQ="
+    #endif
+    
     var tagNames:Set<NSObject> = []
     let defaults = NSUserDefaults.standardUserDefaults()
 
@@ -30,11 +36,7 @@ public class AzureNotifications {
     }
     
     init() {
-        #if DEBUG
-            self.tagNames = ["gametimealerts", "testmessages"]
-        #else
-            self.tagNames = ["gametimealerts"]
-        #endif
+        self.tagNames = ["gametimealerts"]
     }
     
     func setupNotifications(forceSetup: Bool) {
