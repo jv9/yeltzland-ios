@@ -34,7 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ], forState: .Normal)
         
         // Setup Fabric
-        Fabric.with([Crashlytics.self, Twitter.self])
+        #if DEBUG
+            Fabric.with([Twitter.self])
+        #else
+            Fabric.with([Crashlytics.self, Twitter.self])
+        #endif
         
         // Setup notifications
         self.azureNotifications.setupNotifications(false)
