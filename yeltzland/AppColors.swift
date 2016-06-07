@@ -47,6 +47,8 @@ class AppColors {
     static var OtherSectionTextSize = bodyDescriptor.pointSize
     static var OtherTextSize = bodyDescriptor.pointSize
     static var OtherDetailTextSize = footnoteDescriptor.pointSize
+    static var OtherTextColor = UIColor.blackColor()
+    static var OtherDetailColor = UIColor.grayColor()
     
     static var Evostick: UIColor = EvostickRedColor
     static var Fantasy: UIColor = YeltzBlueColor

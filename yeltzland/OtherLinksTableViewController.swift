@@ -115,7 +115,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
 
             cell!.detailTextLabel?.text = "Enable notifications"
         } else if (indexPath.section == 3) {
-            cell!.textLabel?.text = "Another Brave Location App!"
+            cell!.textLabel?.text = "More Brave Location Apps"
             let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.BraveLocation, backgroundColor: UIColor.clearColor())
             cell!.imageView?.image = cellImage
             
@@ -130,6 +130,9 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         cell!.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
         cell!.textLabel?.adjustsFontSizeToFitWidth = true
         cell!.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
+        
+        cell!.textLabel?.textColor = AppColors.OtherTextColor
+        cell!.detailTextLabel?.textColor = AppColors.OtherDetailColor
         
         return cell!
     }
@@ -187,7 +190,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         case 2:
             return "Options"
         case 3:
-            return "About the app"
+            return "About"
         default:
             return ""
         }
