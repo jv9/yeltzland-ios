@@ -85,5 +85,40 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.forum</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Yeltz Forum</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>forum</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.official</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Official Site</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>official</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.yeltztv</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Yeltz TV</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>yeltztv</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.twitter</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Twitter</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>twitter</string>
+		</dict>
+	</array>
 </dict>
 </plist>

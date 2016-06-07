@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let azureNotifications = AzureNotifications()
+    let LASTSELECTEDTABSETTING = "LastSelectedTab"
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -43,10 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup notifications
         self.azureNotifications.setupNotifications(false)
         
-        // Initial web page
+        // If came from a notification, always start on the Twitter tab
         if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
-            // If came from a notification, always start on the Twitter tab
-            NSUserDefaults.standardUserDefaults().setInteger(3, forKey: "LastSelectedTab")
+            NSUserDefaults.standardUserDefaults().setInteger(3, forKey: self.LASTSELECTEDTABSETTING)
+        } else if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] {
+            self.handleShortcut(shortcutItem as! UIApplicationShortcutItem)
         }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -55,6 +57,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        NSLog("3D Touch when from shortcut action");
+        let handledShortCut = self.handleShortcut(shortcutItem)
+        
+        // Reset selected tab
+        let mainViewController: MainTabBarController? = self.window?.rootViewController as? MainTabBarController
+        if (mainViewController != nil) {
+            mainViewController!.selectedIndex = NSUserDefaults.standardUserDefaults().integerForKey(self.LASTSELECTEDTABSETTING)
+        }
+        
+        return completionHandler(handledShortCut);
+    }
+    
+    func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        NSLog("Handling shortcut item %@", shortcutItem.type);
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.forum") {
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: self.LASTSELECTEDTABSETTING)
+            return true
+        }
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.official") {
+            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: self.LASTSELECTEDTABSETTING)
+            return true
+        }
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.yeltztv") {
+            NSUserDefaults.standardUserDefaults().setInteger(2, forKey: self.LASTSELECTEDTABSETTING)
+            return true
+        }
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.twitter") {
+            NSUserDefaults.standardUserDefaults().setInteger(3, forKey: self.LASTSELECTEDTABSETTING)
+            return true
+        }
+        
+        return false
     }
  
     func application(application: UIApplication,
