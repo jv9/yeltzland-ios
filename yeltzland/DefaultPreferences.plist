@@ -4,5 +4,7 @@
 <dict>
 	<key>GameTimeTweetsEnabled</key>
 	<false/>
+	<key>LastSelectedTab</key>
+	<integer>0</integer>
 </dict>
 </plist>

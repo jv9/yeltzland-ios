@@ -44,14 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.azureNotifications.setupNotifications(false)
         
         // Initial web page
-        var firstTab = 0;
         if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
-            // If came from a notification, start on the Twitter tab
-            firstTab = 3
+            // If came from a notification, always start on the Twitter tab
+            NSUserDefaults.standardUserDefaults().setInteger(3, forKey: "LastSelectedTab")
         }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let initialTabViewController = MainTabBarController(initialTab:firstTab)
+        let initialTabViewController = MainTabBarController()
         self.window?.rootViewController = initialTabViewController
         self.window?.makeKeyAndVisible()
         
