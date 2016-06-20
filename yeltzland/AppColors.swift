@@ -50,6 +50,7 @@ class AppColors {
     static var OtherTextColor = UIColor.blackColor()
     static var OtherDetailColor = UIColor.grayColor()
     
+    static var Fixtures: UIColor = YeltzBlueColor
     static var Evostick: UIColor = EvostickRedColor
     static var Fantasy: UIColor = YeltzBlueColor
     static var Stour: UIColor = StourbridgeRedColor
@@ -62,4 +63,8 @@ class AppColors {
     static var ActiveAlertText: UIColor = UIColor.whiteColor()
     
     static var SpinnerColor = YeltzBlueColor
-}
+    
+    static var FixtureWin = UIColor(red: 0.0/255.0, green: 63.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+    static var FixtureDraw = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 63.0/255.0, alpha: 1.0)
+    static var FixtureLose = UIColor(red: 63.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+    static var FixtureNone = UIColor.blackColor()}

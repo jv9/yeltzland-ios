@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup notifications
         self.azureNotifications.setupNotifications(false)
         
+        // Update the fixture cache
+        FixtureManager.instance.getLatestFixtures()
+        
         // If came from a notification, always start on the Twitter tab
         if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
             NSUserDefaults.standardUserDefaults().setInteger(3, forKey: self.LASTSELECTEDTABSETTING)

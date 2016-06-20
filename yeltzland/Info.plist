@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4</string>
+	<string>1.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -61,6 +61,41 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>forum</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Yeltz Forum</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.forum</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>official</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Official Site</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.official</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>yeltztv</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Yeltz TV</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.yeltztv</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>twitter</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Twitter</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.bravelocation.yeltzland.twitter</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
@@ -84,41 +119,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.bravelocation.yeltzland.forum</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Yeltz Forum</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>forum</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.bravelocation.yeltzland.official</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Official Site</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>official</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.bravelocation.yeltzland.yeltztv</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Yeltz TV</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>yeltztv</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.bravelocation.yeltzland.twitter</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Twitter</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>twitter</string>
-		</dict>
 	</array>
 </dict>
 </plist>

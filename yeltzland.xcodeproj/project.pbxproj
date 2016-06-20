@@ -11,6 +11,10 @@
 		5211F7271CDA35CF0031496D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
 		5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */; };
 		5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */; };
+		52236AE61D17DFF8004903AB /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE51D17DFF8004903AB /* Fixture.swift */; };
+		52236AE81D17E4D3004903AB /* FixtureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE71D17E4D3004903AB /* FixtureManager.swift */; };
+		52236AEB1D17ECB4004903AB /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 52236AEA1D17ECB4004903AB /* matches.json */; };
+		52236AEE1D1803C8004903AB /* FixturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AED1D1803C8004903AB /* FixturesTableViewController.swift */; };
 		523C841E1CE47F06006F1865 /* HTFC2016LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 523C841D1CE47F06006F1865 /* HTFC2016LOGO.png */; };
 		523C84201CE70806006F1865 /* ChromeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C841F1CE70806006F1865 /* ChromeActivity.swift */; };
 		5257E8BD1CDB953400157CED /* yeltzlandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257E8BC1CDB953400157CED /* yeltzlandUITests.swift */; };
@@ -40,6 +44,10 @@
 		5211F7261CDA35CF0031496D /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUserTimelineViewController.swift; sourceTree = "<group>"; };
 		5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLinksTableViewController.swift; sourceTree = "<group>"; };
+		52236AE51D17DFF8004903AB /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		52236AE71D17E4D3004903AB /* FixtureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureManager.swift; sourceTree = "<group>"; };
+		52236AEA1D17ECB4004903AB /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
+		52236AED1D1803C8004903AB /* FixturesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixturesTableViewController.swift; sourceTree = "<group>"; };
 		523C841D1CE47F06006F1865 /* HTFC2016LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HTFC2016LOGO.png; sourceTree = "<group>"; };
 		523C841F1CE70806006F1865 /* ChromeActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromeActivity.swift; sourceTree = "<group>"; };
 		5257E8BA1CDB953400157CED /* yeltzlandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yeltzlandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +110,14 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		52236AE91D17EC90004903AB /* data */ = {
+			isa = PBXGroup;
+			children = (
+				52236AEA1D17ECB4004903AB /* matches.json */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		5257E8BB1CDB953400157CED /* yeltzlandUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +131,7 @@
 		52E3DF6A1CD9FA78009F18BD = {
 			isa = PBXGroup;
 			children = (
+				52236AE91D17EC90004903AB /* data */,
 				5211F7231CDA33580031496D /* images */,
 				52E3DF751CD9FA78009F18BD /* yeltzland */,
 				5257E8BB1CDB953400157CED /* yeltzlandUITests */,
@@ -149,6 +166,9 @@
 				528D74561CF1A6FF00263685 /* yeltzland-Bridging-Header.h */,
 				528D74571CF2F20200263685 /* AzureNotifications.swift */,
 				528D74591CF2F4A400263685 /* DefaultPreferences.plist */,
+				52236AE51D17DFF8004903AB /* Fixture.swift */,
+				52236AE71D17E4D3004903AB /* FixtureManager.swift */,
+				52236AED1D1803C8004903AB /* FixturesTableViewController.swift */,
 			);
 			path = yeltzland;
 			sourceTree = "<group>";
@@ -265,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528D745C1CF3201400263685 /* whistleshort.wav in Resources */,
+				52236AEB1D17ECB4004903AB /* matches.json in Resources */,
 				52E3DF811CD9FA78009F18BD /* LaunchScreen.storyboard in Resources */,
 				528D745A1CF2F4A400263685 /* DefaultPreferences.plist in Resources */,
 				523C841E1CE47F06006F1865 /* HTFC2016LOGO.png in Resources */,
@@ -354,9 +375,12 @@
 				523C84201CE70806006F1865 /* ChromeActivity.swift in Sources */,
 				5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */,
 				528D74581CF2F20200263685 /* AzureNotifications.swift in Sources */,
+				52236AE61D17DFF8004903AB /* Fixture.swift in Sources */,
 				5211F7271CDA35CF0031496D /* AppColors.swift in Sources */,
+				52236AE81D17E4D3004903AB /* FixtureManager.swift in Sources */,
 				52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */,
 				5259F9041CDA1292009C2AA8 /* MainTabBarController.swift in Sources */,
+				52236AEE1D1803C8004903AB /* FixturesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
