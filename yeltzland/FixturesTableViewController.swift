@@ -7,8 +7,42 @@
 //
 
 import UIKit
+import Font_Awesome_Swift
 
 class FixturesTableViewController: UITableViewController {
+    
+    var reloadButton: UIBarButtonItem!
+    
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+        self.setupNotificationWatcher()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setupNotificationWatcher()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("Removed notification handler for fixture updates")
+    }
+    
+    private func setupNotificationWatcher() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FixturesTableViewController.fixturesUpdated), name: FixtureManager.FixturesNotification, object: nil)
+        print("Setup notification handler for fixture updates")
+    }
+    
+    @objc private func fixturesUpdated(notification: NSNotification) {
+        print("Fixture update message received")
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
+    }
+    
+    func reloadButtonTouchUp() {
+        FixtureManager.instance.getLatestFixtures()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +54,18 @@ class FixturesTableViewController: UITableViewController {
         self.tableView.separatorColor = AppColors.OtherSeparator
         
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "FixtureCell")
+        
+        // Setup refresh button
+        self.reloadButton = UIBarButtonItem(
+            title: "Reload",
+            style: .Plain,
+            target: self,
+            action: #selector(FixturesTableViewController.reloadButtonTouchUp)
+        )
+        self.reloadButton.FAIcon = FAType.FARotateRight
+        self.reloadButton.tintColor = AppColors.NavBarTintColor
+        self.navigationController?.navigationBar.tintColor = AppColors.NavBarTintColor
+        self.navigationItem.rightBarButtonItems = [self.reloadButton]
     }
 
     // MARK: - Table view data source

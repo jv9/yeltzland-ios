@@ -9,6 +9,7 @@
 import Foundation
 
 public class FixtureManager {
+    public static let FixturesNotification:String = "YLZFixtureNotification"
     private static let sharedInstance = FixtureManager()
     private var fixtureList:[String:[Fixture]] = [String:[Fixture]]()
     
@@ -114,6 +115,9 @@ public class FixtureManager {
         for currentMonth in Array(self.fixtureList.keys) {
             self.fixtureList[currentMonth] = self.fixtureList[currentMonth]?.sort({ $0.fixtureDate.compare($1.fixtureDate) == .OrderedAscending })
         }
+        
+        // Post notification message
+        NSNotificationCenter.defaultCenter().postNotificationName(FixtureManager.FixturesNotification, object: nil)
     }
     
     private func moveSingleBundleFileToAppDirectory(fileName:String, fileType:String) {
