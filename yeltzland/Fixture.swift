@@ -45,7 +45,7 @@ public class Fixture {
     var kickoffTime: String {
         get {
             let formatter = NSDateFormatter()
-            formatter.dateFormat = "EEE dd @HHmm"
+            formatter.dateFormat = "EEE dd"
             
             return formatter.stringFromDate(self.fixtureDate)
         }
