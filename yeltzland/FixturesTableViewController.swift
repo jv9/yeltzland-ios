@@ -110,6 +110,7 @@ class FixturesTableViewController: UITableViewController {
         
         cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
         cell.detailTextLabel?.textColor = resultColor
+        cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         
         cell.textLabel?.text = currentFixture.displayOpponent
         
@@ -118,7 +119,6 @@ class FixturesTableViewController: UITableViewController {
         } else {
             cell.detailTextLabel?.text = currentFixture.score
         }
-
         
         return cell
     }

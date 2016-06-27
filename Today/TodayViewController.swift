@@ -11,6 +11,8 @@ import NotificationCenter
 
 class TodayViewController: UITableViewController, NCWidgetProviding {
     
+    let CellRowHeight:CGFloat = 22.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,13 +32,9 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         self.tableView.reloadData()
-        self.preferredContentSize = CGSizeMake(0.0, 132.0)
+        self.preferredContentSize = CGSizeMake(0.0, self.CellRowHeight * 5)
 
         completionHandler(NCUpdateResult.NewData)
-    }
-    
-    func updatePreferredContentSize() {
-        self.preferredContentSize = CGSizeMake(0.0, 132.0)
     }
     
     // MARK: - Table view data source
@@ -64,6 +62,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
+        cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         
         if ((indexPath.row == 1) || (indexPath.row == 3)) {
             cell.textLabel?.textColor = AppColors.TodayText
@@ -104,7 +103,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 33.0
+        return self.CellRowHeight
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
