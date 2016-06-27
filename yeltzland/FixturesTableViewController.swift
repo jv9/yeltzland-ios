@@ -107,7 +107,6 @@ class FixturesTableViewController: UITableViewController {
         
         cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
         cell.textLabel?.adjustsFontSizeToFitWidth = true
-        //cell.textLabel?.textColor = resultColor
         
         cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
         cell.detailTextLabel?.textColor = resultColor

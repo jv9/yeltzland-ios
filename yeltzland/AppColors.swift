@@ -21,6 +21,8 @@ let headlineDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(U
 let bodyDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
 let footnoteDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleFootnote)
 
+let ios10AndAbove:Bool = NSProcessInfo.processInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 10, minorVersion: 0, patchVersion: 0))
+
 class AppColors {
     static var AppFontName = "AmericanTypewriter"
     
@@ -67,4 +69,12 @@ class AppColors {
     static var FixtureWin = UIColor(red: 0.0/255.0, green: 63.0/255.0, blue: 0.0/255.0, alpha: 1.0)
     static var FixtureDraw = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 63.0/255.0, alpha: 1.0)
     static var FixtureLose = UIColor(red: 63.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-    static var FixtureNone = UIColor.blackColor()}
+    static var FixtureNone = UIColor.blackColor()
+    
+    static var TodayBackground = ios10AndAbove ? LightBlueColor : UIColor.clearColor()
+    static var TodaySeparator = UIColor.redColor()
+    static var TodaySectionText = ios10AndAbove ? YeltzBlueColor : LightBlueColor
+    static var TodayText = ios10AndAbove ? UIColor.blackColor() : UIColor.whiteColor()
+}
+
+    

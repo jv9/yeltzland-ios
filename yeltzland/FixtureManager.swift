@@ -92,6 +92,51 @@ public class FixtureManager {
         }
     }
     
+    public func getLastGame() -> Fixture? {
+        var lastCompletedGame:Fixture? = nil
+        
+        for month in self.Months {
+            for fixture in self.FixturesForMonth(month)! {
+                if (fixture.teamScore != nil && fixture.opponentScore != nil) {
+                    lastCompletedGame = fixture
+                } else {
+                    return lastCompletedGame
+                }
+            }
+        }
+        
+        return lastCompletedGame;
+    }
+    
+    
+    public func getNextGame() -> Fixture? {
+        for month in self.Months {
+            for fixture in self.FixturesForMonth(month)! {
+                if (fixture.teamScore == nil && fixture.opponentScore == nil) {
+                    return fixture
+                }
+            }
+        }
+        
+        return nil;
+    }
+    
+    public func getCurrentGame() -> Fixture? {
+        let nextGame = self.getNextGame()
+        
+        if (nextGame != nil) {
+            // If within 120 minutes of kickoff date, the game is current
+            let now = NSDate()
+            let differenceInMinutes = NSCalendar.currentCalendar().components(.Minute, fromDate: nextGame!.fixtureDate, toDate: now, options: []).minute
+            
+            if (differenceInMinutes >= 0 && differenceInMinutes < 120) {
+                return nextGame
+            }
+        }
+        
+        return nil
+    }
+    
     private func parseMatchesJson(json:[String:AnyObject]) {
         let matches = json["Matches"] as! Array<AnyObject>
         

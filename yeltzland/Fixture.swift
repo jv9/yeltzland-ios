@@ -51,6 +51,16 @@ public class Fixture {
         }
     }
     
+    
+    var fullKickoffTime: String {
+        get {
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "EEE dd MMM"
+            
+            return formatter.stringFromDate(self.fixtureDate)
+        }
+    }
+    
     var fixtureMonth: String {
         get {
             let formatter = NSDateFormatter()
