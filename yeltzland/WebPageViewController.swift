@@ -191,6 +191,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
             
             let message = Message(title: "Couldn't connect to the website right now", backgroundColor: AppColors.WebErrorBackground)
             Whisper(message, to: self.navigationController!)
+            self.hideSpinner()
         }
     }
     
@@ -232,6 +233,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
 
             let message = Message(title: "Couldn't connect to the website right now", backgroundColor: AppColors.WebErrorBackground)
             Whisper(message, to: self.navigationController!)
+            self.hideSpinner()
         }
     }
     
