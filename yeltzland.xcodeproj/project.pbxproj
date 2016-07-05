@@ -28,6 +28,7 @@
 		526F54641D214982001EA8D8 /* FixtureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE71D17E4D3004903AB /* FixtureManager.swift */; };
 		526F54651D214C3B001EA8D8 /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 52236AEA1D17ECB4004903AB /* matches.json */; };
 		526F54661D215A29001EA8D8 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
+		527DAF1B1D2BA9BA0092BB8F /* SafariActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527DAF1A1D2BA9BA0092BB8F /* SafariActivity.swift */; };
 		528D74551CF1A61500263685 /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528D74541CF1A61500263685 /* WindowsAzureMessaging.framework */; };
 		528D74581CF2F20200263685 /* AzureNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D74571CF2F20200263685 /* AzureNotifications.swift */; };
 		528D745A1CF2F4A400263685 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528D74591CF2F4A400263685 /* DefaultPreferences.plist */; };
@@ -89,6 +90,7 @@
 		526F54541D214705001EA8D8 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		526F54571D214705001EA8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		526F54591D214705001EA8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		527DAF1A1D2BA9BA0092BB8F /* SafariActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariActivity.swift; sourceTree = "<group>"; };
 		528D74541CF1A61500263685 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
 		528D74561CF1A6FF00263685 /* yeltzland-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yeltzland-Bridging-Header.h"; sourceTree = "<group>"; };
 		528D74571CF2F20200263685 /* AzureNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureNotifications.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				52236AE71D17E4D3004903AB /* FixtureManager.swift */,
 				528D74591CF2F4A400263685 /* DefaultPreferences.plist */,
 				52236AED1D1803C8004903AB /* FixturesTableViewController.swift */,
+				527DAF1A1D2BA9BA0092BB8F /* SafariActivity.swift */,
 			);
 			path = yeltzland;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				52236AE81D17E4D3004903AB /* FixtureManager.swift in Sources */,
 				52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */,
 				5259F9041CDA1292009C2AA8 /* MainTabBarController.swift in Sources */,
+				527DAF1B1D2BA9BA0092BB8F /* SafariActivity.swift in Sources */,
 				52236AEE1D1803C8004903AB /* FixturesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,6 +32,14 @@ class ChromeActivity: UIActivity {
         return "Open in Chrome";
     }
     
+    override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {
+        return true
+    }
+    
+    override func prepareWithActivityItems(activityItems: [AnyObject]) {
+        // nothing to prepare
+    }
+    
     override class func activityCategory() -> UIActivityCategory{
         return UIActivityCategory.Action
     }
