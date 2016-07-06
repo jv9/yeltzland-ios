@@ -92,6 +92,20 @@ public class FixtureManager {
         }
     }
     
+    public func getAwayGames(opponent:String) -> [Fixture] {
+        var foundGames:[Fixture] = []
+        
+        for month in self.Months {
+            for fixture in self.FixturesForMonth(month)! {
+                if (fixture.opponent == opponent && fixture.home == false) {
+                    foundGames.append(fixture)
+                }
+            }
+        }
+        
+        return foundGames
+    }
+    
     public func getLastGame() -> Fixture? {
         var lastCompletedGame:Fixture? = nil
         

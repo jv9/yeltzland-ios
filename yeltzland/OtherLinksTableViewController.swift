@@ -34,7 +34,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
-            return 1
+            return 2
         } else if (section == 1) {
             return 4
         } else if (section == 2) {
@@ -69,9 +69,20 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         }
         
         if (indexPath.section == 0) {
-            cell!.textLabel?.text = "Fixture List"
-            let cellImage = UIImage(icon: FAType.FACalendar, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
-            cell!.imageView?.image = cellImage
+            switch (indexPath.row) {
+            case 0:
+                cell!.textLabel?.text = "Fixture List"
+                let cellImage = UIImage(icon: FAType.FACalendar, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
+                cell!.imageView?.image = cellImage
+                break
+            case 1:
+                cell!.textLabel?.text = "Where's the Ground?"
+                let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
+                cell!.imageView?.image = cellImage
+                break
+            default:
+                break
+            }
         }
         else if (indexPath.section == 1) {
             switch (indexPath.row) {
@@ -148,6 +159,9 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             if (indexPath.row == 0) {
                 let fixtures = FixturesTableViewController(style: .Grouped)
                 self.navigationController!.pushViewController(fixtures, animated: true)
+            } else if (indexPath.row == 1) {
+                let locations = LocationsViewController()
+                self.navigationController!.pushViewController(locations, animated: true)
             }
             
             return;
