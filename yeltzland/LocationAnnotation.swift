@@ -19,17 +19,20 @@ class LocationAnnotation : NSObject, MKAnnotation {
         self.title = team
         
         // Find away games
-        let awayGames = FixtureManager.instance.getAwayGames(team)
-        
-        if (awayGames.count == 0) {
-            self.subtitle = ""
-        } else {
-            let lastGame = awayGames.last!
-            if (lastGame.teamScore == nil || lastGame.opponentScore == nil) {
-                self.subtitle = lastGame.fullKickoffTime
+        var description = ""
+
+        for awayGame in FixtureManager.instance.getAwayGames(team) {
+            if (description != "") {
+                description = description + ", "
+            }
+            
+            if (awayGame.teamScore == nil || awayGame.opponentScore == nil) {
+                description = description + awayGame.fullKickoffTime
             } else {
-                self.subtitle = lastGame.score
+                description = description + awayGame.score
             }
         }
+        
+        self.subtitle = description
     }
 }
