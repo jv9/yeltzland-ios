@@ -105,14 +105,16 @@ class FixturesTableViewController: UITableViewController {
             resultColor = AppColors.FixtureDraw
         }
         
-        cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
+        // Set main label
+        cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.FixtureTeamSize)!
+        cell.textLabel?.textColor = resultColor
         cell.textLabel?.adjustsFontSizeToFitWidth = true
+        cell.textLabel?.text = currentFixture.displayOpponent
         
-        cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
+        // Set detail text
         cell.detailTextLabel?.textColor = resultColor
         cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
-        
-        cell.textLabel?.text = currentFixture.displayOpponent
+        cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.FixtureScoreOrDateTextSize)!
         
         if (currentFixture.teamScore == nil || currentFixture.opponentScore == nil) {
             cell.detailTextLabel?.text = currentFixture.kickoffTime

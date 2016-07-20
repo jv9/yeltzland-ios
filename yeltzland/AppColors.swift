@@ -52,6 +52,9 @@ class AppColors {
     static var OtherTextColor = UIColor.blackColor()
     static var OtherDetailColor = UIColor.grayColor()
     
+    static var FixtureTeamSize = bodyDescriptor.pointSize
+    static var FixtureScoreOrDateTextSize = footnoteDescriptor.pointSize
+    
     static var Fixtures: UIColor = YeltzBlueColor
     static var Evostick: UIColor = EvostickRedColor
     static var Fantasy: UIColor = YeltzBlueColor
