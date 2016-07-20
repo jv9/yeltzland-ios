@@ -69,6 +69,24 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
             cell.detailTextLabel?.textColor = AppColors.TodayText
             
             if (currentFixture != nil) {
+                if (AppColors.isIos10AndAbove) {
+                    
+                    var resultColor = AppColors.TodayText
+                    
+                    if (currentFixture!.teamScore == nil || currentFixture!.opponentScore == nil) {
+                        resultColor = AppColors.TodayText
+                    } else if (currentFixture!.teamScore > currentFixture!.opponentScore) {
+                        resultColor = AppColors.FixtureWin
+                    } else if (currentFixture!.teamScore < currentFixture!.opponentScore) {
+                        resultColor = AppColors.FixtureLose
+                    } else {
+                        resultColor = AppColors.FixtureDraw
+                    }
+                    
+                    cell.textLabel?.textColor = resultColor
+                    cell.detailTextLabel?.textColor = resultColor
+                }
+                
                 cell.textLabel?.text = String.init(format: "  %@", currentFixture!.displayOpponent)
                 
                 if (currentFixture!.teamScore == nil || currentFixture!.opponentScore == nil) {
