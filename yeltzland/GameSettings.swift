@@ -28,6 +28,19 @@ public class GameSettings : NSObject {
         
         self.appStandardUserDefaults = NSUserDefaults(suiteName: suiteName)!
         self.appStandardUserDefaults!.registerDefaults(defaultPrefs as! [String: AnyObject]);
+        
+        // Migrate old settings if required
+        self.migrateSettingsToGroup()
+    }
+    
+    public var gameTimeTweetsEnabled: Bool {
+        get { return self.readObjectFromStore("GameTimeTweetsEnabled") as! Bool }
+        set { self.writeObjectToStore(newValue, key: "GameTimeTweetsEnabled") }
+    }
+    
+    public var lastSelectedTab: Int {
+        get { return self.readObjectFromStore("LastSelectedTab") as! Int }
+        set { self.writeObjectToStore(newValue, key: "LastSelectedTab") }
     }
     
     public var lastGameTime: NSDate {
@@ -70,7 +83,6 @@ public class GameSettings : NSObject {
         set { self.writeObjectToStore(newValue, key: "nextGameHome") }
     }
     
-    
     public var currentGameTime: NSDate {
         get { return self.readObjectFromStore("currentGameTime") as! NSDate }
         set { self.writeObjectToStore(newValue, key: "currentGameTime") }
@@ -85,6 +97,12 @@ public class GameSettings : NSObject {
         get { return self.readObjectFromStore("currentGameOpponentScore") as! Int }
         set { self.writeObjectToStore(newValue, key: "currentGameOpponentScore") }
     }
+    
+    public var migratedToGroupSettings: Bool {
+        get { return self.readObjectFromStore("migratedToGroupSettings") as! Bool }
+        set { self.writeObjectToStore(newValue, key: "migratedToGroupSettings") }
+    }
+    
     
     public var displayLastOpponent: String {
         get {
@@ -131,7 +149,7 @@ public class GameSettings : NSObject {
     
     public var gameScoreForCurrentGame: Bool {
         get {
-            return self.nextGameTime.compare(self.currentGameTime) == NSComparisonResult.OrderedSame
+            return self.gameTimeTweetsEnabled && (self.nextGameTime.compare(self.currentGameTime) == NSComparisonResult.OrderedSame)
         }
     }
     
@@ -182,5 +200,19 @@ public class GameSettings : NSObject {
         // Write to local user settings
         self.appStandardUserDefaults!.setObject(value, forKey:key)
         self.appStandardUserDefaults!.synchronize()
+    }
+    
+    private func migrateSettingsToGroup() {
+        if (self.migratedToGroupSettings) {
+            return
+        }
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        self.lastSelectedTab = defaults.integerForKey("LastSelectedTab")
+        self.gameTimeTweetsEnabled = defaults.boolForKey("GameTimeTweetsEnabled")
+        self.migratedToGroupSettings = true
+        
+        NSLog("Migrated settings to group")
+        
     }
 }

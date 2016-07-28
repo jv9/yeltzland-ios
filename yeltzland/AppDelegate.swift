@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let azureNotifications = AzureNotifications()
-    let LASTSELECTEDTABSETTING = "LastSelectedTab"
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -50,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // If came from a notification, always start on the Twitter tab
         if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
-            NSUserDefaults.standardUserDefaults().setInteger(3, forKey: self.LASTSELECTEDTABSETTING)
+            GameSettings.instance.lastSelectedTab = 3
         } else if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] {
             self.handleShortcut(shortcutItem as! UIApplicationShortcutItem)
         }
@@ -70,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Reset selected tab
         let mainViewController: MainTabBarController? = self.window?.rootViewController as? MainTabBarController
         if (mainViewController != nil) {
-            mainViewController!.selectedIndex = NSUserDefaults.standardUserDefaults().integerForKey(self.LASTSELECTEDTABSETTING)
+            mainViewController!.selectedIndex = GameSettings.instance.lastSelectedTab
         }
         
         return completionHandler(handledShortCut);
@@ -80,22 +79,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("Handling shortcut item %@", shortcutItem.type);
         
         if (shortcutItem.type == "com.bravelocation.yeltzland.forum") {
-            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: self.LASTSELECTEDTABSETTING)
+            GameSettings.instance.lastSelectedTab = 0
             return true
         }
         
         if (shortcutItem.type == "com.bravelocation.yeltzland.official") {
-            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: self.LASTSELECTEDTABSETTING)
+            GameSettings.instance.lastSelectedTab = 1
             return true
         }
         
         if (shortcutItem.type == "com.bravelocation.yeltzland.yeltztv") {
-            NSUserDefaults.standardUserDefaults().setInteger(2, forKey: self.LASTSELECTEDTABSETTING)
+            GameSettings.instance.lastSelectedTab = 2
             return true
         }
         
         if (shortcutItem.type == "com.bravelocation.yeltzland.twitter") {
-            NSUserDefaults.standardUserDefaults().setInteger(3, forKey: self.LASTSELECTEDTABSETTING)
+            GameSettings.instance.lastSelectedTab = 3
             return true
         }
         

@@ -18,18 +18,18 @@ public class AzureNotifications {
     #endif
     
     var tagNames:Set<NSObject> = []
-    let defaults = NSUserDefaults.standardUserDefaults()
 
     var enabled: Bool {
         get {
-            return self.defaults.boolForKey("GameTimeTweetsEnabled")
+            return GameSettings.instance.gameTimeTweetsEnabled
         }
         set(newValue) {
             // If changed, set the value and re-register
             let currentValue = self.enabled
             
             if (newValue != currentValue) {
-                self.defaults.setBool(newValue, forKey: "GameTimeTweetsEnabled")
+                GameSettings.instance.gameTimeTweetsEnabled = newValue
+
                 self.setupNotifications(true)
             }
         }

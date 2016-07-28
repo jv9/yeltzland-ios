@@ -28,5 +28,7 @@
 	<integer>0</integer>
 	<key>currentGameOpponentScore</key>
 	<integer>0</integer>
+	<key>migratedToGroupSettings</key>
+	<false/>
 </dict>
 </plist>

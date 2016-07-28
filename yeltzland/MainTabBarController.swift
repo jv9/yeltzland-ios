@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     init() {
         super.init(nibName: nil, bundle: nil)
         self.addChildViewControllers()
-        self.selectedIndex = self.defaults.integerForKey("LastSelectedTab");
+        self.selectedIndex = GameSettings.instance.lastSelectedTab;
     }
     
     override func viewDidLoad() {
@@ -99,7 +99,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             currentIndex = currentIndex + 1
         }
         
-        self.defaults.setInteger(selectedIndex, forKey: "LastSelectedTab")
+        GameSettings.instance.lastSelectedTab = selectedIndex
         
         return true;
     }
