@@ -10,9 +10,9 @@ import Foundation
 
 public class FixtureManager {
     public static let FixturesNotification:String = "YLZFixtureNotification"
-    private static let sharedInstance = FixtureManager()
     private var fixtureList:[String:[Fixture]] = [String:[Fixture]]()
     
+    private static let sharedInstance = FixtureManager()
     class var instance:FixtureManager {
         get {
             return sharedInstance
@@ -85,6 +85,9 @@ public class FixtureManager {
                 }
                 
                 NSLog("Loaded fixtures from server")
+                
+                // Update game settings
+                GameSettings.instance.refreshFixtures()
             } catch {
                 NSLog("Error loading fixtures from server ...")
                 print(error)

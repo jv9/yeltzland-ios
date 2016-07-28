@@ -49,11 +49,11 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "FixtureTodayCell")
        
-        var currentFixture: Fixture? = nil
+        var opponent: String = ""
         if (indexPath.row == 1) {
-            currentFixture = FixtureManager.instance.getLastGame()
+            opponent = GameSettings.instance.displayLastOpponent
         } else if (indexPath.row == 3) {
-            currentFixture = FixtureManager.instance.getNextGame()
+            opponent = GameSettings.instance.displayNextOpponent
         }
         
         cell.selectionStyle = .None
@@ -68,31 +68,34 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
             cell.textLabel?.textColor = AppColors.TodayText
             cell.detailTextLabel?.textColor = AppColors.TodayText
             
-            if (currentFixture != nil) {
+            if (opponent.characters.count > 0) {
                 if (AppColors.isIos10AndAbove) {
                     
                     var resultColor = AppColors.TodayText
                     
-                    if (currentFixture!.teamScore == nil || currentFixture!.opponentScore == nil) {
-                        resultColor = AppColors.TodayText
-                    } else if (currentFixture!.teamScore > currentFixture!.opponentScore) {
-                        resultColor = AppColors.FixtureWin
-                    } else if (currentFixture!.teamScore < currentFixture!.opponentScore) {
-                        resultColor = AppColors.FixtureLose
-                    } else {
-                        resultColor = AppColors.FixtureDraw
+                    if (indexPath.row == 1) {
+                        let teamScore = GameSettings.instance.lastGameYeltzScore
+                        let opponentScore  = GameSettings.instance.lastGameOpponentScore
+                        
+                        if (teamScore > opponentScore) {
+                            resultColor = AppColors.FixtureWin
+                        } else if (teamScore < opponentScore) {
+                            resultColor = AppColors.FixtureLose
+                        } else {
+                            resultColor = AppColors.FixtureDraw
+                        }
                     }
                     
                     cell.textLabel?.textColor = resultColor
                     cell.detailTextLabel?.textColor = resultColor
                 }
                 
-                cell.textLabel?.text = String.init(format: "  %@", currentFixture!.displayOpponent)
+                cell.textLabel?.text = String.init(format: "  %@", opponent)
                 
-                if (currentFixture!.teamScore == nil || currentFixture!.opponentScore == nil) {
-                    cell.detailTextLabel?.text = currentFixture!.fullKickoffTime
+                if (indexPath.row == 1) {
+                    cell.detailTextLabel?.text = GameSettings.instance.lastScore
                 } else {
-                    cell.detailTextLabel?.text = currentFixture!.score
+                    cell.detailTextLabel?.text = GameSettings.instance.nextKickoffTime
                 }
             } else {
                 cell.textLabel?.text = "  None"

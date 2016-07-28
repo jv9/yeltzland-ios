@@ -11,6 +11,7 @@
 		5211F7271CDA35CF0031496D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7261CDA35CF0031496D /* AppColors.swift */; };
 		5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */; };
 		5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */; };
+		52176BAC1D4A14C700B7EFAE /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528D74591CF2F4A400263685 /* DefaultPreferences.plist */; };
 		52236AE61D17DFF8004903AB /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE51D17DFF8004903AB /* Fixture.swift */; };
 		52236AE81D17E4D3004903AB /* FixtureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE71D17E4D3004903AB /* FixtureManager.swift */; };
 		52236AEB1D17ECB4004903AB /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 52236AEA1D17ECB4004903AB /* matches.json */; };
@@ -38,6 +39,8 @@
 		528D74581CF2F20200263685 /* AzureNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D74571CF2F20200263685 /* AzureNotifications.swift */; };
 		528D745A1CF2F4A400263685 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528D74591CF2F4A400263685 /* DefaultPreferences.plist */; };
 		528D745C1CF3201400263685 /* whistleshort.wav in Resources */ = {isa = PBXBuildFile; fileRef = 528D745B1CF3201400263685 /* whistleshort.wav */; };
+		52DBCAA01D4A012E00D35F91 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */; };
+		52DBCAA11D4A012E00D35F91 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */; };
 		52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF761CD9FA78009F18BD /* AppDelegate.swift */; };
 		52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */; };
 		52E3DF7E1CD9FA78009F18BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E3DF7D1CD9FA78009F18BD /* Assets.xcassets */; };
@@ -79,6 +82,8 @@
 		5211F7261CDA35CF0031496D /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUserTimelineViewController.swift; sourceTree = "<group>"; };
 		5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLinksTableViewController.swift; sourceTree = "<group>"; };
+		52176BAA1D4A0D9A00B7EFAE /* yeltzland.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = yeltzland.entitlements; sourceTree = "<group>"; };
+		52176BAB1D4A0DB700B7EFAE /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
 		52236AE51D17DFF8004903AB /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		52236AE71D17E4D3004903AB /* FixtureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureManager.swift; sourceTree = "<group>"; };
 		52236AEA1D17ECB4004903AB /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 		528D74571CF2F20200263685 /* AzureNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureNotifications.swift; sourceTree = "<group>"; };
 		528D74591CF2F4A400263685 /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		528D745B1CF3201400263685 /* whistleshort.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistleshort.wav; sourceTree = "<group>"; };
+		52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E3DF761CD9FA78009F18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 		526F54531D214705001EA8D8 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				52176BAB1D4A0DB700B7EFAE /* Today.entitlements */,
 				526F54541D214705001EA8D8 /* TodayViewController.swift */,
 				526F54561D214705001EA8D8 /* MainInterface.storyboard */,
 				526F54591D214705001EA8D8 /* Info.plist */,
@@ -220,6 +227,7 @@
 		52E3DF751CD9FA78009F18BD /* yeltzland */ = {
 			isa = PBXGroup;
 			children = (
+				52176BAA1D4A0D9A00B7EFAE /* yeltzland.entitlements */,
 				52E3DF761CD9FA78009F18BD /* AppDelegate.swift */,
 				52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */,
 				52E3DF7D1CD9FA78009F18BD /* Assets.xcassets */,
@@ -233,14 +241,15 @@
 				528D74561CF1A6FF00263685 /* yeltzland-Bridging-Header.h */,
 				528D74571CF2F20200263685 /* AzureNotifications.swift */,
 				52236AE51D17DFF8004903AB /* Fixture.swift */,
-				52236AE71D17E4D3004903AB /* FixtureManager.swift */,
 				528D74591CF2F4A400263685 /* DefaultPreferences.plist */,
+				52236AE71D17E4D3004903AB /* FixtureManager.swift */,
 				52236AED1D1803C8004903AB /* FixturesTableViewController.swift */,
 				527DAF1A1D2BA9BA0092BB8F /* SafariActivity.swift */,
 				527DAF1E1D2D082C0092BB8F /* Location.swift */,
 				527DAF201D2D096B0092BB8F /* LocationManager.swift */,
 				527DAF221D2D0F550092BB8F /* LocationsViewController.swift */,
 				527DAF241D2D308F0092BB8F /* LocationAnnotation.swift */,
+				52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */,
 			);
 			path = yeltzland;
 			sourceTree = "<group>";
@@ -335,11 +344,19 @@
 					526F544F1D214705001EA8D8 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = W8B3V597R9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					52E3DF721CD9FA78009F18BD = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = W8B3V597R9;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -382,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52176BAC1D4A14C700B7EFAE /* DefaultPreferences.plist in Resources */,
 				526F54651D214C3B001EA8D8 /* matches.json in Resources */,
 				526F54581D214705001EA8D8 /* MainInterface.storyboard in Resources */,
 			);
@@ -493,6 +511,7 @@
 			files = (
 				526F54661D215A29001EA8D8 /* AppColors.swift in Sources */,
 				526F54631D214982001EA8D8 /* Fixture.swift in Sources */,
+				52DBCAA11D4A012E00D35F91 /* GameSettings.swift in Sources */,
 				526F54641D214982001EA8D8 /* FixtureManager.swift in Sources */,
 				526F54551D214705001EA8D8 /* TodayViewController.swift in Sources */,
 			);
@@ -512,6 +531,7 @@
 				527DAF251D2D308F0092BB8F /* LocationAnnotation.swift in Sources */,
 				5211F7271CDA35CF0031496D /* AppColors.swift in Sources */,
 				52236AE81D17E4D3004903AB /* FixtureManager.swift in Sources */,
+				52DBCAA01D4A012E00D35F91 /* GameSettings.swift in Sources */,
 				52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */,
 				527DAF211D2D096B0092BB8F /* LocationManager.swift in Sources */,
 				527DAF231D2D0F550092BB8F /* LocationsViewController.swift in Sources */,
@@ -581,24 +601,28 @@
 		526F545E1D214705001EA8D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.yeltzland.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		526F545F1D214705001EA8D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.yeltzland.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -692,6 +716,7 @@
 			baseConfigurationReference = 6C2886E0C6D579332BF2A5A8 /* Pods-yeltzland.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = yeltzland/yeltzland.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
@@ -714,6 +739,7 @@
 			baseConfigurationReference = C11AF69119A85B889C5CADB2 /* Pods-yeltzland.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = yeltzland/yeltzland.entitlements;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

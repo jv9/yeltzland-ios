@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup notifications
         self.azureNotifications.setupNotifications(false)
         
-        // Update the fixture cache
+        // Update the fixture and scores cache
         FixtureManager.instance.getLatestFixtures()
         
         // If came from a notification, always start on the Twitter tab

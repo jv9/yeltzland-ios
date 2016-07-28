@@ -6,5 +6,21 @@
 	<false/>
 	<key>LastSelectedTab</key>
 	<integer>0</integer>
+	<key>lastGameTime</key>
+	<date>2015-07-28T09:54:34Z</date>
+	<key>lastGameTeam</key>
+	<string></string>
+	<key>lastGameYeltzScore</key>
+	<integer>0</integer>
+	<key>lastGameHome</key>
+	<true/>
+	<key>lastGameOpponentScore</key>
+	<integer>0</integer>
+	<key>nextGameTime</key>
+	<date>2015-07-28T09:55:04Z</date>
+	<key>nextGameTeam</key>
+	<string></string>
+	<key>nextGameHome</key>
+	<false/>
 </dict>
 </plist>
