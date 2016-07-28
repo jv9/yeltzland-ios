@@ -63,7 +63,7 @@ public class GameScoreManager {
     public func getLatestGameScore() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             
-            NSLog("Loading fixtures from server ...")
+            NSLog("Loading game scores from server ...")
             let dataUrl = NSURL(string: "http://bravelocation.com/automation/feeds/gamescore.json")!
             let serverData:NSData? = NSData.init(contentsOfURL: dataUrl)
             

@@ -213,6 +213,5 @@ public class GameSettings : NSObject {
         self.migratedToGroupSettings = true
         
         NSLog("Migrated settings to group")
-        
     }
 }

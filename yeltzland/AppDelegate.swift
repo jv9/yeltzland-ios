@@ -127,6 +127,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Print message
         print("Notification received: \(userInfo)")
         
+        // Go and update the game score
+        GameScoreManager.instance.getLatestGameScore()
+        
         // If app in foreground, show a whisper
         if (application.applicationState == .Active) {
             if let aps = userInfo["aps"] as? NSDictionary {
