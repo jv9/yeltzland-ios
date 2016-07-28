@@ -80,6 +80,8 @@ class AppColors {
     static var TodaySeparator = UIColor.redColor()
     static var TodaySectionText = ios10AndAbove ? YeltzBlueColor : LightBlueColor
     static var TodayText = ios10AndAbove ? UIColor.blackColor() : UIColor.whiteColor()
+    static var TodayTextSize = bodyDescriptor.pointSize
+    static var TodayFootnoteSize = footnoteDescriptor.pointSize
 }
 
     

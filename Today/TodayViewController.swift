@@ -43,6 +43,10 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (GameSettings.instance.gameScoreForCurrentGame) {
+            return 5
+        }
+        
         return 4
     }
     
@@ -59,9 +63,9 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         cell.selectionStyle = .None
         cell.accessoryType = .None
 
-        cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherTextSize)!
+        cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.TodayTextSize)!
         cell.textLabel?.adjustsFontSizeToFitWidth = true
-        cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
+        cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.TodayFootnoteSize)!
         cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         
         if ((indexPath.row == 1) || (indexPath.row == 3)) {
@@ -95,7 +99,11 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
                 if (indexPath.row == 1) {
                     cell.detailTextLabel?.text = GameSettings.instance.lastScore
                 } else {
-                    cell.detailTextLabel?.text = GameSettings.instance.nextKickoffTime
+                    if (GameSettings.instance.gameScoreForCurrentGame) {
+                        cell.detailTextLabel?.text = GameSettings.instance.currentScore
+                    } else {
+                        cell.detailTextLabel?.text = GameSettings.instance.nextKickoffTime
+                    }
                 }
             } else {
                 cell.textLabel?.text = "  None"
@@ -105,13 +113,25 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         else {
             if (indexPath.row == 0) {
                 cell.textLabel?.text = "Last game:"
+            } else if (indexPath.row == 2) {
+                if (GameSettings.instance.gameScoreForCurrentGame) {
+                    cell.textLabel?.text = "Current score:"
+                } else {
+                    cell.textLabel?.text = "Next game:"
+                }
             } else {
-                cell.textLabel?.text = "Next game:"
+                cell.textLabel?.text = "  (score from Twitter, may be wrong!)"
+                cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.TodayFootnoteSize)!
             }
             
             cell.detailTextLabel?.text = ""
-            cell.textLabel?.textColor = AppColors.TodaySectionText
             cell.detailTextLabel?.textColor = AppColors.TodaySectionText
+            
+            if (indexPath.row == 4) {
+                cell.textLabel?.textColor = AppColors.TodayText
+            } else {
+                cell.textLabel?.textColor = AppColors.TodaySectionText
+            }
         }
         
         return cell

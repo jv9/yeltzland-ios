@@ -12,6 +12,9 @@
 		5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F7291CDA53D70031496D /* TwitterUserTimelineViewController.swift */; };
 		5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */; };
 		52176BAC1D4A14C700B7EFAE /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528D74591CF2F4A400263685 /* DefaultPreferences.plist */; };
+		52176BAE1D4A1AF600B7EFAE /* gamescore.json in Resources */ = {isa = PBXBuildFile; fileRef = 52176BAD1D4A1AF600B7EFAE /* gamescore.json */; };
+		52176BB01D4A1B3200B7EFAE /* GameScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */; };
+		52176BB11D4A200400B7EFAE /* GameScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */; };
 		52236AE61D17DFF8004903AB /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE51D17DFF8004903AB /* Fixture.swift */; };
 		52236AE81D17E4D3004903AB /* FixtureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE71D17E4D3004903AB /* FixtureManager.swift */; };
 		52236AEB1D17ECB4004903AB /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 52236AEA1D17ECB4004903AB /* matches.json */; };
@@ -84,6 +87,8 @@
 		5211F72C1CDB1EE50031496D /* OtherLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLinksTableViewController.swift; sourceTree = "<group>"; };
 		52176BAA1D4A0D9A00B7EFAE /* yeltzland.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = yeltzland.entitlements; sourceTree = "<group>"; };
 		52176BAB1D4A0DB700B7EFAE /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
+		52176BAD1D4A1AF600B7EFAE /* gamescore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gamescore.json; sourceTree = "<group>"; };
+		52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScoreManager.swift; sourceTree = "<group>"; };
 		52236AE51D17DFF8004903AB /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		52236AE71D17E4D3004903AB /* FixtureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureManager.swift; sourceTree = "<group>"; };
 		52236AEA1D17ECB4004903AB /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
@@ -175,6 +180,7 @@
 			children = (
 				527DAF1C1D2D08030092BB8F /* locations.json */,
 				52236AEA1D17ECB4004903AB /* matches.json */,
+				52176BAD1D4A1AF600B7EFAE /* gamescore.json */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 				527DAF221D2D0F550092BB8F /* LocationsViewController.swift */,
 				527DAF241D2D308F0092BB8F /* LocationAnnotation.swift */,
 				52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */,
+				52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */,
 			);
 			path = yeltzland;
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 				528D745C1CF3201400263685 /* whistleshort.wav in Resources */,
 				52236AEB1D17ECB4004903AB /* matches.json in Resources */,
 				52E3DF811CD9FA78009F18BD /* LaunchScreen.storyboard in Resources */,
+				52176BAE1D4A1AF600B7EFAE /* gamescore.json in Resources */,
 				528D745A1CF2F4A400263685 /* DefaultPreferences.plist in Resources */,
 				523C841E1CE47F06006F1865 /* HTFC2016LOGO.png in Resources */,
 				52E3DF7E1CD9FA78009F18BD /* Assets.xcassets in Resources */,
@@ -509,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52176BB11D4A200400B7EFAE /* GameScoreManager.swift in Sources */,
 				526F54661D215A29001EA8D8 /* AppColors.swift in Sources */,
 				526F54631D214982001EA8D8 /* Fixture.swift in Sources */,
 				52DBCAA11D4A012E00D35F91 /* GameSettings.swift in Sources */,
@@ -523,6 +532,7 @@
 			files = (
 				5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */,
 				52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */,
+				52176BB01D4A1B3200B7EFAE /* GameScoreManager.swift in Sources */,
 				523C84201CE70806006F1865 /* ChromeActivity.swift in Sources */,
 				5211F72A1CDA53D70031496D /* TwitterUserTimelineViewController.swift in Sources */,
 				528D74581CF2F20200263685 /* AzureNotifications.swift in Sources */,

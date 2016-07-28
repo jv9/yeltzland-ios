@@ -70,6 +70,22 @@ public class GameSettings : NSObject {
         set { self.writeObjectToStore(newValue, key: "nextGameHome") }
     }
     
+    
+    public var currentGameTime: NSDate {
+        get { return self.readObjectFromStore("currentGameTime") as! NSDate }
+        set { self.writeObjectToStore(newValue, key: "currentGameTime") }
+    }
+    
+    public var currentGameYeltzScore: Int {
+        get { return self.readObjectFromStore("currentGameYeltzScore") as! Int }
+        set { self.writeObjectToStore(newValue, key: "currentGameYeltzScore") }
+    }
+    
+    public var currentGameOpponentScore: Int {
+        get { return self.readObjectFromStore("currentGameOpponentScore") as! Int }
+        set { self.writeObjectToStore(newValue, key: "currentGameOpponentScore") }
+    }
+    
     public var displayLastOpponent: String {
         get {
             return self.lastGameHome ? self.lastGameTeam.uppercaseString : self.lastGameTeam
@@ -96,6 +112,13 @@ public class GameSettings : NSObject {
             return String.init(format: "%@ %d-%d", result, self.lastGameYeltzScore, self.lastGameOpponentScore)
         }
     }
+    
+    
+    public var currentScore: String {
+        get {
+            return String.init(format: "%d-%d*", self.currentGameYeltzScore, self.currentGameOpponentScore)
+        }
+    }
 
     public var nextKickoffTime: String {
         get {
@@ -106,9 +129,14 @@ public class GameSettings : NSObject {
         }
     }
     
-    @objc
+    public var gameScoreForCurrentGame: Bool {
+        get {
+            return self.nextGameTime.compare(self.currentGameTime) == NSComparisonResult.OrderedSame
+        }
+    }
+    
     public func refreshFixtures() {
-        NSLog("Updating game score fixtures ...")
+        NSLog("Updating game fixture settings ...")
         
         let lastGame = FixtureManager.instance.getLastGame()
         
@@ -132,7 +160,16 @@ public class GameSettings : NSObject {
             self.nextGameTeam = nextGame!.opponent
         }
     }
-
+    
+    public func refreshGameScore() {
+        NSLog("Updating game score settings ...")
+        
+        if let scoreMatchDate = GameScoreManager.instance.MatchDate {
+            self.currentGameTime = scoreMatchDate
+            self.currentGameYeltzScore = GameScoreManager.instance.YeltzScore
+            self.currentGameOpponentScore = GameScoreManager.instance.OpponentScore
+        }
+    }
 
     private func readObjectFromStore(key: String) -> AnyObject?{
         // Otherwise try the user details

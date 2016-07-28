@@ -1,0 +1,13 @@
+{
+    "match": {
+        "MatchId": "4",
+        "MatchDateTime": "2016-07-26 19:45:00",
+        "Opponent": "Alvechurch",
+        "Home": "0",
+        "TeamScore": null,
+        "OpponentScore": null,
+        "errorMessage": ""
+    },
+    "yeltzScore": "1",
+    "opponentScore": "2"
+}
