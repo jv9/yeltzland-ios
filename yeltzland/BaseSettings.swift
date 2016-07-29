@@ -139,6 +139,15 @@ public class BaseSettings : NSObject {
             return formatter.stringFromDate(self.nextGameTime)
         }
     }
+ 
+    public var nextKickoffTimeShort: String {
+        get {
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "EEE dd"
+            
+            return formatter.stringFromDate(self.nextGameTime)
+        }
+    }
     
     public var gameScoreForCurrentGame: Bool {
         get {
