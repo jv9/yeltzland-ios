@@ -7,17 +7,12 @@
 //
 
 import Foundation
+import WatchConnectivity
 
 public class BaseSettings : NSObject {
     
-    public var appStandardUserDefaults: NSUserDefaults?
-    
-    private static let sharedInstance = GameSettings()
-    class var instance:GameSettings {
-        get {
-            return sharedInstance
-        }
-    }
+    var appStandardUserDefaults: NSUserDefaults?
+    var watchSessionInitialised: Bool = false
     
     public init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.yeltzland") {
         super.init()
@@ -151,14 +146,33 @@ public class BaseSettings : NSObject {
         }
     }
     
-    private func readObjectFromStore(key: String) -> AnyObject?{
+    func initialiseWatchSession() {
+        if (self.watchSessionInitialised) {
+            NSLog("Watch session already initialised")
+            return
+        }
+        
+        self.watchSessionInitialised = true
+        
+        // Set up watch setting if appropriate
+        if (WCSession.isSupported()) {
+            NSLog("Setting up watch session ...")
+            let session: WCSession = WCSession.defaultSession();
+            session.activateSession()
+            NSLog("Watch session activated")
+        } else {
+            NSLog("No watch session set up")
+        }
+    }
+    
+    func readObjectFromStore(key: String) -> AnyObject?{
         // Otherwise try the user details
         let userSettingsValue = self.appStandardUserDefaults!.valueForKey(key)
         
         return userSettingsValue
     }
     
-    private func writeObjectToStore(value: AnyObject, key: String) {
+    func writeObjectToStore(value: AnyObject, key: String) {
         // Write to local user settings
         self.appStandardUserDefaults!.setObject(value, forKey:key)
         self.appStandardUserDefaults!.synchronize()

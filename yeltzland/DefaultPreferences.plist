@@ -7,27 +7,27 @@
 	<key>LastSelectedTab</key>
 	<integer>0</integer>
 	<key>lastGameTime</key>
-	<date>2015-07-28T09:54:34Z</date>
+	<date>2016-07-28T18:45:00Z</date>
 	<key>lastGameTeam</key>
-	<string></string>
+	<string>Kidderminster Harriers</string>
 	<key>lastGameYeltzScore</key>
 	<integer>0</integer>
 	<key>lastGameHome</key>
 	<true/>
 	<key>lastGameOpponentScore</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>nextGameTime</key>
-	<date>2015-07-28T09:55:04Z</date>
+	<date>2016-08-02T14:00:04Z</date>
 	<key>nextGameTeam</key>
-	<string></string>
+	<string>Bromsgrove Sporting</string>
 	<key>nextGameHome</key>
-	<false/>
+	<true/>
 	<key>currentGameTime</key>
-	<date>2015-07-28T11:13:56Z</date>
+	<date>2015-07-28T20:13:56Z</date>
 	<key>currentGameYeltzScore</key>
 	<integer>0</integer>
 	<key>currentGameOpponentScore</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>migratedToGroupSettings</key>
 	<false/>
 </dict>

@@ -82,6 +82,15 @@ class AppColors {
     static var TodayText = ios10AndAbove ? UIColor.blackColor() : UIColor.whiteColor()
     static var TodayTextSize = bodyDescriptor.pointSize
     static var TodayFootnoteSize = footnoteDescriptor.pointSize
+    
+    static var WatchHeadingColor:UIColor = LightBlueColor
+    static var WatchTextColor:UIColor = UIColor.whiteColor()
+    static var WatchHeadingSize = headlineDescriptor.pointSize
+    static var WatchTextSize = bodyDescriptor.pointSize
+    static var WatchFixtureWin = UIColor(red: 127.0/255.0, green: 255.0/255.0, blue: 127.0/255.0, alpha: 1.0)
+    static var WatchFixtureDraw = UIColor(red: 127.0/255.0, green: 127.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    static var WatchFixtureLose = UIColor(red: 255.0/255.0, green: 127.0/255.0, blue: 127.0/255.0, alpha: 1.0)
+
 }
 
     

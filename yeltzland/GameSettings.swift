@@ -10,8 +10,13 @@ import Foundation
 import WatchConnectivity
 
 public class GameSettings : BaseSettings {
-    
-    public var watchSessionInitialised: Bool = false
+
+    private static let sharedInstance = GameSettings()
+    class var instance:GameSettings {
+        get {
+            return sharedInstance
+        }
+    }
     
     public func refreshFixtures() {
         NSLog("Updating game fixture settings ...")
@@ -82,25 +87,6 @@ public class GameSettings : BaseSettings {
             session.transferUserInfo(updatedSettings)
             
             NSLog("Settings pushed to watch")
-        }
-    }
-    
-    private func initialiseWatchSession() {
-        if (self.watchSessionInitialised) {
-            NSLog("Watch session already initialised")
-            return
-        }
-        
-        self.watchSessionInitialised = true
-
-        // Set up watch setting if appropriate
-        if (WCSession.isSupported()) {
-            NSLog("Setting up watch session ...")
-            let session: WCSession = WCSession.defaultSession();
-            session.activateSession()
-            NSLog("Watch session activated")
-        } else {
-            NSLog("No watch session set up")
         }
     }
 }
