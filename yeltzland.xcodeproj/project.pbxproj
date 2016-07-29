@@ -15,6 +15,8 @@
 		52176BAE1D4A1AF600B7EFAE /* gamescore.json in Resources */ = {isa = PBXBuildFile; fileRef = 52176BAD1D4A1AF600B7EFAE /* gamescore.json */; };
 		52176BB01D4A1B3200B7EFAE /* GameScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */; };
 		52176BB11D4A200400B7EFAE /* GameScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */; };
+		52176BB31D4B62DC00B7EFAE /* BaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BB21D4B62DC00B7EFAE /* BaseSettings.swift */; };
+		52176BB41D4B62DC00B7EFAE /* BaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BB21D4B62DC00B7EFAE /* BaseSettings.swift */; };
 		52236AE61D17DFF8004903AB /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE51D17DFF8004903AB /* Fixture.swift */; };
 		52236AE81D17E4D3004903AB /* FixtureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE71D17E4D3004903AB /* FixtureManager.swift */; };
 		52236AEB1D17ECB4004903AB /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 52236AEA1D17ECB4004903AB /* matches.json */; };
@@ -89,6 +91,7 @@
 		52176BAB1D4A0DB700B7EFAE /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
 		52176BAD1D4A1AF600B7EFAE /* gamescore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gamescore.json; sourceTree = "<group>"; };
 		52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScoreManager.swift; sourceTree = "<group>"; };
+		52176BB21D4B62DC00B7EFAE /* BaseSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSettings.swift; sourceTree = "<group>"; };
 		52236AE51D17DFF8004903AB /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		52236AE71D17E4D3004903AB /* FixtureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureManager.swift; sourceTree = "<group>"; };
 		52236AEA1D17ECB4004903AB /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
@@ -257,6 +260,7 @@
 				527DAF241D2D308F0092BB8F /* LocationAnnotation.swift */,
 				52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */,
 				52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */,
+				52176BB21D4B62DC00B7EFAE /* BaseSettings.swift */,
 			);
 			path = yeltzland;
 			sourceTree = "<group>";
@@ -521,6 +525,7 @@
 				526F54661D215A29001EA8D8 /* AppColors.swift in Sources */,
 				526F54631D214982001EA8D8 /* Fixture.swift in Sources */,
 				52DBCAA11D4A012E00D35F91 /* GameSettings.swift in Sources */,
+				52176BB41D4B62DC00B7EFAE /* BaseSettings.swift in Sources */,
 				526F54641D214982001EA8D8 /* FixtureManager.swift in Sources */,
 				526F54551D214705001EA8D8 /* TodayViewController.swift in Sources */,
 			);
@@ -531,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5211F72D1CDB1EE50031496D /* OtherLinksTableViewController.swift in Sources */,
+				52176BB31D4B62DC00B7EFAE /* BaseSettings.swift in Sources */,
 				52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */,
 				52176BB01D4A1B3200B7EFAE /* GameScoreManager.swift in Sources */,
 				523C84201CE70806006F1865 /* ChromeActivity.swift in Sources */,
