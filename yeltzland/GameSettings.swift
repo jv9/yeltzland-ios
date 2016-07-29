@@ -103,7 +103,6 @@ public class GameSettings : NSObject {
         set { self.writeObjectToStore(newValue, key: "migratedToGroupSettings") }
     }
     
-    
     public var displayLastOpponent: String {
         get {
             return self.lastGameHome ? self.lastGameTeam.uppercaseString : self.lastGameTeam
@@ -130,7 +129,6 @@ public class GameSettings : NSObject {
             return String.init(format: "%@ %d-%d", result, self.lastGameYeltzScore, self.lastGameOpponentScore)
         }
     }
-    
     
     public var currentScore: String {
         get {
@@ -162,20 +160,24 @@ public class GameSettings : NSObject {
             self.lastGameTeam = ""
             self.lastGameYeltzScore = 0
             self.lastGameOpponentScore = 0
+            self.lastGameHome = false
         } else {
             self.lastGameTime = lastGame!.fixtureDate
             self.lastGameTeam = lastGame!.opponent
             self.lastGameYeltzScore = lastGame!.teamScore!
             self.lastGameOpponentScore = lastGame!.opponentScore!
+            self.lastGameHome = lastGame!.home
         }
         
         let nextGame = FixtureManager.instance.getNextGame()
         
         if (nextGame == nil) {
             self.nextGameTeam = ""
+            self.nextGameHome = false
         } else {
             self.nextGameTime = nextGame!.fixtureDate
             self.nextGameTeam = nextGame!.opponent
+            self.nextGameHome = nextGame!.home
         }
     }
     
