@@ -13,11 +13,18 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     
     let CellRowHeight:CGFloat = 22.0
     
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+        self.setupNotificationWatcher()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.setupNotificationWatcher()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Update the fixture cache
-        FixtureManager.instance.getLatestFixtures()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -31,12 +38,30 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
-        self.tableView.reloadData()
+        // Fetch latest fixtures
+        FixtureManager.instance.getLatestFixtures()
+        
         self.preferredContentSize = CGSizeMake(0.0, self.CellRowHeight * 5)
-
         completionHandler(NCUpdateResult.NewData)
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("Removed notification handler for fixture updates in today view")
+    }
+    
+    private func setupNotificationWatcher() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: FixtureManager.FixturesNotification, object: nil)
+        print("Setup notification handler for fixture updates in today view")
+    }
+    
+    @objc private func fixturesUpdated(notification: NSNotification) {
+        print("Fixture update message received in today view")
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
+    }
+
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
