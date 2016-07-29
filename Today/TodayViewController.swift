@@ -120,7 +120,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
                     cell.textLabel?.text = "Next game:"
                 }
             } else {
-                cell.textLabel?.text = "  (score from Twitter, may be wrong!)"
+                cell.textLabel?.text = "  (*best guess from Twitter)"
                 cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.TodayFootnoteSize)!
             }
             
