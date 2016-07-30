@@ -56,6 +56,8 @@
 		528D74581CF2F20200263685 /* AzureNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D74571CF2F20200263685 /* AzureNotifications.swift */; };
 		528D745A1CF2F4A400263685 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528D74591CF2F4A400263685 /* DefaultPreferences.plist */; };
 		528D745C1CF3201400263685 /* whistleshort.wav in Resources */ = {isa = PBXBuildFile; fileRef = 528D745B1CF3201400263685 /* whistleshort.wav */; };
+		52C4DA881D4CA68A009AFD25 /* american_typewriter_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C4DA871D4CA68A009AFD25 /* american_typewriter_regular.ttf */; };
+		52C4DA891D4CA68A009AFD25 /* american_typewriter_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C4DA871D4CA68A009AFD25 /* american_typewriter_regular.ttf */; };
 		52DBCAA01D4A012E00D35F91 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */; };
 		52DBCAA11D4A012E00D35F91 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */; };
 		52E3DF771CD9FA78009F18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF761CD9FA78009F18BD /* AppDelegate.swift */; };
@@ -181,6 +183,7 @@
 		528D74571CF2F20200263685 /* AzureNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureNotifications.swift; sourceTree = "<group>"; };
 		528D74591CF2F4A400263685 /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		528D745B1CF3201400263685 /* whistleshort.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistleshort.wav; sourceTree = "<group>"; };
+		52C4DA871D4CA68A009AFD25 /* american_typewriter_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = american_typewriter_regular.ttf; sourceTree = "<group>"; };
 		52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E3DF761CD9FA78009F18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +279,7 @@
 		52176BC81D4B6D5900B7EFAE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52C4DA871D4CA68A009AFD25 /* american_typewriter_regular.ttf */,
 				52176BC91D4B6D5900B7EFAE /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
@@ -583,6 +587,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C4DA881D4CA68A009AFD25 /* american_typewriter_regular.ttf in Resources */,
 				52176BBD1D4B6D5900B7EFAE /* Assets.xcassets in Resources */,
 				52176BBB1D4B6D5900B7EFAE /* Interface.storyboard in Resources */,
 			);
@@ -592,6 +597,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C4DA891D4CA68A009AFD25 /* american_typewriter_regular.ttf in Resources */,
 				52176BD31D4B6D5900B7EFAE /* Assets.xcassets in Resources */,
 				52176BE51D4B73BA00B7EFAE /* DefaultPreferences.plist in Resources */,
 			);
