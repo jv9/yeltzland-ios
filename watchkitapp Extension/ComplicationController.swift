@@ -91,8 +91,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
             case .CircularSmall:
-                let template = CLKComplicationTemplateCircularSmallSimpleText()
-                template.textProvider = CLKSimpleTextProvider(text: "2-0")
+                let template = CLKComplicationTemplateCircularSmallStackText()
+                template.line1TextProvider = CLKSimpleTextProvider(text: "STO")
+                template.line2TextProvider = CLKSimpleTextProvider(text: "2-0")
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
         }
@@ -161,8 +162,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .CircularSmall:
-                let template = CLKComplicationTemplateCircularSmallSimpleText()
-                template.textProvider = CLKSimpleTextProvider(text: String(scoreOrDate))
+                let template = CLKComplicationTemplateCircularSmallStackText()
+                template.line1TextProvider = CLKSimpleTextProvider(text: String(smallOpponent))
+                template.line2TextProvider = CLKSimpleTextProvider(text: String(scoreOrDate))
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         }
