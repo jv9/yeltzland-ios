@@ -163,7 +163,7 @@ public class BaseSettings : NSObject {
             }
             
             let formatter = NSDateFormatter()
-            formatter.dateFormat = "EEE dd"
+            formatter.dateFormat = "EEEdd"
             
             return formatter.stringFromDate(self.nextGameTime)
         }

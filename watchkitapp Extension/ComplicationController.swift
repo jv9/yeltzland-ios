@@ -47,20 +47,20 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
         let differenceInMinutes = NSCalendar.currentCalendar().components(.Minute, fromDate: settings.nextGameTime, toDate: now, options: []).minute
         
+        var minutesToNextUpdate = 60.0
         if (differenceInMinutes >= 0) {
             // In game time, so ask again in 10 mins.
-            let calendar = NSCalendar.currentCalendar()
-            let tenMinutesTime = calendar.dateByAddingUnit(
-                .Minute,
-                value: 10,
-                toDate: now,
-                options: NSCalendarOptions.WrapComponents
-            )
-            
-            handler(tenMinutesTime)
-        } else {
-            handler(settings.nextGameTime)
+            minutesToNextUpdate = 10.0
         }
+        
+        let requestTime = now.dateByAddingTimeInterval(minutesToNextUpdate * 60.0)
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.timeStyle = .FullStyle
+        NSLog("Complications - request update at: %@", formatter.stringFromDate(requestTime))
+        
+        handler(requestTime)
     }
     
     // MARK: - Placeholder Templates
@@ -69,7 +69,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         switch complication.family {
             case .ModularSmall:
                 let template = CLKComplicationTemplateModularSmallStackText()
-                template.line1TextProvider = CLKSimpleTextProvider(text: "STO")
+                template.line1TextProvider = CLKSimpleTextProvider(text: "STOU")
                 template.line2TextProvider = CLKSimpleTextProvider(text: "2-0")
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
@@ -87,12 +87,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 handler(template)
             case .UtilitarianLarge:
                 let template = CLKComplicationTemplateUtilitarianLargeFlat()
-                template.textProvider = CLKSimpleTextProvider(text: "Stourbridge 2-0")
+                template.textProvider = CLKSimpleTextProvider(text: "Stourbridge: 10-0")
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
             case .CircularSmall:
                 let template = CLKComplicationTemplateCircularSmallStackText()
-                template.line1TextProvider = CLKSimpleTextProvider(text: "STO")
+                template.line1TextProvider = CLKSimpleTextProvider(text: "STOU")
                 template.line2TextProvider = CLKSimpleTextProvider(text: "2-0")
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
@@ -111,12 +111,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         var header = ""
         var opponent = ""
         var scoreOrDate = ""
+        var fullScoreOrDate = ""
+        var score = settings.lastScore
         
         if (settings.gameScoreForCurrentGame) {
             // Game in progress
             header = "Current score:"
             opponent = settings.displayNextOpponent
             scoreOrDate = settings.currentScore
+            fullScoreOrDate = settings.currentScore
+            score = settings.currentScore
         } else {
             // Was the last game today?
             let isLastGameDay = NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: settings.lastGameTime)
@@ -125,15 +129,26 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 header = "Today's result:"
                 opponent = settings.displayLastOpponent
                 scoreOrDate = settings.lastScore
+                fullScoreOrDate = settings.lastScore
             } else {
                 header = "Next game:"
                 opponent = settings.displayNextOpponent
                 scoreOrDate = settings.nextKickoffTimeShort
+                fullScoreOrDate = settings.nextKickoffTime
             }
         }
         
-        let smallOpponent = opponent[opponent.startIndex..<opponent.startIndex.advancedBy(3)]
-        let combinedInfo = String(format: "%@: %@", smallOpponent, scoreOrDate)
+        let smallOpponent = opponent[opponent.startIndex..<opponent.startIndex.advancedBy(4)]
+        
+        var maxMediumLength = 10;
+        if (opponent.characters.count < maxMediumLength) {
+            maxMediumLength = opponent.characters.count
+        }
+        
+        let mediumOpponent = opponent[opponent.startIndex..<opponent.startIndex.advancedBy(maxMediumLength)].stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )
+        let combinedInfo = String(format: "%@: %@", mediumOpponent, scoreOrDate)
         
         var entry : CLKComplicationTimelineEntry?
         
@@ -147,13 +162,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             case .ModularLarge:
                 let template = CLKComplicationTemplateModularLargeStandardBody()
                 template.headerTextProvider = CLKSimpleTextProvider(text: String(header))
-                template.body1TextProvider = CLKSimpleTextProvider(text: String(opponent))
-                template.body2TextProvider = CLKSimpleTextProvider(text: String(scoreOrDate))
+                template.body1TextProvider = CLKSimpleTextProvider(text: String(mediumOpponent))
+                template.body2TextProvider = CLKSimpleTextProvider(text: String(fullScoreOrDate))
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .UtilitarianSmall:
                 let template = CLKComplicationTemplateUtilitarianSmallFlat()
-                template.textProvider = CLKSimpleTextProvider(text: String(scoreOrDate))
+                template.textProvider = CLKSimpleTextProvider(text: String(score))
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .UtilitarianLarge:

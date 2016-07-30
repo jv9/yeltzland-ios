@@ -14,7 +14,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     
     public static let UpdateSettingsNotification = "kYTZUserSettingsNotification"
         
-    private func updateComplications() {
+    public func updateComplications() {
         NSLog("Updating complications...")
         let complicationServer = CLKComplicationServer.sharedInstance()
         let activeComplications = complicationServer.activeComplications

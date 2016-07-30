@@ -13,8 +13,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     lazy var model:WatchGameSettings = WatchGameSettings()
     
     func applicationDidBecomeActive() {
-        NSLog("applicationDidBecomeActive started")
         self.model.initialiseWatchSession()
-        NSLog("applicationDidBecomeActive completed")
+        self.model.updateComplications()
     }
 }
