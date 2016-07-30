@@ -8,37 +8,53 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchkitapp" customModuleProvider="target">
+                <controller animationDuration="2" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchkitapp" customModuleProvider="target">
                     <items>
-                        <label width="136" alignment="left" text="Last game:" id="16Y-pJ-VTf">
-                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        <separator alignment="left" id="Pia-g8-Zc6">
+                            <color key="color" red="0.023529411760000001" green="0.2156862745" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <imageView width="1" alignment="center" image="logo" contentMode="center" id="g3O-YU-52c"/>
+                        <separator alignment="left" id="n1J-zY-UF5">
+                            <color key="color" red="0.023529411760000001" green="0.2156862745" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label width="0.94999999999999996" alignment="center" text="Kidderminster Harriers" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="G1I-Dx-f1N">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="11"/>
                         </label>
-                        <label width="136" alignment="left" text="Kidderminster Harriers" textAlignment="left" id="G1I-Dx-f1N"/>
-                        <label width="136" alignment="left" text="0-2" textAlignment="right" id="Nqg-lj-NH6">
-                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        <label width="0.94999999999999996" alignment="center" text="0-2" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="Nqg-lj-NH6">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="11"/>
                         </label>
-                        <label width="136" alignment="left" text="Next game:" id="d6x-h5-0bT">
-                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        <separator width="1" alignment="center" alpha="0.5" id="XzM-1y-QYx">
+                            <color key="color" red="0.79215686269999996" green="0.86274509799999999" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label width="0.94999999999999996" alignment="center" text="BROMSGROVE SPORTING" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="Tj5-Pp-pS2">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="11"/>
                         </label>
-                        <label width="136" alignment="left" text="BROMSGROVE SPORTING" id="Tj5-Pp-pS2"/>
-                        <label width="136" alignment="left" text="Tue 02 Aug" textAlignment="right" id="WSg-Tk-m4q">
-                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        <label width="0.94999999999999996" alignment="center" text="Tue 02 Aug" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="WSg-Tk-m4q">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="11"/>
+                        </label>
+                        <separator alignment="left" id="SZb-fg-hOw">
+                            <color key="color" red="0.023529411760000001" green="0.2156862745" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label width="0.94999999999999996" alignment="center" text="*best guess from Twitter" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="fUg-IL-WJ7">
+                            <fontDescription key="font" type="system" pointSize="10"/>
                         </label>
                     </items>
+                    <color key="backgroundColor" red="0.023529411764705882" green="0.21568627450980393" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
-                        <outlet property="bottomHeadingLabel" destination="d6x-h5-0bT" id="ng3-vG-Ix1"/>
                         <outlet property="bottomScoreLabel" destination="WSg-Tk-m4q" id="tBj-i9-KWH"/>
                         <outlet property="bottomTeamLabel" destination="Tj5-Pp-pS2" id="ioz-h6-UbL"/>
-                        <outlet property="topHeadingLabel" destination="16Y-pJ-VTf" id="WLX-iG-fgJ"/>
+                        <outlet property="footnoteLabel" destination="fUg-IL-WJ7" id="33B-0Z-4F8"/>
                         <outlet property="topScoreLabel" destination="Nqg-lj-NH6" id="4mb-Fq-hQO"/>
                         <outlet property="topTeamLabel" destination="G1I-Dx-f1N" id="0gq-hF-VHe"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="218" y="343"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.023529411760000001" green="0.2156862745" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
 </document>

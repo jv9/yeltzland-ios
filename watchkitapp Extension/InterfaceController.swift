@@ -11,14 +11,14 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
     
-    @IBOutlet var topHeadingLabel: WKInterfaceLabel!
-    @IBOutlet var bottomHeadingLabel: WKInterfaceLabel!
-    
     @IBOutlet var topTeamLabel: WKInterfaceLabel!
     @IBOutlet var topScoreLabel: WKInterfaceLabel!
     
     @IBOutlet var bottomTeamLabel: WKInterfaceLabel!
     @IBOutlet var bottomScoreLabel: WKInterfaceLabel!
+    
+    @IBOutlet var footnoteLabel: WKInterfaceLabel!
+    
     override init() {
         super.init()
         
@@ -48,10 +48,9 @@ class InterfaceController: WKInterfaceController {
         let gameSettings = appDelegate.model
     
         // Setup colors
-        self.topHeadingLabel.setTextColor(AppColors.WatchHeadingColor)
-        self.bottomHeadingLabel.setTextColor(AppColors.WatchHeadingColor)
-        
         self.topTeamLabel.setTextColor(AppColors.WatchTextColor)
+        self.bottomTeamLabel.setTextColor(AppColors.WatchTextColor)
+        self.bottomScoreLabel.setTextColor(AppColors.WatchTextColor)
         
         if (gameSettings.lastGameYeltzScore > gameSettings.lastGameOpponentScore) {
             self.topScoreLabel.setTextColor(AppColors.WatchFixtureWin)
@@ -61,25 +60,20 @@ class InterfaceController: WKInterfaceController {
             self.topScoreLabel.setTextColor(AppColors.WatchFixtureLose)
         }
         
-        self.bottomTeamLabel.setTextColor(AppColors.WatchTextColor)
-        self.bottomScoreLabel.setTextColor(AppColors.WatchTextColor)
-        
         // Set label text
-        self.topHeadingLabel.setText("Last game:")
         self.topTeamLabel.setText(gameSettings.displayLastOpponent)
         self.topScoreLabel.setText(gameSettings.lastScore)
+        self.bottomTeamLabel.setText(gameSettings.displayNextOpponent)
         
         // Do we have a current score?
         if (gameSettings.gameScoreForCurrentGame) {
-            self.bottomHeadingLabel.setText("Current game:")
             self.bottomScoreLabel.setText(gameSettings.currentScore)
+            self.footnoteLabel.setText("(*best guess from Twitter)")
         } else {
-            self.bottomHeadingLabel.setText("Next game:")
             self.bottomScoreLabel.setText(gameSettings.nextKickoffTime)
+            self.footnoteLabel.setText("")
         }
         
-        self.bottomTeamLabel.setText(gameSettings.displayNextOpponent)
-
         NSLog("View updated")
     }
     
