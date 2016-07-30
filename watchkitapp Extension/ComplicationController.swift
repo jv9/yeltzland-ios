@@ -45,15 +45,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let settings = self.settingsData()
         let now = NSDate()
 
-        let differenceInMinutes = NSCalendar.currentCalendar().components(.Minute, fromDate: settings.nextGameTime, toDate: now, options: []).minute
+        let differenceInMinutes = NSCalendar.currentCalendar().components(.Minute, fromDate: now, toDate: settings.nextGameTime, options: []).minute
         
-        var minutesToNextUpdate = 60.0
-        if (differenceInMinutes >= 0) {
-            // In game time, so ask again in 10 mins.
-            minutesToNextUpdate = 10.0
+        var minutesToNextUpdate = 240
+        if (differenceInMinutes > 0 && differenceInMinutes < minutesToNextUpdate) {
+            // Getting close to game start
+            minutesToNextUpdate = differenceInMinutes
+        } else if (differenceInMinutes < 0 && differenceInMinutes >= -180) {
+            // In game time
+            minutesToNextUpdate = 10
+        } else if (differenceInMinutes < -180) {
+            // After the game, but not in game time
+            minutesToNextUpdate = 60
         }
         
-        let requestTime = now.dateByAddingTimeInterval(minutesToNextUpdate * 60.0)
+        let requestTime = now.dateByAddingTimeInterval(Double(minutesToNextUpdate) * 60.0)
         
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle

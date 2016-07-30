@@ -47,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FixtureManager.instance.getLatestFixtures()
         GameScoreManager.instance.getLatestGameScore()
         
+        // Setup backhground fetch
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
         // If came from a notification, always start on the Twitter tab
         if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
             GameSettings.instance.lastSelectedTab = 3
@@ -60,6 +63,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func application(application: UIApplication,
+                     performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        NSLog("In background refresh ...")
+        let now = NSDate()
+        
+        let differenceInMinutes = NSCalendar.currentCalendar().components(.Minute, fromDate: now, toDate: GameSettings.instance.nextGameTime, options: []).minute
+        
+        var fetchedData = false
+        if (differenceInMinutes < 0) {
+            // After game kicked off, so go get game score
+            GameScoreManager.instance.getLatestGameScore()
+            fetchedData = true
+        }
+        
+        if (differenceInMinutes < -120) {
+            // Probably after end of game, so go get fixtures
+            FixtureManager.instance.getLatestFixtures()
+            fetchedData = true
+        }
+        
+        if (fetchedData) {
+            completionHandler(UIBackgroundFetchResult.NewData)
+        } else {
+            completionHandler(UIBackgroundFetchResult.NoData)
+        }
     }
     
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
