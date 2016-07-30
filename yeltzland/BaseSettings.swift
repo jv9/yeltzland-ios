@@ -112,6 +112,11 @@ public class BaseSettings : NSObject {
     
     public var lastScore: String {
         get {
+            // If no opponent, then no score
+            if (self.lastGameTeam.characters.count == 0) {
+                return ""
+            }
+            
             var result = ""
             if (self.lastGameYeltzScore > self.lastGameOpponentScore) {
                 result = "W"
@@ -127,12 +132,22 @@ public class BaseSettings : NSObject {
     
     public var currentScore: String {
         get {
+            // If no opponent, then no current score
+            if (self.nextGameTeam.characters.count == 0) {
+                return ""
+            }
+            
             return String.init(format: "%d-%d*", self.currentGameYeltzScore, self.currentGameOpponentScore)
         }
     }
     
     public var nextKickoffTime: String {
         get {
+            // If no opponent, then no kickoff time
+            if (self.nextGameTeam.characters.count == 0) {
+                return ""
+            }
+            
             let formatter = NSDateFormatter()
             formatter.dateFormat = "EEE dd MMM"
             
@@ -142,6 +157,11 @@ public class BaseSettings : NSObject {
  
     public var nextKickoffTimeShort: String {
         get {
+            // If no opponent, then no kickoff time
+            if (self.nextGameTeam.characters.count == 0) {
+                return ""
+            }
+            
             let formatter = NSDateFormatter()
             formatter.dateFormat = "EEE dd"
             
@@ -151,6 +171,11 @@ public class BaseSettings : NSObject {
     
     public var gameScoreForCurrentGame: Bool {
         get {
+            // If no opponent, then no current game
+            if (self.nextGameTeam.characters.count == 0) {
+                return false
+            }
+            
             return self.gameTimeTweetsEnabled && (self.nextGameTime.compare(self.currentGameTime) == NSComparisonResult.OrderedSame)
         }
     }
