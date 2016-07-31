@@ -94,6 +94,14 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         for currentController in self.viewControllers! {
             if (currentController == viewController) {
                 selectedIndex = currentIndex
+                
+                // Refresh the page if the controller is a web page
+                if let selectedNavigationController = currentController as? UINavigationController {
+                    if let selectedController = selectedNavigationController.viewControllers[0] as? WebPageViewController {
+                        selectedController.reloadButtonTouchUp()
+                    }
+                }
+                
                 break
             }
             currentIndex = currentIndex + 1

@@ -7,19 +7,19 @@
 	<key>LastSelectedTab</key>
 	<integer>0</integer>
 	<key>lastGameTime</key>
-	<date>2016-07-28T18:45:00Z</date>
+	<date>2016-07-26T18:45:00Z</date>
 	<key>lastGameTeam</key>
-	<string>Kidderminster Harriers</string>
+	<string>Alvechurch</string>
 	<key>lastGameYeltzScore</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>lastGameHome</key>
-	<true/>
+	<false/>
 	<key>lastGameOpponentScore</key>
 	<integer>2</integer>
 	<key>nextGameTime</key>
-	<date>2016-08-02T14:00:04Z</date>
+	<date>2016-07-28T18:45:00Z</date>
 	<key>nextGameTeam</key>
-	<string>Bromsgrove Sporting</string>
+	<string>Kidderminster Harriers</string>
 	<key>nextGameHome</key>
 	<true/>
 	<key>currentGameTime</key>
