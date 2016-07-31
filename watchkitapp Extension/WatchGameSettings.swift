@@ -13,7 +13,29 @@ import ClockKit
 public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     
     public static let UpdateSettingsNotification = "kYTZUserSettingsNotification"
+
+    
+    func initialiseWatchSession() {
+        if (self.watchSessionInitialised) {
+            NSLog("Watch session already initialised")
+            return
+        }
         
+        self.watchSessionInitialised = true
+        NSLog("Watch session starting initialisation...")
+        
+        // Set up watch setting if appropriate
+        if (WCSession.isSupported()) {
+            NSLog("Setting up watch session ...")
+            let session: WCSession = WCSession.defaultSession();
+            session.delegate = self
+            session.activateSession()
+            NSLog("Watch session activated")
+        } else {
+            NSLog("No watch session set up")
+        }
+    }
+    
     public func updateComplications() {
         NSLog("Updating complications...")
         let complicationServer = CLKComplicationServer.sharedInstance()

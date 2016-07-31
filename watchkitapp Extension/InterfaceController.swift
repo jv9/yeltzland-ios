@@ -29,11 +29,6 @@ class InterfaceController: WKInterfaceController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-        self.updateViewData()
-    }
-
     override func willActivate() {
         super.willActivate()
         self.setTitle("Yeltzland")

@@ -191,26 +191,7 @@ public class BaseSettings : NSObject {
             return self.nextGameTime.compare(self.currentGameTime) == NSComparisonResult.OrderedSame
         }
     }
-    
-    func initialiseWatchSession() {
-        if (self.watchSessionInitialised) {
-            NSLog("Watch session already initialised")
-            return
-        }
         
-        self.watchSessionInitialised = true
-        
-        // Set up watch setting if appropriate
-        if (WCSession.isSupported()) {
-            NSLog("Setting up watch session ...")
-            let session: WCSession = WCSession.defaultSession();
-            session.activateSession()
-            NSLog("Watch session activated")
-        } else {
-            NSLog("No watch session set up")
-        }
-    }
-    
     func readObjectFromStore(key: String) -> AnyObject?{
         // Otherwise try the user details
         let userSettingsValue = self.appStandardUserDefaults!.valueForKey(key)

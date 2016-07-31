@@ -7,14 +7,36 @@
 //
 
 import Foundation
+import UIKit
 import WatchConnectivity
 
-public class GameSettings : BaseSettings {
+public class GameSettings : BaseSettings, WCSessionDelegate {
 
     private static let sharedInstance = GameSettings()
     class var instance:GameSettings {
         get {
             return sharedInstance
+        }
+    }
+
+    func initialiseWatchSession() {
+        if (self.watchSessionInitialised) {
+            NSLog("Watch session already initialised")
+            return
+        }
+        
+        self.watchSessionInitialised = true
+        NSLog("Watch session starting initialisation...")
+        
+        // Set up watch setting if appropriate
+        if (WCSession.isSupported()) {
+            NSLog("Setting up watch session ...")
+            let session: WCSession = WCSession.defaultSession();
+            session.delegate = self
+            session.activateSession()
+            NSLog("Watch session activated")
+        } else {
+            NSLog("No watch session set up")
         }
     }
     
@@ -84,9 +106,13 @@ public class GameSettings : BaseSettings {
             updatedSettings["currentGameYeltzScore"] = self.currentGameYeltzScore
             updatedSettings["currentGameOpponentScore"] = self.currentGameOpponentScore
             
-            session.transferUserInfo(updatedSettings)
-            
-            NSLog("Settings pushed to watch")
+            do {
+                try session.updateApplicationContext(updatedSettings)
+                print("Settings pushed to watch")
+            }
+            catch {
+                NSLog("An error occurred pushing settings to watch: \(error)")
+            }
         }
     }
 }

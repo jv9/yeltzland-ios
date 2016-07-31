@@ -10,7 +10,7 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
-    lazy var model:WatchGameSettings = WatchGameSettings()
+    var model:WatchGameSettings = WatchGameSettings()
     
     func applicationDidBecomeActive() {
         self.model.initialiseWatchSession()
