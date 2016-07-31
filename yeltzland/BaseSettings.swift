@@ -188,7 +188,7 @@ public class BaseSettings : NSObject {
                 return false
             }
             
-            return self.nextGameTime.compare(self.currentGameTime) != NSComparisonResult.OrderedSame
+            return self.nextGameTime.compare(self.currentGameTime) == NSComparisonResult.OrderedSame
         }
     }
     
