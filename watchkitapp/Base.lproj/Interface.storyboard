@@ -22,24 +22,22 @@
                         <separator alignment="left" semanticContentAttribute="spatial" alpha="0.0" id="Pia-g8-Zc6"/>
                         <imageView width="1" alignment="center" image="logo" contentMode="center" id="g3O-YU-52c"/>
                         <separator alignment="left" semanticContentAttribute="spatial" alpha="0.0" id="n1J-zY-UF5"/>
-                        <label width="0.94999999999999996" alignment="center" text="Kidderminster Harriers" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="G1I-Dx-f1N">
+                        <label width="0.94999999999999996" alignment="center" text="Kidderminster Harriers" textAlignment="center" minimumScaleFactor="0.5" id="G1I-Dx-f1N">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="11"/>
+                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                         </label>
-                        <label width="0.94999999999999996" alignment="center" text="L 0-2" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="Nqg-lj-NH6">
+                        <label width="0.94999999999999996" alignment="center" text="L 0-2" textAlignment="center" minimumScaleFactor="0.5" id="Nqg-lj-NH6">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="11"/>
+                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                         </label>
-                        <separator width="1" alignment="center" semanticContentAttribute="spatial" alpha="0.0" id="XzM-1y-QYx"/>
-                        <label width="0.94999999999999996" alignment="center" text="BROMSGROVE SPORTING" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="Tj5-Pp-pS2">
+                        <label width="0.94999999999999996" alignment="center" text="BROMSGROVE SPORTING" textAlignment="center" minimumScaleFactor="0.5" id="Tj5-Pp-pS2">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="11"/>
+                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                         </label>
-                        <label width="0.94999999999999996" alignment="center" text="Tue 02 Aug" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="WSg-Tk-m4q">
+                        <label width="0.94999999999999996" alignment="center" text="Tue 02 Aug" textAlignment="center" minimumScaleFactor="0.5" id="WSg-Tk-m4q">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="11"/>
+                            <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                         </label>
-                        <separator alignment="left" semanticContentAttribute="spatial" alpha="0.0" id="SZb-fg-hOw"/>
                         <label width="0.94999999999999996" alignment="center" text="*best guess from Twitter" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="fUg-IL-WJ7">
                             <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="10"/>
                         </label>

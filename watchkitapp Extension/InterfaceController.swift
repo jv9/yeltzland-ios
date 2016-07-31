@@ -61,9 +61,9 @@ class InterfaceController: WKInterfaceController {
         }
         
         // Set label text
-        self.topTeamLabel.setText(gameSettings.displayLastOpponent)
+        self.topTeamLabel.setText(gameSettings.truncateLastOpponent)
         self.topScoreLabel.setText(gameSettings.lastScore)
-        self.bottomTeamLabel.setText(gameSettings.displayNextOpponent)
+        self.bottomTeamLabel.setText(gameSettings.truncateNextOpponent)
         
         // Do we have a current score?
         if (gameSettings.gameScoreForCurrentGame) {

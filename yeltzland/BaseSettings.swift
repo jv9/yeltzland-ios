@@ -110,6 +110,18 @@ public class BaseSettings : NSObject {
         }
     }
     
+    public var truncateLastOpponent: String {
+        get {
+            return self.truncateTeamName(self.displayLastOpponent)
+        }
+    }
+    
+    public var truncateNextOpponent: String {
+        get {
+            return self.truncateTeamName(self.displayNextOpponent)
+        }
+    }
+    
     public var lastScore: String {
         get {
             // If no opponent, then no score
@@ -149,7 +161,7 @@ public class BaseSettings : NSObject {
             }
             
             let formatter = NSDateFormatter()
-            formatter.dateFormat = "EEE dd MMM"
+            formatter.dateFormat = "EEE d MMM"
             
             return formatter.stringFromDate(self.nextGameTime)
         }
@@ -163,7 +175,7 @@ public class BaseSettings : NSObject {
             }
             
             let formatter = NSDateFormatter()
-            formatter.dateFormat = "EEEdd"
+            formatter.dateFormat = "d"
             
             return formatter.stringFromDate(self.nextGameTime)
         }
@@ -176,7 +188,7 @@ public class BaseSettings : NSObject {
                 return false
             }
             
-            return self.gameTimeTweetsEnabled && (self.nextGameTime.compare(self.currentGameTime) == NSComparisonResult.OrderedSame)
+            return self.nextGameTime.compare(self.currentGameTime) != NSComparisonResult.OrderedSame
         }
     }
     
@@ -224,5 +236,33 @@ public class BaseSettings : NSObject {
         self.migratedToGroupSettings = true
         
         NSLog("Migrated settings to group")
+    }
+    
+    private func truncateTeamName(original:String) -> String {
+        let max = 16;
+        let originalLength = original.characters.count
+        
+        // If the original is short enough, we're done
+        if (originalLength <= max) {
+            return original
+        }
+        
+        // Find the first space
+        var firstSpace = 0
+        for c in original.characters {
+            if (c == Character(" ")) {
+                break
+            }
+            firstSpace = firstSpace + 1
+        }
+        
+        if (firstSpace < max) {
+            return original[original.startIndex..<original.startIndex.advancedBy(firstSpace)]
+        }
+        
+        // If still not found, just truncate it
+        return original[original.startIndex..<original.startIndex.advancedBy(max)].stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )
     }
 }
