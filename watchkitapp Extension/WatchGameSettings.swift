@@ -65,7 +65,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     public var smallOpponent: String {
         get {
             switch self.currentGameState() {
-            case .Before:
+            case .DaysBefore, .GameDayBefore:
                 return self.truncateTeamName(self.displayNextOpponent, max: 4)
             case .During:
                 return self.truncateTeamName(self.displayNextOpponent, max: 4)
@@ -80,7 +80,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     public var smallScoreOrDate: String {
         get {
             switch self.currentGameState() {
-            case .Before:
+            case .DaysBefore:
                 // If no opponent, then no kickoff time
                 if (self.nextGameTeam.characters.count == 0) {
                     return ""
@@ -88,6 +88,16 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
                 
                 let formatter = NSDateFormatter()
                 formatter.dateFormat = "d"
+                
+                return formatter.stringFromDate(self.nextGameTime)
+            case .GameDayBefore:
+                // If no opponent, then no kickoff time
+                if (self.nextGameTeam.characters.count == 0) {
+                    return ""
+                }
+                
+                let formatter = NSDateFormatter()
+                formatter.dateFormat = "HHmm"
                 
                 return formatter.stringFromDate(self.nextGameTime)
             case .During:
@@ -103,7 +113,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     public var smallScore: String {
         get {
             switch self.currentGameState() {
-            case .Before:
+            case .DaysBefore, .GameDayBefore:
                 return self.lastScore
             case .During:
                 return self.currentScore
@@ -118,7 +128,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     public var longCombinedTeamScoreOrDate: String {
         get {
             switch self.currentGameState() {
-            case .Before:
+            case .DaysBefore, .GameDayBefore:
                 return String(format: "%@ %@", self.truncateLastOpponent, self.lastScore)
             case .During:
                 return String(format: "%@ %@", self.truncateNextOpponent, self.currentScore)
@@ -133,7 +143,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     public var fullTitle: String {
         get {
             switch self.currentGameState() {
-            case .Before:
+            case .DaysBefore, .GameDayBefore:
                 return "Next game:"
             case .During:
                 return "Current score"
@@ -148,7 +158,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     public var fullTeam: String {
         get {
             switch self.currentGameState() {
-            case .Before:
+            case .DaysBefore, .GameDayBefore:
                 return self.truncateNextOpponent
             case .During:
                 return self.truncateNextOpponent
@@ -163,8 +173,18 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     public var fullScoreOrDate: String {
         get {
             switch self.currentGameState() {
-            case .Before:
+            case .DaysBefore:
                 return self.nextKickoffTime
+            case .GameDayBefore:
+                // If no opponent, then no kickoff time
+                if (self.nextGameTeam.characters.count == 0) {
+                    return ""
+                }
+                
+                let formatter = NSDateFormatter()
+                formatter.dateFormat = "HHmm"
+                let formattedTime = formatter.stringFromDate(self.nextGameTime)
+                return String(format: "Today at %@", formattedTime)
             case .During:
                 return self.currentScore
             case .After:
@@ -232,29 +252,37 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     // MARK:- Game state functions
     private func currentGameState() -> GameState {
         
+        // If no next game, return none
+        if (self.nextGameTeam.characters.count == 0) {
+            return GameState.None
+        }
         // If currently in a game, return game time
         if (self.gameScoreForCurrentGame) {
             return GameState.During
         }
         
-        // If last game was today or yesterday, return after game
-        let todayDayNumber = self.dayNumber(NSDate())
+        let now = NSDate()
+        let todayDayNumber = self.dayNumber(now)
         let lastGameNumber = self.dayNumber(self.lastGameTime)
+        let nextGameNumber = self.dayNumber(self.nextGameTime)
         
+        // If next game is today, and we are before kickoff ...
+        if (nextGameNumber == todayDayNumber && (now.compare(self.lastGameTime) == NSComparisonResult.OrderedAscending)) {
+            return GameState.GameDayBefore
+        }
+        
+        // If last game was today or yesterday
         if ((lastGameNumber == todayDayNumber) || (lastGameNumber == todayDayNumber - 1)) {
             return GameState.After
         }
-        
-        // If we have a next game, we are before that
-        if (self.nextGameTeam.characters.count > 0) {
-            return GameState.Before
-        }
-            
-        return GameState.None
+
+        // Must before next game
+        return GameState.DaysBefore
     }
     
     private enum GameState {
-        case Before
+        case DaysBefore
+        case GameDayBefore
         case During
         case After
         case None
