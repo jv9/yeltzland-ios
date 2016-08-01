@@ -42,7 +42,7 @@
                             <fontDescription key="font" name="AmericanTypewriter" family="American Typewriter" pointSize="10"/>
                         </label>
                     </items>
-                    <color key="backgroundColor" red="0.023529411764705882" green="0.21568627450980393" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.023529411764705882" green="0.11372549019607843" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="bottomScoreLabel" destination="WSg-Tk-m4q" id="tBj-i9-KWH"/>
                         <outlet property="bottomTeamLabel" destination="Tj5-Pp-pS2" id="ioz-h6-UbL"/>
