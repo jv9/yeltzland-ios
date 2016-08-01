@@ -45,6 +45,8 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
                 complicationServer.reloadTimelineForComplication(complication)
             }
         }
+        
+        NSLog("Complications Updated")
     }
 
     // MARK:- Watch specific settings
@@ -221,7 +223,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
         
         // Send a notification for the view controllers to refresh
         NSNotificationCenter.defaultCenter().postNotificationName(WatchGameSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
-        NSLog("Sent UpdateSettingsNotification")
+        NSLog("Sent 'Update Settings' notification")
         
         // Refresh any complications
         self.updateComplications()
