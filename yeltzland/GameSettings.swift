@@ -106,13 +106,8 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
             updatedSettings["currentGameYeltzScore"] = self.currentGameYeltzScore
             updatedSettings["currentGameOpponentScore"] = self.currentGameOpponentScore
             
-            do {
-                try session.updateApplicationContext(updatedSettings)
-                print("Settings pushed to watch")
-            }
-            catch {
-                NSLog("An error occurred pushing settings to watch: \(error)")
-            }
+            session.transferCurrentComplicationUserInfo(updatedSettings)
+            NSLog("Settings pushed to watch")
         }
     }
 }
