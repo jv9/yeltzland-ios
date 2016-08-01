@@ -127,9 +127,14 @@ public class FixtureManager {
     
     
     public func getNextGame() -> Fixture? {
+        let currentDayNumber = self.dayNumber(NSDate())
+        
         for month in self.Months {
             for fixture in self.FixturesForMonth(month)! {
-                if (fixture.teamScore == nil && fixture.opponentScore == nil) {
+                let matchDayNumber = self.dayNumber(fixture.fixtureDate)
+                
+                // If no score and match is not before today
+                if (fixture.teamScore == nil && fixture.opponentScore == nil && currentDayNumber <= matchDayNumber) {
                     return fixture
                 }
             }
@@ -239,4 +244,14 @@ public class FixtureManager {
         return dirPath
     }
     
+    private func dayNumber(date:NSDate) -> Int {
+        // Removes the time components from a date
+        let calendar = NSCalendar.currentCalendar()
+        let unitFlags: NSCalendarUnit = [.Day, .Month, .Year]
+        let startOfDayComponents = calendar.components(unitFlags, fromDate: date)
+        let startOfDay = calendar.dateFromComponents(startOfDayComponents)
+        let intervalToStaryOfDay = startOfDay!.timeIntervalSince1970
+        let daysDifference = floor(intervalToStaryOfDay) / 86400  // Number of seconds per day = 60 * 60 * 24 = 86400
+        return Int(daysDifference)
+    }
 }
