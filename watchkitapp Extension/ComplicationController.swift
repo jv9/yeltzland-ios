@@ -113,70 +113,36 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     private func createTimeLineEntry(family: CLKComplicationFamily, date: NSDate) -> CLKComplicationTimelineEntry? {
         let settings = self.settingsData()
-        
-        var header = ""
-        var opponent = ""
-        var scoreOrDate = ""
-        var fullScoreOrDate = ""
-        var score = settings.lastScore
-        
-        if (settings.gameScoreForCurrentGame) {
-            // Game in progress
-            header = "Current score:"
-            opponent = settings.displayNextOpponent
-            scoreOrDate = settings.currentScore
-            fullScoreOrDate = settings.currentScore
-            score = settings.currentScore
-        } else {
-            // Was the last game today?
-            let isLastGameDay = NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: settings.lastGameTime)
-            
-            if (isLastGameDay) {
-                header = "Today's result:"
-                opponent = settings.truncateLastOpponent
-                scoreOrDate = settings.lastScore
-                fullScoreOrDate = settings.lastScore
-            } else {
-                header = "Next game:"
-                opponent = settings.truncateNextOpponent
-                scoreOrDate = settings.nextKickoffTimeShort
-                fullScoreOrDate = settings.nextKickoffTime
-            }
-        }
-        
-        let smallOpponent = opponent[opponent.startIndex..<opponent.startIndex.advancedBy(4)]
-        let combinedInfo = String(format: "%@: %@", opponent, scoreOrDate)
-        
         var entry : CLKComplicationTimelineEntry?
         
         switch family {
             case .ModularSmall:
                 let template = CLKComplicationTemplateModularSmallStackText()
-                template.line1TextProvider = CLKSimpleTextProvider(text: String(smallOpponent))
-                template.line2TextProvider = CLKSimpleTextProvider(text: String(scoreOrDate))
+                template.line1TextProvider = CLKSimpleTextProvider(text: settings.smallOpponent)
+                template.line2TextProvider = CLKSimpleTextProvider(text: settings.smallScoreOrDate)
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .ModularLarge:
                 let template = CLKComplicationTemplateModularLargeStandardBody()
-                template.headerTextProvider = CLKSimpleTextProvider(text: String(header))
-                template.body1TextProvider = CLKSimpleTextProvider(text: String(opponent))
-                template.body2TextProvider = CLKSimpleTextProvider(text: String(fullScoreOrDate))
+                template.headerTextProvider = CLKSimpleTextProvider(text: settings.fullTitle)
+                template.body1TextProvider = CLKSimpleTextProvider(text: settings.fullTeam)
+                template.body2TextProvider = CLKSimpleTextProvider(text: settings.fullScoreOrDate)
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .UtilitarianSmall:
                 let template = CLKComplicationTemplateUtilitarianSmallFlat()
-                template.textProvider = CLKSimpleTextProvider(text: String(score))
+                template.textProvider = CLKSimpleTextProvider(text: settings.smallScore)
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .UtilitarianLarge:
                 let template = CLKComplicationTemplateUtilitarianLargeFlat()
-                template.textProvider = CLKSimpleTextProvider(text: String(combinedInfo))
+                template.textProvider = CLKSimpleTextProvider(text: settings.longCombinedTeamScoreOrDate)
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .CircularSmall:
                 let template = CLKComplicationTemplateCircularSmallStackText()
-                template.line1TextProvider = CLKSimpleTextProvider(text: String(smallOpponent))
-                template.line2TextProvider = CLKSimpleTextProvider(text: String(scoreOrDate))
+                template.line1TextProvider = CLKSimpleTextProvider(text: settings.smallOpponent)
+                template.line2TextProvider = CLKSimpleTextProvider(text: settings.smallScoreOrDate)
                 template.tintColor = AppColors.WatchComplicationColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         }
