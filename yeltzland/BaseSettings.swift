@@ -198,24 +198,25 @@ public class BaseSettings : NSObject {
     }
     
     // MARK:- Game state functions
-    func currentGameState() -> GameState {
+    public func currentGameState() -> GameState {
         
         // If no next game, return none
         if (self.nextGameTeam.characters.count == 0) {
             return GameState.None
         }
-        // If currently in a game, return game time
+        
+        // If we have a game score for the next match
         if (self.gameScoreForCurrentGame) {
             return GameState.During
         }
         
         let now = NSDate()
+        let beforeKickoff = now.compare(self.nextGameTime) == NSComparisonResult.OrderedAscending
         let todayDayNumber = self.dayNumber(now)
         let lastGameNumber = self.dayNumber(self.lastGameTime)
         let nextGameNumber = self.dayNumber(self.nextGameTime)
         
         // If next game is today, and we are before kickoff ...
-        let beforeKickoff = now.compare(self.nextGameTime) == NSComparisonResult.OrderedAscending
         if (nextGameNumber == todayDayNumber && beforeKickoff) {
             return GameState.GameDayBefore
         }
@@ -229,7 +230,7 @@ public class BaseSettings : NSObject {
         return GameState.DaysBefore
     }
     
-    enum GameState {
+    public enum GameState {
         case DaysBefore
         case GameDayBefore
         case During

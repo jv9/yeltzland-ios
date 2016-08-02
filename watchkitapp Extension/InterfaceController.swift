@@ -37,8 +37,6 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func updateViewData() {
-        NSLog("Updating view data...")
-        
         let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
         let gameSettings = appDelegate.model
     
@@ -68,8 +66,6 @@ class InterfaceController: WKInterfaceController {
             self.bottomScoreLabel.setText(gameSettings.nextKickoffTime)
             self.footnoteLabel.setText("")
         }
-        
-        NSLog("View updated")
     }
     
     @objc

@@ -46,7 +46,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
             }
         }
         
-        NSLog("Complications Updated")
+        NSLog("Complications updated")
     }
 
     // MARK:- Watch specific settings
