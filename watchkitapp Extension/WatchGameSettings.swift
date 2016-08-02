@@ -248,56 +248,5 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
         // Refresh any complications
         self.updateComplications()
     }
-    
-    // MARK:- Game state functions
-    private func currentGameState() -> GameState {
-        
-        // If no next game, return none
-        if (self.nextGameTeam.characters.count == 0) {
-            return GameState.None
-        }
-        // If currently in a game, return game time
-        if (self.gameScoreForCurrentGame) {
-            return GameState.During
-        }
-        
-        let now = NSDate()
-        let todayDayNumber = self.dayNumber(now)
-        let lastGameNumber = self.dayNumber(self.lastGameTime)
-        let nextGameNumber = self.dayNumber(self.nextGameTime)
-        
-        // If next game is today, and we are before kickoff ...
-        if (nextGameNumber == todayDayNumber && (now.compare(self.lastGameTime) == NSComparisonResult.OrderedAscending)) {
-            return GameState.GameDayBefore
-        }
-        
-        // If last game was today or yesterday
-        if ((lastGameNumber == todayDayNumber) || (lastGameNumber == todayDayNumber - 1)) {
-            return GameState.After
-        }
-
-        // Must before next game
-        return GameState.DaysBefore
-    }
-    
-    private enum GameState {
-        case DaysBefore
-        case GameDayBefore
-        case During
-        case After
-        case None
-    }
-    
-    
-    private func dayNumber(date:NSDate) -> Int {
-        // Removes the time components from a date
-        let calendar = NSCalendar.currentCalendar()
-        let unitFlags: NSCalendarUnit = [.Day, .Month, .Year]
-        let startOfDayComponents = calendar.components(unitFlags, fromDate: date)
-        let startOfDay = calendar.dateFromComponents(startOfDayComponents)
-        let intervalToStaryOfDay = startOfDay!.timeIntervalSince1970
-        let daysDifference = floor(intervalToStaryOfDay) / 86400  // Number of seconds per day = 60 * 60 * 24 = 86400
-        return Int(daysDifference)
-    }
 }
 
