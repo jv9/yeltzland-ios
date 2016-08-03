@@ -9,6 +9,8 @@
 import Foundation
 
 public class GameScoreManager {
+    public static let GameScoreNotification:String = "YLZGameScoreNotification"
+    
     private var matchDate:NSDate? = nil
     private var yeltzScore:Int = 0
     private var opponentScore:Int = 0
@@ -118,6 +120,9 @@ public class GameScoreManager {
         if let parsedOpponentScore = json["opponentScore"] as? String {
             self.opponentScore = Int(parsedOpponentScore)!
         }
+
+        // Post notification message
+        NSNotificationCenter.defaultCenter().postNotificationName(GameScoreManager.GameScoreNotification, object: nil)
     }
     
     private func moveSingleBundleFileToAppDirectory(fileName:String, fileType:String) {

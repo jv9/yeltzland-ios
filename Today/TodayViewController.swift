@@ -15,12 +15,12 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     
     override init(style: UITableViewStyle) {
         super.init(style: style)
-        self.setupNotificationWatcher()
+        self.setupNotificationWatchers()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        self.setupNotificationWatcher()
+        self.setupNotificationWatchers()
     }
     
     override func viewDidLoad() {
@@ -40,6 +40,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Fetch latest fixtures
         FixtureManager.instance.getLatestFixtures()
+        GameScoreManager.instance.getLatestGameScore()
         
         self.preferredContentSize = CGSizeMake(0.0, self.CellRowHeight * 5)
         completionHandler(NCUpdateResult.NewData)
@@ -50,9 +51,10 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         print("Removed notification handler for fixture updates in today view")
     }
     
-    private func setupNotificationWatcher() {
+    private func setupNotificationWatchers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: FixtureManager.FixturesNotification, object: nil)
-        print("Setup notification handler for fixture updates in today view")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: GameScoreManager.GameScoreNotification, object: nil)
+        print("Setup notification handlers for fixture or score updates in today view")
     }
     
     @objc private func fixturesUpdated(notification: NSNotification) {

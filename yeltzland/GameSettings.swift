@@ -141,11 +141,11 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
                 updated = true
             }
             
-            // If any values have been changed, push then to the watch
-            if (updated) {
+            // If any values have been changed, push then to the watch (always push in game time)
+            if (updated || self.currentGameState() == GameState.During) {
                 self.pushAllSettingsToWatch()
             } else {
-                NSLog("No game settings changed")
+                NSLog("No game settings pushed")
             }
         }
     }

@@ -72,20 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let differenceInMinutes = NSCalendar.currentCalendar().components(.Minute, fromDate: now, toDate: GameSettings.instance.nextGameTime, options: []).minute
         
-        var fetchedData = false
         if (differenceInMinutes < 0) {
             // After game kicked off, so go get game score
             GameScoreManager.instance.getLatestGameScore()
-            fetchedData = true
-        }
-        
-        if (differenceInMinutes < -120) {
-            // Probably after end of game, so go get fixtures
             FixtureManager.instance.getLatestFixtures()
-            fetchedData = true
-        }
         
-        if (fetchedData) {
             completionHandler(UIBackgroundFetchResult.NewData)
         } else {
             completionHandler(UIBackgroundFetchResult.NoData)

@@ -46,6 +46,9 @@ class FixturesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Go get latest fixtures in background
+        self.reloadButtonTouchUp()
 
         // Setup navigation
         self.navigationItem.title = "Fixtures"
