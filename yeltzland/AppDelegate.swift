@@ -50,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup backhground fetch
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
+        // Push settings to watch in the background
+        GameSettings.instance.forceBackgroundWatchUpdate()
+        
         // If came from a notification, always start on the Twitter tab
         if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
             GameSettings.instance.lastSelectedTab = 3
