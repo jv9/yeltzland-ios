@@ -79,6 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
             completionHandler(UIBackgroundFetchResult.NewData)
         } else {
+            // Otherwise, make sure the watch is updated occasionally
+            GameSettings.instance.forceBackgroundWatchUpdate()
             completionHandler(UIBackgroundFetchResult.NoData)
         }
     }

@@ -50,6 +50,8 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
         var lastGameHome = false
         var lastGameTime:NSDate? = nil
         
+        let currentlyInGame = self.currentGameState() == GameState.During
+        
         if let lastGame = FixtureManager.instance.getLastGame() {
             lastGameTime = lastGame.fixtureDate
             lastGameTeam = lastGame.opponent
@@ -111,7 +113,7 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
 
         // If any values have been changed, push then to the watch
         if (updated) {
-            self.pushAllSettingsToWatch()
+            self.pushAllSettingsToWatch(currentlyInGame)
         } else {
             NSLog("No fixture settings changed")
         }
@@ -119,6 +121,8 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
     
     public func refreshGameScore() {
         NSLog("Updating game score settings ...")
+        
+        let currentlyInGame = self.currentGameState() == GameState.During
         
         if let currentGameTime = GameScoreManager.instance.MatchDate {
             var updated = false
@@ -141,17 +145,22 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
                 updated = true
             }
             
-            // If any values have been changed, push then to the watch (always push in game time)
-            if (updated || self.currentGameState() == GameState.During) {
-                self.pushAllSettingsToWatch()
+            // If any values have been changed, push then to the watch
+            if (updated) {
+                self.pushAllSettingsToWatch(currentlyInGame)
             } else {
-                NSLog("No game settings pushed")
+                NSLog("No game settings changed")
             }
         }
     }
     
+    // Update the watch in background
+    public func forceBackgroundWatchUpdate() {
+        self.pushAllSettingsToWatch(false)
+    }
+    
     /// Send initial settings to watch
-    private func pushAllSettingsToWatch() {
+    private func pushAllSettingsToWatch(currentlyInGame:Bool) {
         self.initialiseWatchSession()
         
         if (WCSession.isSupported()) {
@@ -172,7 +181,13 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
             updatedSettings["currentGameYeltzScore"] = self.currentGameYeltzScore
             updatedSettings["currentGameOpponentScore"] = self.currentGameOpponentScore
             
-            session.transferCurrentComplicationUserInfo(updatedSettings)
+            // If we're in a game, push it out straight away, otherwise do it in the background
+            if (currentlyInGame) {
+                session.transferCurrentComplicationUserInfo(updatedSettings)
+            } else {
+                session.transferUserInfo(updatedSettings)
+            }
+            
             NSLog("Settings pushed to watch")
         }
     }
