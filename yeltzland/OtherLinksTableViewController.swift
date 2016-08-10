@@ -34,7 +34,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
-            return 2
+            return 3
         } else if (section == 1) {
             return 4
         } else if (section == 2) {
@@ -78,6 +78,10 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             case 1:
                 cell!.textLabel?.text = "Where's the Ground?"
                 let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
+                cell!.imageView?.image = cellImage
+            case 2:
+                cell!.textLabel?.text = "League Table"
+                let cellImage = UIImage(icon: FAType.FATable, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
                 cell!.imageView?.image = cellImage
                 break
             default:
@@ -159,16 +163,21 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             if (indexPath.row == 0) {
                 let fixtures = FixturesTableViewController(style: .Grouped)
                 self.navigationController!.pushViewController(fixtures, animated: true)
+                return;
             } else if (indexPath.row == 1) {
                 let locations = LocationsViewController()
                 self.navigationController!.pushViewController(locations, animated: true)
+                return;
             }
-            
-            return;
         }
         
         var url: NSURL? = nil;
-        if (indexPath.section == 1) {
+        
+        if (indexPath.section == 0) {
+            if (indexPath.row == 2) {
+                url = NSURL(string: "http://www.evostikleague.co.uk/match-info/tables")
+            }
+        } else if (indexPath.section == 1) {
             switch (indexPath.row) {
             case 0:
                 url = NSURL(string: "https://www.facebook.com/halesowentownfc/")
