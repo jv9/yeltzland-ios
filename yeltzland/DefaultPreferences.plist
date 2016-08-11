@@ -7,19 +7,19 @@
 	<key>LastSelectedTab</key>
 	<integer>0</integer>
 	<key>lastGameTime</key>
-	<date>2016-07-26T18:45:00Z</date>
+	<date>2016-08-06T14:00:00Z</date>
 	<key>lastGameTeam</key>
-	<string>Alvechurch</string>
+	<string>Gresley FC</string>
 	<key>lastGameYeltzScore</key>
-	<integer>1</integer>
-	<key>lastGameHome</key>
-	<false/>
-	<key>lastGameOpponentScore</key>
 	<integer>2</integer>
+	<key>lastGameHome</key>
+	<true/>
+	<key>lastGameOpponentScore</key>
+	<integer>4</integer>
 	<key>nextGameTime</key>
-	<date>2016-07-28T18:45:00Z</date>
+	<date>2016-08-13T14:00:00Z</date>
 	<key>nextGameTeam</key>
-	<string>Kidderminster Harriers</string>
+	<string>Buxton</string>
 	<key>nextGameHome</key>
 	<true/>
 	<key>currentGameTime</key>
@@ -27,7 +27,7 @@
 	<key>currentGameYeltzScore</key>
 	<integer>0</integer>
 	<key>currentGameOpponentScore</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>migratedToGroupSettings</key>
 	<false/>
 </dict>
