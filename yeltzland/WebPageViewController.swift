@@ -203,7 +203,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
             print("didFailProvisionalNavigation error occurred: ", error.localizedDescription, ":", error.code)
             
             let message = Message(title: "Couldn't connect to the website right now", backgroundColor: AppColors.WebErrorBackground)
-            Whisper(message, to: self.navigationController!)
+            show(whisper: message, to: self.navigationController!)
             self.hideSpinner()
         }
     }
@@ -245,7 +245,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
             print("Navigation error occurred: ", error.localizedDescription)
 
             let message = Message(title: "Couldn't connect to the website right now", backgroundColor: AppColors.WebErrorBackground)
-            Whisper(message, to: self.navigationController!)
+            show(whisper: message, to: self.navigationController!)
             self.hideSpinner()
         }
     }
