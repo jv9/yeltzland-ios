@@ -32,6 +32,21 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.tintColor = AppColors.TabBarTextColor
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Reload all the view controllers
+        print("Reloading all the view controllers ...")
+        for currentController in self.viewControllers! {
+            // Refresh the page if the controller is a web page
+            if let selectedNavigationController = currentController as? UINavigationController {
+                if let selectedController = selectedNavigationController.viewControllers[0] as? WebPageViewController {
+                    selectedController.reloadButtonTouchUp()
+                }
+            }
+        }
+    }
+    
     func addChildViewControllers() {
         // Forum
         let forumViewController = WebPageViewController()
