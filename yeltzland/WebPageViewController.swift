@@ -258,5 +258,13 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         
         decisionHandler(WKNavigationActionPolicy.Allow)
     }
+    
+    func webView(webView: WKWebView, decidePolicyForNavigationResponse navigationResponse: WKNavigationResponse, decisionHandler: (WKNavigationResponsePolicy) -> Void) {
+        
+        // This is supposed to flush the cookies to storage!
+        NSUserDefaults.standardUserDefaults().synchronize()
+            
+        decisionHandler(.Allow)
+    }
 }
 
