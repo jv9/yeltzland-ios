@@ -41,13 +41,32 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     // Initializers
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        self.setupNotificationWatchers()
     }
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.loadHomePage()
+        self.setupNotificationWatchers()
     }
     
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("Removed notification handler for fixture updates in today view")
+    }
+    
+    private func setupNotificationWatchers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WebPageViewController.enterForeground), name: UIApplicationWillEnterForegroundNotification, object: nil)
+
+    }
+    
+    @objc private func enterForeground(notification: NSNotification) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.reloadButtonTouchUp()
+        })
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -126,6 +145,12 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         
         // Swipe gestures automatically supported
         self.webView.allowsBackForwardNavigationGestures = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Reloading in view will appear...")
+        self.reloadButtonTouchUp()
     }
     
     // MARK: - Nav bar actions
