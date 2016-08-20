@@ -81,6 +81,10 @@ class FixturesTableViewController: UITableViewController {
         let months = FixtureManager.instance.Months;
         let fixturesForMonth = FixtureManager.instance.FixturesForMonth(months[section])
         
+        if (fixturesForMonth == nil || fixturesForMonth?.count == 0) {
+            return 0
+        }
+        
         return fixturesForMonth!.count
     }
 
@@ -88,21 +92,26 @@ class FixturesTableViewController: UITableViewController {
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "FixtureCell")
 
         // Find the fixture
+        var currentFixture:Fixture? = nil
         let months = FixtureManager.instance.Months;
         let fixturesForMonth = FixtureManager.instance.FixturesForMonth(months[indexPath.section])
         
-        let currentFixture = fixturesForMonth![indexPath.row]
+        if (fixturesForMonth != nil && fixturesForMonth?.count > indexPath.row) {
+            currentFixture = fixturesForMonth![indexPath.row]
+        }
 
         cell.selectionStyle = .None
         cell.accessoryType = .None
         
         var resultColor = AppColors.FixtureNone
         
-        if (currentFixture.teamScore == nil || currentFixture.opponentScore == nil) {
+        if (currentFixture == nil) {
             resultColor = AppColors.FixtureNone
-        } else if (currentFixture.teamScore > currentFixture.opponentScore) {
+        } else if (currentFixture!.teamScore == nil || currentFixture!.opponentScore == nil) {
+            resultColor = AppColors.FixtureNone
+        } else if (currentFixture!.teamScore > currentFixture!.opponentScore) {
             resultColor = AppColors.FixtureWin
-        } else if (currentFixture.teamScore < currentFixture.opponentScore) {
+        } else if (currentFixture!.teamScore < currentFixture!.opponentScore) {
             resultColor = AppColors.FixtureLose
         } else {
             resultColor = AppColors.FixtureDraw
@@ -112,17 +121,19 @@ class FixturesTableViewController: UITableViewController {
         cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.FixtureTeamSize)!
         cell.textLabel?.textColor = resultColor
         cell.textLabel?.adjustsFontSizeToFitWidth = true
-        cell.textLabel?.text = currentFixture.displayOpponent
+        cell.textLabel?.text = (currentFixture == nil ? "" : currentFixture!.displayOpponent)
         
         // Set detail text
         cell.detailTextLabel?.textColor = resultColor
         cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.FixtureScoreOrDateTextSize)!
         
-        if (currentFixture.teamScore == nil || currentFixture.opponentScore == nil) {
-            cell.detailTextLabel?.text = currentFixture.kickoffTime
+        if (currentFixture == nil) {
+            cell.detailTextLabel?.text = ""
+        } else if (currentFixture!.teamScore == nil || currentFixture!.opponentScore == nil) {
+            cell.detailTextLabel?.text = currentFixture!.kickoffTime
         } else {
-            cell.detailTextLabel?.text = currentFixture.score
+            cell.detailTextLabel?.text = currentFixture!.score
         }
         
         return cell
@@ -131,9 +142,12 @@ class FixturesTableViewController: UITableViewController {
     override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String
     {
         let months = FixtureManager.instance.Months;
-        let fixturesForMonth = FixtureManager.instance.FixturesForMonth(months[section])!
-        return fixturesForMonth[0].fixtureMonth
+        let fixturesForMonth = FixtureManager.instance.FixturesForMonth(months[section])
+        if (fixturesForMonth == nil || fixturesForMonth?.count == 0) {
+            return ""
+        }
         
+        return fixturesForMonth![0].fixtureMonth
     }
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

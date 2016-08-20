@@ -20,7 +20,7 @@ public class FixtureManager {
     }
     
     public var Months: [String] {
-        return Array(fixtureList.keys).sort()
+        return Array(self.fixtureList.keys).sort()
     }
     
     public func FixturesForMonth(monthKey: String) -> [Fixture]? {
