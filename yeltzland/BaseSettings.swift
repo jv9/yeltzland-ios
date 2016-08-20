@@ -149,7 +149,8 @@ public class BaseSettings : NSObject {
             }
             
             let formatter = NSDateFormatter()
-            if (self.currentGameState() == GameState.GameDayBefore)  {
+            let gameState = self.currentGameState()
+            if (gameState == GameState.GameDayBefore || gameState == GameState.During)  {
                 formatter.dateFormat = "HHmm"
             } else {
                 formatter.dateFormat = "EEE d MMM"
@@ -224,6 +225,11 @@ public class BaseSettings : NSObject {
         // If last game was today or yesterday
         if ((lastGameNumber == todayDayNumber) || (lastGameNumber == todayDayNumber - 1)) {
             return GameState.After
+        }
+        
+        // If next game is today and after kickoff also during
+        if (nextGameNumber == todayDayNumber && beforeKickoff == false) {
+            return GameState.During
         }
         
         // Must before next game
