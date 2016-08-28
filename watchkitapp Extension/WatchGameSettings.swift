@@ -86,8 +86,19 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
                     return ""
                 }
                 
+                let now = NSDate()
+                let todayDayNumber = self.dayNumber(now)
+                let nextGameNumber = self.dayNumber(self.nextGameTime)
+                
                 let formatter = NSDateFormatter()
-                formatter.dateFormat = "d"
+                
+                if (nextGameNumber - todayDayNumber > 7) {
+                    // If next game more than a week off, show the day number
+                    formatter.dateFormat = "d"
+                } else {
+                    // Otherwise show the day name
+                    formatter.dateFormat = "E"
+                }
                 
                 return formatter.stringFromDate(self.nextGameTime)
             case .GameDayBefore:
