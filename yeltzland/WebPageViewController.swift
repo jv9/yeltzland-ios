@@ -250,6 +250,7 @@ class WebPageViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         // Mark the progress as done
         self.hideSpinner()
+        hide(whisperFrom: self.navigationController!, after: 5.0)
         
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
