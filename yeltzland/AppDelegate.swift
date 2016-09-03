@@ -168,7 +168,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             if let tabController : UITabBarController? = (self.window?.rootViewController as! UITabBarController) {
                                 if let navigationController : UINavigationController? = tabController!.viewControllers![0] as? UINavigationController {
                                     show(whisper: message, to: navigationController!, action: .Show)
-                                    hide(whisperFrom: navigationController!, after: 5.0)
                                 }
                             }
                         }
