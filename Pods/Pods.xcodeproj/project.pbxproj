@@ -77,7 +77,6 @@
 		46BAA99C225CC331F50BAAAA1DF56307 /* Pods-yeltzland-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-yeltzland-dummy.m"; sourceTree = "<group>"; };
 		4BC53A66E75482A030E0EAA55170EDAF /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		51643E4E00A2B4CE1C26390CBD195B76 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
-		531A8C859281BB2C88D22E69BB47CFD0 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		582C7A41619BE9EA68B188861AD134D8 /* Whisper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whisper-umbrella.h"; sourceTree = "<group>"; };
 		5A1D428346B80AA9E0CAD5450ECA8762 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
 		5C8DDCE09656863C8CA67828401B0121 /* Pods-yeltzland-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-yeltzland-umbrella.h"; sourceTree = "<group>"; };
@@ -91,18 +90,19 @@
 		853BDD090F7FEF4BF64C08FFC7FDFC99 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
 		868C6C428E8B9B1C6C2E0EC892C62203 /* WhisperView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhisperView.swift; path = Source/WhisperView.swift; sourceTree = "<group>"; };
 		89C86CC30D183BE8D4652D6452070C02 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		8EA7AD63BBB269922D04182ECEE48E3E /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = iOS/TwitterKit.framework; sourceTree = "<group>"; };
 		929516D04C4B0B5773C9187A461B233F /* Pods_yeltzland.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yeltzland.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95DC96973C1B4C5DA0403626AF5E382B /* Font-Awesome-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Font-Awesome-Swift.xcconfig"; sourceTree = "<group>"; };
 		99038209F70EAF74CF35BCECBAEE416A /* Pods-yeltzland-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-yeltzland-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9FC71F1812C261485BED951BDC45F346 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		A58580B1E17CEBBD6A7E00A34695AE99 /* Showing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Showing.swift; path = Source/Showing.swift; sourceTree = "<group>"; };
-		A85C1E40E4FD7CA1E5869CF1FA509639 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		ABD50929A4855EA9323B03E9AC7A2AA3 /* Pods-yeltzland.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-yeltzland.modulemap"; sourceTree = "<group>"; };
 		AD417A83AAF4500418052CCFEF2B4C5C /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B908CC13E29C5291CB7FCCAB2E530A38 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
 		C83AE19E68B0632788299D38640509A8 /* Whisper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Whisper.modulemap; sourceTree = "<group>"; };
 		CC38B64CFFE3C1E1E2A0C0FB50FA109E /* Pods-yeltzland.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yeltzland.release.xcconfig"; sourceTree = "<group>"; };
+		D3200EA9CDE41C711376137D9AC45BFA /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = iOS/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		D9C8924D60706CCB6665E327618D6256 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		DFD8AE9D9AF2F4E90C3D2B84F770BC46 /* Whisper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whisper.xcconfig; sourceTree = "<group>"; };
 		E2D7A23F366D4FB345CC1CDFFEB65963 /* ResourceBundle-Font-Awesome-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Font-Awesome-Swift-Info.plist"; sourceTree = "<group>"; };
@@ -154,6 +154,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0431CCF542AA0B0B5C1F415EAFA366F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3200EA9CDE41C711376137D9AC45BFA /* TwitterKitResources.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		07C458BBD7D9146EAEDF34B5766A1FC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,8 +194,8 @@
 		1DD6D9085D9A90E36839B8F016AE0289 /* TwitterKit */ = {
 			isa = PBXGroup;
 			children = (
-				EDD57C8619675FBDAF0AE8C204695256 /* Frameworks */,
-				94CDAAF21D0F0EE02C7E7E737EDA05EB /* Resources */,
+				45DA128A167B4C1F1CD465B75887CF98 /* Frameworks */,
+				0431CCF542AA0B0B5C1F415EAFA366F6 /* Resources */,
 			);
 			path = TwitterKit;
 			sourceTree = "<group>";
@@ -227,6 +235,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Font-Awesome-Swift";
+			sourceTree = "<group>";
+		};
+		45DA128A167B4C1F1CD465B75887CF98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EA7AD63BBB269922D04182ECEE48E3E /* TwitterKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4C786EE60D1C1856F217A265FAE7D5F5 /* Targets Support Files */ = {
@@ -271,14 +287,6 @@
 				1F48A031A6EB27B9842DB0C768423E48 /* Frameworks */,
 			);
 			path = Fabric;
-			sourceTree = "<group>";
-		};
-		94CDAAF21D0F0EE02C7E7E737EDA05EB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				531A8C859281BB2C88D22E69BB47CFD0 /* TwitterKitResources.bundle */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		A23260DBD1498BA91209DBB3DB11C994 /* TwitterCore */ = {
@@ -367,14 +375,6 @@
 			isa = PBXGroup;
 			children = (
 				51643E4E00A2B4CE1C26390CBD195B76 /* TwitterCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EDD57C8619675FBDAF0AE8C204695256 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A85C1E40E4FD7CA1E5869CF1FA509639 /* TwitterKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

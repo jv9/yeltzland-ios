@@ -229,6 +229,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
             
             let message = Message(title: "Couldn't connect to the website right now", backgroundColor: AppColors.WebErrorBackground)
             show(whisper: message, to: self.navigationController!)
+            hide(whisperFrom: self.navigationController!, after: 2.0)
             self.hideSpinner()
         }
     }
@@ -250,7 +251,7 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation) {
         // Mark the progress as done
         self.hideSpinner()
-        hide(whisperFrom: self.navigationController!, after: 5.0)
+        hide(whisperFrom: self.navigationController!, after: 0.0)
 
         progressBar.setProgress(1, animated: true)
         UIView.animateWithDuration(0.3, delay: 1, options: .CurveEaseInOut, animations: { self.progressBar.alpha = 0 }, completion: nil)
