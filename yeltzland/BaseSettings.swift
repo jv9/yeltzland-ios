@@ -137,6 +137,10 @@ public class BaseSettings : NSObject {
                 return ""
             }
             
+            if self.currentGameState() == GameState.DuringNoScore {
+                return "0-0*"
+            }
+            
             return String.init(format: "%d-%d*", self.currentGameYeltzScore, self.currentGameOpponentScore)
         }
     }
@@ -229,7 +233,7 @@ public class BaseSettings : NSObject {
         
         // If next game is today and after kickoff also during
         if (nextGameNumber == todayDayNumber && beforeKickoff == false) {
-            return GameState.During
+            return GameState.DuringNoScore
         }
         
         // Must before next game
@@ -240,6 +244,7 @@ public class BaseSettings : NSObject {
         case DaysBefore
         case GameDayBefore
         case During
+        case DuringNoScore
         case After
         case None
     }

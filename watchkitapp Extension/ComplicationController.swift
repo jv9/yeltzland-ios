@@ -81,7 +81,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         var minutesToNextUpdate = 360.0
         
         let gameState = self.settingsData().currentGameState()
-        if (gameState == BaseSettings.GameState.During) {
+        if (gameState == BaseSettings.GameState.During || gameState == BaseSettings.GameState.DuringNoScore) {
             // During match, update every 15 minutes
             minutesToNextUpdate = 15.0
         } else if (gameState == BaseSettings.GameState.GameDayBefore || gameState == BaseSettings.GameState.After) {

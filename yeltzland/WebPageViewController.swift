@@ -50,7 +50,6 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         self.setupNotificationWatchers()
     }
     
-    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
         print("Removed notification handler for fixture updates in today view")

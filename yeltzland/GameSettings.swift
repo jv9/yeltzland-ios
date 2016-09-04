@@ -50,7 +50,8 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
         var lastGameHome = false
         var lastGameTime:NSDate? = nil
         
-        let currentlyInGame = self.currentGameState() == GameState.During
+        let gameState = self.currentGameState()
+        let currentlyInGame = (gameState == GameState.During || gameState == GameState.DuringNoScore)
         
         if let lastGame = FixtureManager.instance.getLastGame() {
             lastGameTime = lastGame.fixtureDate

@@ -67,7 +67,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
             switch self.currentGameState() {
             case .DaysBefore, .GameDayBefore:
                 return self.truncateTeamName(self.displayNextOpponent, max: 4)
-            case .During:
+            case .During, .DuringNoScore:
                 return self.truncateTeamName(self.displayNextOpponent, max: 4)
             case .After:
                 return self.truncateTeamName(self.displayLastOpponent, max: 4)
@@ -111,7 +111,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
                 formatter.dateFormat = "HHmm"
                 
                 return formatter.stringFromDate(self.nextGameTime)
-            case .During:
+            case .During, .DuringNoScore:
                 return self.currentScore
             case .After:
                 return self.lastScore
@@ -126,7 +126,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
             switch self.currentGameState() {
             case .DaysBefore, .GameDayBefore:
                 return self.lastScore
-            case .During:
+            case .During, .DuringNoScore:
                 return self.currentScore
             case .After:
                 return self.lastScore
@@ -141,7 +141,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
             switch self.currentGameState() {
             case .DaysBefore, .GameDayBefore:
                 return String(format: "%@ %@", self.truncateLastOpponent, self.lastScore)
-            case .During:
+            case .During, .DuringNoScore:
                 return String(format: "%@ %@", self.truncateNextOpponent, self.currentScore)
             case .After:
                 return String(format: "%@ %@", self.truncateLastOpponent, self.lastScore)
@@ -156,7 +156,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
             switch self.currentGameState() {
             case .DaysBefore, .GameDayBefore:
                 return "Next game:"
-            case .During:
+            case .During, .DuringNoScore:
                 return "Current score"
             case .After:
                 return "Last game:"
@@ -171,7 +171,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
             switch self.currentGameState() {
             case .DaysBefore, .GameDayBefore:
                 return self.truncateNextOpponent
-            case .During:
+            case .During, .DuringNoScore:
                 return self.truncateNextOpponent
             case .After:
                 return self.truncateLastOpponent
@@ -196,7 +196,7 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
                 formatter.dateFormat = "HHmm"
                 let formattedTime = formatter.stringFromDate(self.nextGameTime)
                 return String(format: "Today at %@", formattedTime)
-            case .During:
+            case .During, .DuringNoScore:
                 return self.currentScore
             case .After:
                 return self.lastScore
