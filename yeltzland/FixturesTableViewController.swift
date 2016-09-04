@@ -37,7 +37,30 @@ class FixturesTableViewController: UITableViewController {
         print("Fixture update message received")
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
+            
+            let currentMonthIndexPath = NSIndexPath(forRow: 0, inSection: self.currentMonthSection())
+            self.tableView.scrollToRowAtIndexPath(currentMonthIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
         })
+    }
+    
+    private func currentMonthSection() -> Int {
+        var monthIndex = 0
+
+        let now = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyyMM"
+        let currentMonth = formatter.stringFromDate(now)
+        
+        for month in FixtureManager.instance.Months {
+            if (month == currentMonth) {
+                return monthIndex
+            }
+            
+            monthIndex = monthIndex + 1
+        }
+        
+        // No match found, so just start at the top
+        return 0
     }
     
     func reloadButtonTouchUp() {

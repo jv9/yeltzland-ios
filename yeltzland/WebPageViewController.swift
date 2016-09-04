@@ -148,7 +148,6 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print("Reloading in view will appear...")
         self.reloadButtonTouchUp()
     }
     
