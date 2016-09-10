@@ -246,6 +246,17 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
         self.updateSettings(receivedApplicationContext)
     }
     
+    @objc
+    public func session(session: WCSession,
+                        activationDidCompleteWithState activationState: WCSessionActivationState,
+                        error: NSError?) {}
+    
+    @objc
+    public func sessionDidBecomeInactive(session: WCSession) {}
+    
+    @objc
+    public func sessionDidDeactivate(session: WCSession) {}
+    
     private func updateSettings(userInfo: [String : AnyObject]) {
         // Update each incoming setting
         for (key, value) in userInfo {

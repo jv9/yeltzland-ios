@@ -65,7 +65,7 @@ class ChromeActivity: UIActivity {
         }
         
         if (chromeScheme != "") {
-            let chromeUrl = self.currentUrl!.absoluteString.stringByReplacingOccurrencesOfString(self.currentUrl!.scheme + "://", withString: chromeScheme + "://")
+            let chromeUrl = self.currentUrl!.absoluteString!.stringByReplacingOccurrencesOfString(self.currentUrl!.scheme! + "://", withString: chromeScheme + "://")
             print("Chrome URL is \(chromeUrl)")
             return NSURL(string:chromeUrl)!
         }

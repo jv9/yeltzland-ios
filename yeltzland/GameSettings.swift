@@ -192,4 +192,16 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
             NSLog("Settings pushed to watch")
         }
     }
+    
+    // MARK:- WCSessionDelegate implementation
+    @objc
+    public func session(session: WCSession,
+                         activationDidCompleteWithState activationState: WCSessionActivationState,
+                                                        error: NSError?) {}
+    
+    @objc
+    public func sessionDidBecomeInactive(session: WCSession) {}
+    
+    @objc
+    public func sessionDidDeactivate(session: WCSession) {}
 }
