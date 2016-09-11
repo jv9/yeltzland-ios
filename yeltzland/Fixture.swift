@@ -15,11 +15,20 @@ public class Fixture {
     var teamScore: Int?
     var opponentScore: Int?
     
-    init(fromJson: [String:AnyObject]) {
+    init?(fromJson: [String:AnyObject]) {
         // Parse properties from JSON match properties
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        self.fixtureDate = formatter.dateFromString(fromJson["MatchDateTime"] as! String)!
+        
+        if let matchDateTime = fromJson["MatchDateTime"] as! String? {
+            if let parsedMatchDate = formatter.dateFromString(matchDateTime) {
+                self.fixtureDate = parsedMatchDate
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
         
         self.opponent = fromJson["Opponent"] as! String
         self.home = ((fromJson["Home"] as! String) == "1")

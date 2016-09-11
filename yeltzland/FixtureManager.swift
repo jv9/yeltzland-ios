@@ -166,14 +166,14 @@ public class FixtureManager {
         
         for currentMatch in matches {
             if let match = currentMatch as? [String:AnyObject] {
-                let currentFixture = Fixture(fromJson: match)
+                if let currentFixture = Fixture(fromJson: match) {
+                    let monthFixtures = self.FixturesForMonth(currentFixture.monthKey)
                 
-                let monthFixtures = self.FixturesForMonth(currentFixture.monthKey)
-                
-                if monthFixtures != nil {
-                    self.fixtureList[currentFixture.monthKey]?.append(currentFixture)
-                } else {
-                    self.fixtureList[currentFixture.monthKey] = [currentFixture]
+                    if monthFixtures != nil {
+                        self.fixtureList[currentFixture.monthKey]?.append(currentFixture)
+                    } else {
+                        self.fixtureList[currentFixture.monthKey] = [currentFixture]
+                    }
                 }
             }
         }

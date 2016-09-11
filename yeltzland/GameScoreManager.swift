@@ -109,8 +109,9 @@ public class GameScoreManager {
         self.opponentScore = 0
         
         if let currentMatch = json["match"] {
-            let fixture = Fixture(fromJson: currentMatch as! [String : AnyObject])
-            self.matchDate = fixture.fixtureDate
+            if let fixture = Fixture(fromJson: currentMatch as! [String : AnyObject]) {
+                self.matchDate = fixture.fixtureDate
+            }
         }
 
         if let parsedYeltzScore = json["yeltzScore"] as? String {
