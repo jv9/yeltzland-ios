@@ -16,4 +16,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         self.model.initialiseWatchSession()
         self.model.updateComplications()
     }
+    
+    func handleBackgroundTasks(backgroundTasks: Set<WKRefreshBackgroundTask>) {
+        print("Handling background task started")
+        
+        // Mark tasks as completed
+        for task in backgroundTasks {
+            // TODO: Do something on background task perhaps?
+            task.setTaskCompleted()
+        }
+    }
+
 }

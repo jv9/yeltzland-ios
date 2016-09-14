@@ -9,6 +9,7 @@
 import Foundation
 import WatchConnectivity
 import ClockKit
+import WatchKit
 
 public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     
@@ -269,6 +270,19 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
         
         // Refresh any complications
         self.updateComplications()
+        
+        // Also schedule a snapshot for a few seconds time
+        self.scheduleSnapshot()
+    }
+    
+    private func scheduleSnapshot() {
+        // Let's update the snapshot if the view changed
+        print("Scheduling snapshot")
+        let soon = NSDate().addTimeInterval(5.0)
+        WKExtension.sharedExtension().scheduleSnapshotRefreshWithPreferredDate(soon as! NSDate, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+            if let error = error {
+                print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
+            }})
     }
 }
 
