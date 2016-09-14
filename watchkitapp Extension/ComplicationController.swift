@@ -42,7 +42,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template.body2TextProvider = CLKSimpleTextProvider(text: settings.fullScoreOrDate)
             template.tintColor = AppColors.WatchComplicationColor
             entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
-        case .UtilitarianSmall:
+        case .UtilitarianSmall, .UtilitarianSmallFlat:
             let template = CLKComplicationTemplateUtilitarianSmallFlat()
             template.textProvider = CLKSimpleTextProvider(text: settings.smallScore)
             template.tintColor = AppColors.WatchComplicationColor
@@ -58,10 +58,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template.line2TextProvider = CLKSimpleTextProvider(text: settings.smallScoreOrDate)
             template.tintColor = AppColors.WatchComplicationColor
             entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
-            
-        // TODO: Support new complication types
-        default:
-            break
+        case .ExtraLarge:
+            let template = CLKComplicationTemplateExtraLargeSimpleText()
+            template.textProvider = CLKSimpleTextProvider(text: settings.longCombinedTeamScoreOrDate)
+            template.tintColor = AppColors.WatchComplicationColor
+            entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
         }
         
         handler(entry)
@@ -116,7 +117,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 template.body2TextProvider = CLKSimpleTextProvider(text: "Tue 26 Dec")
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
-            case .UtilitarianSmall:
+            case .UtilitarianSmall, .UtilitarianSmallFlat:
                 let template = CLKComplicationTemplateUtilitarianSmallFlat()
                 template.textProvider = CLKSimpleTextProvider(text: "2-0")
                 template.tintColor = AppColors.WatchComplicationColor
@@ -132,10 +133,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 template.line2TextProvider = CLKSimpleTextProvider(text: "2-0")
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
-            
-            // TODO: Support new complication types
-            default:
-                break
+            case .ExtraLarge:
+                let template = CLKComplicationTemplateExtraLargeSimpleText()
+                template.textProvider = CLKSimpleTextProvider(text: "Stourbridge 10-0")
+                template.tintColor = AppColors.WatchComplicationColor
+                handler(template)
         }
     }
     

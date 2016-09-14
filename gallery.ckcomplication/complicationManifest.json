@@ -1,0 +1,10 @@
+{
+  "supported complication families" : {
+    "3" : "87F20000-A93B-4EAA-8638-BBD16C4FF9BD.json",
+    "1" : "B59BC77E-BD3B-4DD0-891D-C851F8850BDD.json",
+    "4" : "3BAE85FF-700B-4C58-84A4-661FD3BF872C.json",
+    "2" : "8A2335C0-8CEC-4783-B20C-CC124056BC04.json",
+    "0" : "A0A8110E-FE2F-4E80-BF2E-740E95BD5BBB.json"
+  },
+  "client ID" : "com.bravelocation.yeltzland.watchkitapp.watchkitextension"
+}

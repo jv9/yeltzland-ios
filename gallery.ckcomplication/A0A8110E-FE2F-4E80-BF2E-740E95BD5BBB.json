@@ -1,0 +1,19 @@
+{
+  "tintColor" : {
+    "green" : 0.8627451,
+    "red" : 0.7921569,
+    "alpha" : 1,
+    "blue" : 0.9215686
+  },
+  "class" : "CLKComplicationTemplateModularSmallStackText",
+  "highlightLine2" : false,
+  "line2TextProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "2-0"
+  },
+  "version" : 30000,
+  "line1TextProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "STOU"
+  }
+}

@@ -57,6 +57,7 @@
 		528D74581CF2F20200263685 /* AzureNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D74571CF2F20200263685 /* AzureNotifications.swift */; };
 		528D745A1CF2F4A400263685 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528D74591CF2F4A400263685 /* DefaultPreferences.plist */; };
 		528D745C1CF3201400263685 /* whistleshort.wav in Resources */ = {isa = PBXBuildFile; fileRef = 528D745B1CF3201400263685 /* whistleshort.wav */; };
+		52A4596E1D89666E00822D8C /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 52A4596D1D89666E00822D8C /* gallery.ckcomplication */; };
 		52C4DA881D4CA68A009AFD25 /* american_typewriter_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C4DA871D4CA68A009AFD25 /* american_typewriter_regular.ttf */; };
 		52C4DA891D4CA68A009AFD25 /* american_typewriter_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C4DA871D4CA68A009AFD25 /* american_typewriter_regular.ttf */; };
 		52DBCAA01D4A012E00D35F91 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */; };
@@ -184,6 +185,7 @@
 		528D74571CF2F20200263685 /* AzureNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureNotifications.swift; sourceTree = "<group>"; };
 		528D74591CF2F4A400263685 /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		528D745B1CF3201400263685 /* whistleshort.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistleshort.wav; sourceTree = "<group>"; };
+		52A4596D1D89666E00822D8C /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 		52C4DA871D4CA68A009AFD25 /* american_typewriter_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = american_typewriter_regular.ttf; sourceTree = "<group>"; };
 		52DBCA9F1D4A012E00D35F91 /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		52E3DF731CD9FA78009F18BD /* yeltzland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yeltzland.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,6 +355,7 @@
 		52E3DF6A1CD9FA78009F18BD = {
 			isa = PBXGroup;
 			children = (
+				52A4596D1D89666E00822D8C /* gallery.ckcomplication */,
 				52236AE91D17EC90004903AB /* data */,
 				5211F7231CDA33580031496D /* images */,
 				52E3DF751CD9FA78009F18BD /* yeltzland */,
@@ -646,6 +649,7 @@
 				52176BAE1D4A1AF600B7EFAE /* gamescore.json in Resources */,
 				528D745A1CF2F4A400263685 /* DefaultPreferences.plist in Resources */,
 				523C841E1CE47F06006F1865 /* HTFC2016LOGO.png in Resources */,
+				52A4596E1D89666E00822D8C /* gallery.ckcomplication in Resources */,
 				52E3DF7E1CD9FA78009F18BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -869,7 +873,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -887,7 +891,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -906,7 +910,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -925,7 +929,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
