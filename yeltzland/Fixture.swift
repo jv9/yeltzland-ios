@@ -20,18 +20,14 @@ public class Fixture {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        if let matchDateTime = fromJson["MatchDateTime"] as! String? {
-            if let parsedMatchDate = formatter.dateFromString(matchDateTime) {
-                self.fixtureDate = parsedMatchDate
-            } else {
-                return nil
-            }
-        } else {
-            return nil
-        }
+        guard let matchDateTime = fromJson["MatchDateTime"] as! String? else { return nil }
+        self.fixtureDate = formatter.dateFromString(matchDateTime)!
         
-        self.opponent = fromJson["Opponent"] as! String
-        self.home = ((fromJson["Home"] as! String) == "1")
+        guard let opponent = fromJson["Opponent"] as! String? else { return nil }
+        self.opponent = opponent
+        
+        guard let home = fromJson["Home"] as! String? else { return nil }
+        self.home = (home == "1")
         
         // Parse scores or "null"
         if let parsedTeamScore = fromJson["TeamScore"] as? String {

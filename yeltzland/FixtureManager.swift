@@ -160,7 +160,10 @@ public class FixtureManager {
     }
     
     private func parseMatchesJson(json:[String:AnyObject]) {
-        let matches = json["Matches"] as! Array<AnyObject>
+        guard let matches = json["Matches"] as? Array<AnyObject> else { return }
+        
+        // Open lock on fixtures
+        objc_sync_enter(self.fixtureList)
         
         self.fixtureList.removeAll()
         
@@ -182,6 +185,10 @@ public class FixtureManager {
         for currentMonth in Array(self.fixtureList.keys) {
             self.fixtureList[currentMonth] = self.fixtureList[currentMonth]?.sort({ $0.fixtureDate.compare($1.fixtureDate) == .OrderedAscending })
         }
+        
+        // Release lock on fixtures
+        objc_sync_exit(self.fixtureList)
+
         
         // Post notification message
         NSNotificationCenter.defaultCenter().postNotificationName(FixtureManager.FixturesNotification, object: nil)
