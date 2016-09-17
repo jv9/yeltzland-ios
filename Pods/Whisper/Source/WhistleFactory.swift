@@ -7,14 +7,6 @@ public enum WhistleAction {
 
 let whistleFactory = WhistleFactory()
 
-public func Whistle(murmur: Murmur, action: WhistleAction = .Show(1.5)) {
-  whistleFactory.whistler(murmur, action: action)
-}
-
-public func Calm(after after: NSTimeInterval = 0) {
-  whistleFactory.calm(after: after)
-}
-
 public class WhistleFactory: UIViewController {
 
   public lazy var whistleWindow: UIWindow = UIWindow()
@@ -28,7 +20,6 @@ public class WhistleFactory: UIViewController {
     return label
   }()
 
-  public var duration: NSTimeInterval = 2
   public var viewController: UIViewController?
   public var hideTimer = NSTimer()
 
@@ -147,7 +138,7 @@ public class WhistleFactory: UIViewController {
 
   public func calm(after after: NSTimeInterval) {
     hideTimer.invalidate()
-    hideTimer = NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: #selector(WhistleFactory.timerDidFire), userInfo: nil, repeats: false)
+    hideTimer = NSTimer.scheduledTimerWithTimeInterval(after, target: self, selector: #selector(WhistleFactory.timerDidFire), userInfo: nil, repeats: false)
   }
 
   // MARK: - Timer methods

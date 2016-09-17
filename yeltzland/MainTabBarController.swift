@@ -11,14 +11,16 @@ import Font_Awesome_Swift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
     
-    init(initialTab: Int) {
+    init() {
         super.init(nibName: nil, bundle: nil)
         self.addChildViewControllers()
-        self.selectedIndex = initialTab
+        self.selectedIndex = GameSettings.instance.lastSelectedTab;
     }
     
     override func viewDidLoad() {
@@ -31,16 +33,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func addChildViewControllers() {
-        // Official Site
-        let officialViewController = WebPageViewController()
-        officialViewController.homeUrl = NSURL(string:"http://www.ht-fc.com")
-        officialViewController.pageTitle = "Official Site"
-        let officialNavigationController = UINavigationController(rootViewController:officialViewController)
-        
-        let officialIcon = UITabBarItem(title: "Official Site", image: nil, selectedImage: nil)
-        officialIcon.setFAIcon(FAType.FABlackTie)
-        officialNavigationController.tabBarItem = officialIcon
-        
         // Forum
         let forumViewController = WebPageViewController()
         forumViewController.homeUrl = NSURL(string:"http://www.yeltz.co.uk/0/")
@@ -50,6 +42,16 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let forumIcon = UITabBarItem(title: "Yeltz Forum", image: nil, selectedImage: nil)
         forumIcon.setFAIcon(FAType.FAUsers)
         forumNavigationController.tabBarItem = forumIcon
+
+        // Official Site
+        let officialViewController = WebPageViewController()
+        officialViewController.homeUrl = NSURL(string:"http://www.ht-fc.com")
+        officialViewController.pageTitle = "Official Site"
+        let officialNavigationController = UINavigationController(rootViewController:officialViewController)
+        
+        let officialIcon = UITabBarItem(title: "Official Site", image: nil, selectedImage: nil)
+        officialIcon.setFAIcon(FAType.FABlackTie)
+        officialNavigationController.tabBarItem = officialIcon
         
         // Yeltz TV
         let tvViewController = WebPageViewController()
@@ -74,7 +76,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let otherViewController = OtherLinksTableViewController()
         let otherNavigationController = UINavigationController(rootViewController:otherViewController)
         
-        let otherIcon = UITabBarItem(tabBarSystemItem: .More, tag: 0)
+        let otherIcon = UITabBarItem(tabBarSystemItem: .More, tag: 4)
         otherNavigationController.tabBarItem = otherIcon
 
         // Add controllers
@@ -84,7 +86,21 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // Delegate methods
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        //print("Should select viewController: \(viewController.title) ?")
+        
+        // Find tab index of selected view controller, and store it as last selected
+        var currentIndex = 0
+        var selectedIndex = 0
+        
+        for currentController in self.viewControllers! {
+            if (currentController == viewController) {
+                selectedIndex = currentIndex
+                break
+            }
+            currentIndex = currentIndex + 1
+        }
+        
+        GameSettings.instance.lastSelectedTab = selectedIndex
+        
         return true;
     }
 }

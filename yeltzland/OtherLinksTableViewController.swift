@@ -18,7 +18,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         super.viewDidLoad()
 
         // Setup navigation
-        self.navigationItem.title = "Odds and Sods"
+        self.navigationItem.title = "More"
         
         self.view.backgroundColor = AppColors.OtherBackground
         self.tableView.separatorColor = AppColors.OtherSeparator
@@ -29,18 +29,19 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0)
-        {
-            return 4
+        if (section == 0) {
+            return 3
         } else if (section == 1) {
-            return 2
+            return 4
         } else if (section == 2) {
-            return 1
+            return 2
         } else if (section == 3) {
+            return 1
+        } else if (section == 4) {
             return 1
         }
         
@@ -50,7 +51,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = nil
         
-        if (indexPath.section == 2 && indexPath.row == 0) {
+        if (indexPath.section == 3 && indexPath.row == 0) {
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SettingsCell")
             cell!.selectionStyle = .None
             cell!.accessoryType = .None
@@ -68,6 +69,26 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         }
         
         if (indexPath.section == 0) {
+            switch (indexPath.row) {
+            case 0:
+                cell!.textLabel?.text = "Fixture List"
+                let cellImage = UIImage(icon: FAType.FACalendar, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
+                cell!.imageView?.image = cellImage
+                break
+            case 1:
+                cell!.textLabel?.text = "Where's the Ground?"
+                let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
+                cell!.imageView?.image = cellImage
+            case 2:
+                cell!.textLabel?.text = "League Table"
+                let cellImage = UIImage(icon: FAType.FATable, size: CGSize(width: 100, height: 100), textColor: AppColors.Fixtures, backgroundColor: UIColor.clearColor())
+                cell!.imageView?.image = cellImage
+                break
+            default:
+                break
+            }
+        }
+        else if (indexPath.section == 1) {
             switch (indexPath.row) {
             case 0:
                 cell!.textLabel?.text = "HTFC on Facebook"
@@ -92,7 +113,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             default:
                 break
             }
-        } else if (indexPath.section == 1) {
+        } else if (indexPath.section == 2) {
             switch (indexPath.row) {
             case 0:
                 cell!.textLabel?.text = "Yeltz Archives"
@@ -107,15 +128,15 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             default:
                 break
             }
-        } else if (indexPath.section == 2) {
+        } else if (indexPath.section == 3) {
             cell!.textLabel?.text = "Game time tweets"
             let cellImage = UIImage(icon: FAType.FATwitter, size: CGSize(width: 100, height: 100), textColor: AppColors.TwitterIcon, backgroundColor: UIColor.clearColor())
 
             cell!.imageView?.image = cellImage
 
             cell!.detailTextLabel?.text = "Enable notifications"
-        } else if (indexPath.section == 3) {
-            cell!.textLabel?.text = "Another Brave Location App!"
+        } else if (indexPath.section == 4) {
+            cell!.textLabel?.text = "More Brave Location Apps"
             let cellImage = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: 100, height: 100), textColor: AppColors.BraveLocation, backgroundColor: UIColor.clearColor())
             cell!.imageView?.image = cellImage
             
@@ -131,12 +152,32 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         cell!.textLabel?.adjustsFontSizeToFitWidth = true
         cell!.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.OtherDetailTextSize)!
         
+        cell!.textLabel?.textColor = AppColors.OtherTextColor
+        cell!.detailTextLabel?.textColor = AppColors.OtherDetailColor
+        
         return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var url: NSURL? = nil;
         if (indexPath.section == 0) {
+            if (indexPath.row == 0) {
+                let fixtures = FixturesTableViewController(style: .Grouped)
+                self.navigationController!.pushViewController(fixtures, animated: true)
+                return;
+            } else if (indexPath.row == 1) {
+                let locations = LocationsViewController()
+                self.navigationController!.pushViewController(locations, animated: true)
+                return;
+            }
+        }
+        
+        var url: NSURL? = nil;
+        
+        if (indexPath.section == 0) {
+            if (indexPath.row == 2) {
+                url = NSURL(string: "http://www.evostikleague.co.uk/match-info/tables")
+            }
+        } else if (indexPath.section == 1) {
             switch (indexPath.row) {
             case 0:
                 url = NSURL(string: "https://www.facebook.com/halesowentownfc/")
@@ -150,7 +191,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             default:
                 break
             }
-        } else if (indexPath.section == 1) {
+        } else if (indexPath.section == 2) {
             switch (indexPath.row) {
             case 0:
                 url = NSURL(string: "http://www.yeltzarchives.com")
@@ -161,7 +202,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             default:
                 break
             }
-        } else if (indexPath.section == 3) {
+        } else if (indexPath.section == 4) {
             url = NSURL(string: "http://bravelocation.com/apps")
         }
         
@@ -169,7 +210,7 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
             let svc = SFSafariViewController(URL: url!)
             svc.delegate = self
             self.presentViewController(svc, animated: true, completion: nil)
-        } else if (indexPath.section == 0 && indexPath.row == 3) {
+        } else if (indexPath.section == 1 && indexPath.row == 3) {
             let alert = UIAlertController(title: "Really?", message: "Computer says no", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -181,13 +222,15 @@ class OtherLinksTableViewController: UITableViewController, SFSafariViewControll
         switch(section)
         {
         case 0:
-            return "Other websites"
+            return "Statistics"
         case 1:
-            return "Know Your History"
+             return "Other websites"
         case 2:
-            return "Options"
+            return "Know Your History"
         case 3:
-            return "About the app"
+            return "Options"
+        case 4:
+            return "About"
         default:
             return ""
         }

@@ -18,18 +18,18 @@ public class AzureNotifications {
     #endif
     
     var tagNames:Set<NSObject> = []
-    let defaults = NSUserDefaults.standardUserDefaults()
 
     var enabled: Bool {
         get {
-            return self.defaults.boolForKey("GameTimeTweetsEnabled")
+            return GameSettings.instance.gameTimeTweetsEnabled
         }
         set(newValue) {
             // If changed, set the value and re-register
             let currentValue = self.enabled
             
             if (newValue != currentValue) {
-                self.defaults.setBool(newValue, forKey: "GameTimeTweetsEnabled")
+                GameSettings.instance.gameTimeTweetsEnabled = newValue
+
                 self.setupNotifications(true)
             }
         }
@@ -37,6 +37,9 @@ public class AzureNotifications {
     
     init() {
         self.tagNames = ["gametimealerts"]
+        #if DEBUG
+            self.tagNames = ["gametimealerts", "testtag"]
+        #endif
     }
     
     func setupNotifications(forceSetup: Bool) {
@@ -52,6 +55,14 @@ public class AzureNotifications {
     func register(deviceToken: NSData) {
         // Register with Azure Hub
         let hub = SBNotificationHub(connectionString: self.hubListenAccess, notificationHubPath: self.hubName)
+        
+        // Debug device token:
+        var token = deviceToken.description
+        token = token.stringByReplacingOccurrencesOfString("<", withString: "")
+        token = token.stringByReplacingOccurrencesOfString(">", withString: "")
+        token = token.stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        print("Device token: \(token)")
         
         if (self.enabled) {
             do {

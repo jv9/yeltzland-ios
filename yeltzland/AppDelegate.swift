@@ -34,24 +34,97 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ], forState: .Normal)
         
         // Setup Fabric
-        Fabric.with([Crashlytics.self, Twitter.self])
+        #if DEBUG
+            Fabric.with([Twitter.self])
+        #else
+            Fabric.with([Crashlytics.self, Twitter.self])
+        #endif
         
         // Setup notifications
         self.azureNotifications.setupNotifications(false)
         
-        // Initial web page
-        var firstTab = 0;
+        // Update the fixture and game score caches
+        FixtureManager.instance.getLatestFixtures()
+        GameScoreManager.instance.getLatestGameScore()
+        
+        // Setup backhground fetch
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        // Push settings to watch in the background
+        GameSettings.instance.forceBackgroundWatchUpdate()
+        
+        // If came from a notification, always start on the Twitter tab
         if launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
-            // If came from a notification, start on the Twitter tab
-            firstTab = 3
+            GameSettings.instance.lastSelectedTab = 3
+        } else if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] {
+            self.handleShortcut(shortcutItem as! UIApplicationShortcutItem)
         }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let initialTabViewController = MainTabBarController(initialTab:firstTab)
+        let initialTabViewController = MainTabBarController()
         self.window?.rootViewController = initialTabViewController
         self.window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func application(application: UIApplication,
+                     performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        NSLog("In background refresh ...")
+        let now = NSDate()
+        
+        let differenceInMinutes = NSCalendar.currentCalendar().components(.Minute, fromDate: now, toDate: GameSettings.instance.nextGameTime, options: []).minute
+        
+        if (differenceInMinutes < 0) {
+            // After game kicked off, so go get game score
+            GameScoreManager.instance.getLatestGameScore()
+            FixtureManager.instance.getLatestFixtures()
+        
+            completionHandler(UIBackgroundFetchResult.NewData)
+        } else {
+            // Otherwise, make sure the watch is updated occasionally
+            GameSettings.instance.forceBackgroundWatchUpdate()
+            completionHandler(UIBackgroundFetchResult.NoData)
+        }
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        NSLog("3D Touch when from shortcut action");
+        let handledShortCut = self.handleShortcut(shortcutItem)
+        
+        // Reset selected tab
+        let mainViewController: MainTabBarController? = self.window?.rootViewController as? MainTabBarController
+        if (mainViewController != nil) {
+            mainViewController!.selectedIndex = GameSettings.instance.lastSelectedTab
+        }
+        
+        return completionHandler(handledShortCut);
+    }
+    
+    func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        NSLog("Handling shortcut item %@", shortcutItem.type);
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.forum") {
+            GameSettings.instance.lastSelectedTab = 0
+            return true
+        }
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.official") {
+            GameSettings.instance.lastSelectedTab = 1
+            return true
+        }
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.yeltztv") {
+            GameSettings.instance.lastSelectedTab = 2
+            return true
+        }
+        
+        if (shortcutItem.type == "com.bravelocation.yeltzland.twitter") {
+            GameSettings.instance.lastSelectedTab = 3
+            return true
+        }
+        
+        return false
     }
  
     func application(application: UIApplication,
@@ -80,6 +153,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Print message
         print("Notification received: \(userInfo)")
         
+        // Go and update the game score
+        GameScoreManager.instance.getLatestGameScore()
+        
         // If app in foreground, show a whisper
         if (application.applicationState == .Active) {
             if let aps = userInfo["aps"] as? NSDictionary {
@@ -91,7 +167,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         if (self.window != nil && self.window?.rootViewController != nil) {
                             if let tabController : UITabBarController? = (self.window?.rootViewController as! UITabBarController) {
                                 if let navigationController : UINavigationController? = tabController!.viewControllers![0] as? UINavigationController {
-                                    Whisper(message, to: navigationController!, action: .Show)
+                                    show(whisper: message, to: navigationController!, action: .Show)
+                                    hide(whisperFrom: navigationController!, after: 2.0)
                                 }
                             }
                         }

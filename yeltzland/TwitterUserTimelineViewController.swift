@@ -15,7 +15,6 @@ import Font_Awesome_Swift
 class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetViewDelegate, SFSafariViewControllerDelegate {
     
     var userScreenName: String!
-    var spinner: UIActivityIndicatorView!
     var reloadButton: UIBarButtonItem!
     var timer: NSTimer!
     
@@ -50,37 +49,7 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
         super.viewWillAppear(animated)
         self.reloadData()
     }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row == tableView.indexPathsForVisibleRows!.last!.row) {
-            self.hideSpinner()
-        }
-    }
-    
-    func showSpinner() {
-        if (self.spinner != nil) {
-            self.hideSpinner()
-        }
-        
-        let topPosition = (self.navigationController?.navigationBar.frame.size.height)! + CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-        let tableViewHeight = CGRectGetHeight(view.frame) -
-            (topPosition + CGRectGetHeight((self.tabBarController?.tabBar.frame)!));
-        let overlayPosition = CGRectMake(0, self.view.bounds.origin.y, self.view.bounds.size.width, tableViewHeight)
-        
-        self.spinner = UIActivityIndicatorView(frame:overlayPosition)
-        self.spinner.color = AppColors.SpinnerColor
-        self.view.addSubview(self.spinner)
-        self.spinner.startAnimating()
-    }
-    
-    func hideSpinner() {
-        if (self.spinner != nil) {
-            self.spinner.stopAnimating()
-            self.spinner.removeFromSuperview()
-            self.spinner = nil;
-        }
-    }
-    
+   
     func tweetView(tweetView: TWTRTweetView, didTapURL url: NSURL) {
         let svc = SFSafariViewController(URL: url)
         self.presentViewController(svc, animated: true, completion: nil)
@@ -88,7 +57,6 @@ class TwitterUserTimelineViewController: TWTRTimelineViewController, TWTRTweetVi
     
     // MARK: - Nav bar actions
     func reloadData() {
-        self.showSpinner()
         self.refresh()
         
         // Set a timer to refresh the data after interval period
