@@ -183,6 +183,7 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
             updatedSettings["currentGameOpponentScore"] = self.currentGameOpponentScore
             
             // If we're in a game, push it out straight away, otherwise do it in the background
+            // When upgraded to iOS10 target, we can also check for session.remainingComplicationUserInfoTransfers > 0
             if (currentlyInGame) {
                 session.transferCurrentComplicationUserInfo(updatedSettings)
             } else {
