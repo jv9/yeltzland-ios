@@ -278,8 +278,8 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     private func scheduleSnapshot() {
         // Let's update the snapshot if the view changed
         print("Scheduling snapshot")
-        let soon = NSDate().addTimeInterval(5.0)
-        WKExtension.sharedExtension().scheduleSnapshotRefreshWithPreferredDate(soon as! NSDate, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+        let soon =  NSCalendar.autoupdatingCurrentCalendar().dateByAddingUnit(.Second, value: 5, toDate: NSDate(), options: [])
+        WKExtension.sharedExtension().scheduleSnapshotRefreshWithPreferredDate(soon!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
             if let error = error {
                 print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
             }})

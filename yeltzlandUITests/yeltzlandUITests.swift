@@ -17,7 +17,7 @@ class yeltzlandUITests: XCTestCase {
         continueAfterFailure = false
         
         let app = XCUIApplication()
-        setupSnapshot(app)
+        setupSnapshot(app: app)
         app.launch()
     }
     
@@ -28,30 +28,26 @@ class yeltzlandUITests: XCTestCase {
     
     func testYeltzForum() {
         XCUIApplication().tabBars.buttons["Yeltz Forum"].tap()
-        snapshot("01Forum")
+        snapshot(name: "01Forum")
     }
     
     func testOfficialSite() {
         XCUIApplication().tabBars.buttons["Official Site"].tap()
-        snapshot("02Site")
+        snapshot(name: "02Site")
     }
     
     func testYeltzTV() {
         XCUIApplication().tabBars.buttons["Yeltz TV"].tap()
-        snapshot("03TV")
+        snapshot(name: "03TV")
     }
     
     func testTwitter() {
         XCUIApplication().tabBars.buttons["Twitter"].tap()
-        snapshot("04Twitter")
+        snapshot(name: "04Twitter")
     }
     
     func testMore() {
         XCUIApplication().tabBars.buttons["More"].tap()
-        snapshot("05More")
-
+        snapshot(name: "05More")
     }
-    
-    
-    
 }
