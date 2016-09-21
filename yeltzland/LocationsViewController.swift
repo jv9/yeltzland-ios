@@ -98,4 +98,9 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             return nil
         }
     }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        let selectedLocation = view.annotation!.title
+        print("Selected \(selectedLocation)")
+    }
 }
