@@ -12,6 +12,7 @@ import NotificationCenter
 class TodayViewController: UITableViewController, NCWidgetProviding {
     
     let CellRowHeight:CGFloat = 22.0
+    var inExpandedMode:Bool = false
     
     override init(style: UITableViewStyle) {
         super.init(style: style)
@@ -25,6 +26,11 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOSApplicationExtension 10.0, *) {
+            self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.Expanded
+        } else {
+            // Fallback on earlier versions
+        }
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -42,8 +48,27 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         FixtureManager.instance.getLatestFixtures()
         GameScoreManager.instance.getLatestGameScore()
         
-        self.preferredContentSize = CGSizeMake(0.0, self.CellRowHeight * 5)
+        var rowCount:CGFloat = 5.0
+        if (self.inExpandedMode) {
+            rowCount = 9.0
+        }
+        
+        self.preferredContentSize = CGSizeMake(0.0, self.CellRowHeight * rowCount)
         completionHandler(NCUpdateResult.NewData)
+    }
+    
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if (activeDisplayMode == NCWidgetDisplayMode.Compact) {
+            self.preferredContentSize = maxSize
+            self.inExpandedMode = false
+        }
+        else {
+            self.preferredContentSize = CGSize(width: maxSize.width, height: self.CellRowHeight * 9)
+            self.inExpandedMode = true
+        }
+        
+        self.tableView.reloadData()
     }
     
     deinit {
@@ -66,98 +91,102 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if (GameSettings.instance.gameScoreForCurrentGame) {
+            return 3
+        }
+        
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (GameSettings.instance.gameScoreForCurrentGame) {
-            return 5
+        switch (section) {
+        case 0:
+            return 1
+        case 1:
+            if (GameSettings.instance.gameScoreForCurrentGame) {
+                return 1
+            } else if (self.inExpandedMode) {
+                return 6
+            } else {
+                return 2
+            }
+        case 2:
+            if (self.inExpandedMode) {
+                return 3
+            } else {
+                return 0
+            }
+
+        default:
+            return 0
         }
-        
-        return 4
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "FixtureTodayCell")
        
+        // Figure out data to show
+        let nextFixtures = FixtureManager.instance.GetNextFixtures(6)
         var opponent: String = ""
-        if (indexPath.row == 1) {
-            opponent = GameSettings.instance.displayLastOpponent
-        } else if (indexPath.row == 3) {
-            opponent = GameSettings.instance.displayNextOpponent
-        }
+        var gameDetails = ""
         
+        if (indexPath.section == 0) {
+            opponent = GameSettings.instance.displayLastOpponent
+            gameDetails = GameSettings.instance.lastScore
+        } else if (indexPath.section == 1) {
+            if (GameSettings.instance.gameScoreForCurrentGame) {
+                opponent = GameSettings.instance.displayNextOpponent
+                gameDetails = GameSettings.instance.currentScore
+            } else if (nextFixtures.count > indexPath.row){
+                opponent = nextFixtures[indexPath.row].displayOpponent
+                gameDetails = indexPath.row == 0 ? GameSettings.instance.nextKickoffTime : nextFixtures[indexPath.row].fullKickoffTime
+            }
+        } else if (indexPath.section == 2) {
+            if (nextFixtures.count > indexPath.row){
+                opponent = nextFixtures[indexPath.row].displayOpponent
+                gameDetails = nextFixtures[indexPath.row].fullKickoffTime
+            }
+        }
+                
+        if (opponent.characters.count > 0) {
+            cell.textLabel?.text = opponent
+            cell.detailTextLabel?.text = gameDetails
+        } else {
+            cell.textLabel?.text = "  None"
+            cell.detailTextLabel?.text = ""
+        }
+
+        // Set colors
         cell.selectionStyle = .None
         cell.accessoryType = .None
+        cell.backgroundColor = AppColors.TodayBackground
+        cell.separatorInset = UIEdgeInsetsMake(0.0, 20.0, 0.0, 0.0)
 
         cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.TodayTextSize)!
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.detailTextLabel?.font = UIFont(name: AppColors.AppFontName, size: AppColors.TodayFootnoteSize)!
         cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         
-        if ((indexPath.row == 1) || (indexPath.row == 3)) {
-            cell.textLabel?.textColor = AppColors.TodayText
-            cell.detailTextLabel?.textColor = AppColors.TodayText
+        cell.textLabel?.textColor = AppColors.TodayText
+        cell.detailTextLabel?.textColor = AppColors.TodayText
             
-            if (opponent.characters.count > 0) {
-                if (AppColors.isIos10AndAbove) {
-                    
-                    var resultColor = AppColors.TodayText
-                    
-                    if (indexPath.row == 1) {
-                        let teamScore = GameSettings.instance.lastGameYeltzScore
-                        let opponentScore  = GameSettings.instance.lastGameOpponentScore
-                        
-                        if (teamScore > opponentScore) {
-                            resultColor = AppColors.FixtureWin
-                        } else if (teamScore < opponentScore) {
-                            resultColor = AppColors.FixtureLose
-                        } else {
-                            resultColor = AppColors.FixtureDraw
-                        }
-                    }
-                    
-                    cell.textLabel?.textColor = resultColor
-                    cell.detailTextLabel?.textColor = resultColor
+        if (indexPath.section == 0 && opponent.characters.count > 0) {
+            if (AppColors.isIos10AndAbove) {
+                let teamScore = GameSettings.instance.lastGameYeltzScore
+                let opponentScore  = GameSettings.instance.lastGameOpponentScore
+                
+                var resultColor = AppColors.TodayText
+                
+                if (teamScore > opponentScore) {
+                    resultColor = AppColors.FixtureWin
+                } else if (teamScore < opponentScore) {
+                    resultColor = AppColors.FixtureLose
+                } else {
+                    resultColor = AppColors.FixtureDraw
                 }
                 
-                cell.textLabel?.text = String.init(format: "  %@", opponent)
-                
-                if (indexPath.row == 1) {
-                    cell.detailTextLabel?.text = GameSettings.instance.lastScore
-                } else {
-                    if (GameSettings.instance.gameScoreForCurrentGame) {
-                        cell.detailTextLabel?.text = GameSettings.instance.currentScore
-                    } else {
-                        cell.detailTextLabel?.text = GameSettings.instance.nextKickoffTime
-                    }
-                }
-            } else {
-                cell.textLabel?.text = "  None"
-                cell.detailTextLabel?.text = ""
-            }
-        }
-        else {
-            if (indexPath.row == 0) {
-                cell.textLabel?.text = "Last game:"
-            } else if (indexPath.row == 2) {
-                if (GameSettings.instance.gameScoreForCurrentGame) {
-                    cell.textLabel?.text = "Current score:"
-                } else {
-                    cell.textLabel?.text = "Next game:"
-                }
-            } else {
-                cell.textLabel?.text = "  (*best guess from Twitter)"
-                cell.textLabel?.font = UIFont(name: AppColors.AppFontName, size:AppColors.TodayFootnoteSize)!
-            }
-            
-            cell.detailTextLabel?.text = ""
-            cell.detailTextLabel?.textColor = AppColors.TodaySectionText
-            
-            if (indexPath.row == 4) {
-                cell.textLabel?.textColor = AppColors.TodayText
-            } else {
-                cell.textLabel?.textColor = AppColors.TodaySectionText
+                cell.textLabel?.textColor = resultColor
+                cell.detailTextLabel?.textColor = resultColor
             }
         }
         
@@ -169,16 +198,65 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         print("Opening app")
         self.extensionContext?.openURL(url!, completionHandler: nil)
     }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = AppColors.TodayBackground
+        header.textLabel!.textColor = AppColors.OtherSectionText
+        header.textLabel!.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherSectionTextSize)!
+        
+        switch section {
+        case 0:
+            header.textLabel?.text = " Last game"
+        case 1:
+            if (GameSettings.instance.gameScoreForCurrentGame) {
+                header.textLabel?.text = " Current score"
+            } else {
+                header.textLabel?.text = " Next fixtures"
+            }
+        case 2:
+            if (self.inExpandedMode) {
+                header.textLabel?.text = " Next fixtures"
+            } else {
+                header.textLabel?.text = ""
+            }
+        default:
+             header.textLabel?.text = ""
+        }
+    }
+
+    
+    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        let footer: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        footer.contentView.backgroundColor = AppColors.TodayBackground
+        footer.textLabel!.textColor = AppColors.TodayText
+        footer.textLabel!.font = UIFont(name: AppColors.AppFontName, size:AppColors.OtherDetailTextSize)!
+        
+        switch section {
+        case 1:
+            if (GameSettings.instance.gameScoreForCurrentGame) {
+                footer.textLabel?.text = "  (*best guess from Twitter)"
+            } else {
+                footer.textLabel?.text = ""
+            }
+        default:
+            footer.textLabel?.text = ""
+        }
+    }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return self.CellRowHeight
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
+        return 20.0
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if (section == 1 && GameSettings.instance.gameScoreForCurrentGame) {
+            return 20.0
+        }
+        
         return 0.0
     }
 }

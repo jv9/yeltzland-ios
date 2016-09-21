@@ -127,6 +127,17 @@ public class FixtureManager {
     
     
     public func getNextGame() -> Fixture? {
+        let fixtures = self.GetNextFixtures(1)
+        
+        if (fixtures.count > 0) {
+            return fixtures[0]
+        }
+        
+        return nil;
+    }
+    
+    public func GetNextFixtures(numberOfFixtures:Int) -> [Fixture] {
+        var fixtures:[Fixture] = []
         let currentDayNumber = self.dayNumber(NSDate())
         
         for month in self.Months {
@@ -135,12 +146,16 @@ public class FixtureManager {
                 
                 // If no score and match is not before today
                 if (fixture.teamScore == nil && fixture.opponentScore == nil && currentDayNumber <= matchDayNumber) {
-                    return fixture
+                    fixtures.append(fixture)
+                    
+                    if (fixtures.count == numberOfFixtures) {
+                        return fixtures
+                    }
                 }
             }
         }
         
-        return nil;
+        return fixtures
     }
     
     public func getCurrentGame() -> Fixture? {
