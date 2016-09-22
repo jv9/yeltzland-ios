@@ -138,5 +138,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.bravelocation.yeltzland.currenttab</string>
+	</array>
 </dict>
 </plist>

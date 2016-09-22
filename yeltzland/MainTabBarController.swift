@@ -9,7 +9,7 @@
 import UIKit
 import Font_Awesome_Swift
 
-class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate, NSUserActivityDelegate {
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
@@ -101,6 +101,35 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         GameSettings.instance.lastSelectedTab = selectedIndex
         
+        // Set activity for handoff
+        let activity = NSUserActivity(activityType: "com.bravelocation.yeltzland.currenttab")
+        activity.delegate = self
+        activity.eligibleForHandoff = true
+        activity.needsSave = true
+        
+        self.userActivity = activity;
+        self.userActivity?.becomeCurrent()
+        
         return true;
+    }
+    
+    override func restoreUserActivityState(activity: NSUserActivity) {
+        print("Restoring user activity in tab controller ...")
+        print("User info is: \(activity.userInfo)")
+        
+        if (activity.activityType == "com.bravelocation.yeltzland.currenttab") {
+            if let info = activity.userInfo {
+                if let tab = info["com.bravelocation.yeltzland.currenttab.key"] {
+                    self.selectedIndex = tab as! Int
+                    GameSettings.instance.lastSelectedTab = tab as! Int
+                    print("Set tab to \(tab) due to userActivity call")
+                }
+            }
+        }
+    }
+    
+    func userActivityWillSave(userActivity: NSUserActivity) {
+        print("Saving user activity current tab to be \(self.selectedIndex)")
+        userActivity.userInfo = ["com.bravelocation.yeltzland.currenttab.key": NSNumber(integer: self.selectedIndex)]
     }
 }

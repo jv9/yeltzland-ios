@@ -100,6 +100,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return completionHandler(handledShortCut);
     }
+        
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        print("In continueUserActivity")
+        
+        if let window = self.window {
+            window.rootViewController?.restoreUserActivityState(userActivity)
+        }
+        
+        return true
+    }
     
     func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
         NSLog("Handling shortcut item %@", shortcutItem.type);
