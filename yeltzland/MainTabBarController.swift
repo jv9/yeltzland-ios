@@ -15,14 +15,26 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, NSUs
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        self.setupNotificationWatcher()
     }
     
     init() {
         super.init(nibName: nil, bundle: nil)
         self.addChildViewControllers()
         self.selectedIndex = GameSettings.instance.lastSelectedTab;
+        self.setupNotificationWatcher()
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("Removed notification handler for URL updates")
     }
     
+    private func setupNotificationWatcher() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainTabBarController.setupHandoff), name: WebPageViewController.UrlNotification, object: nil)
+        print("Setup notification handler for URL updates")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -84,6 +96,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, NSUs
         self.viewControllers = controllers
     }
     
+    func latestUrl(url: NSURL) {
+        
+    }
+    
     // Delegate methods
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         
@@ -100,7 +116,12 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, NSUs
         }
         
         GameSettings.instance.lastSelectedTab = selectedIndex
-        
+        self.setupHandoff()
+
+        return true;
+    }
+    
+    func setupHandoff() {
         // Set activity for handoff
         let activity = NSUserActivity(activityType: "com.bravelocation.yeltzland.currenttab")
         activity.delegate = self
@@ -109,13 +130,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, NSUs
         
         self.userActivity = activity;
         self.userActivity?.becomeCurrent()
-        
-        return true;
     }
     
     override func restoreUserActivityState(activity: NSUserActivity) {
         print("Restoring user activity in tab controller ...")
-        print("User info is: \(activity.userInfo)")
         
         if (activity.activityType == "com.bravelocation.yeltzland.currenttab") {
             if let info = activity.userInfo {
@@ -123,6 +141,15 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, NSUs
                     self.selectedIndex = tab as! Int
                     GameSettings.instance.lastSelectedTab = tab as! Int
                     print("Set tab to \(tab) due to userActivity call")
+                    
+                    if let currentController = self.viewControllers![self.selectedIndex] as? UINavigationController {
+                        if let selectedController = currentController.viewControllers[0] as? WebPageViewController {
+                            if let currentUrl = info["com.bravelocation.yeltzland.currenttab.currenturl"] as? NSURL {
+                                selectedController.loadPage(currentUrl)
+                                print("Restoring URL to be \(currentUrl)")
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -130,6 +157,31 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, NSUs
     
     func userActivityWillSave(userActivity: NSUserActivity) {
         print("Saving user activity current tab to be \(self.selectedIndex)")
-        userActivity.userInfo = ["com.bravelocation.yeltzland.currenttab.key": NSNumber(integer: self.selectedIndex)]
+
+        userActivity.userInfo = [
+            "com.bravelocation.yeltzland.currenttab.key": NSNumber(integer: self.selectedIndex),
+        ]
+        
+        // Add current URL if a web view
+        var currentUrl:NSURL? = nil
+        
+        if let currentController = self.viewControllers![self.selectedIndex] as? UINavigationController {
+            if let selectedController = currentController.viewControllers[0] as? WebPageViewController {
+                currentUrl = selectedController.webView.URL
+            }
+        }
+        
+        if (currentUrl == nil) {
+            userActivity.userInfo = [
+                "com.bravelocation.yeltzland.currenttab.key": NSNumber(integer: self.selectedIndex)
+            ]
+        } else {
+            userActivity.userInfo = [
+                "com.bravelocation.yeltzland.currenttab.key": NSNumber(integer: self.selectedIndex),
+                "com.bravelocation.yeltzland.currenttab.currenturl": currentUrl!
+            ]
+            
+            print("Saving user activity current URL to be \(currentUrl)")
+        }
     }
 }

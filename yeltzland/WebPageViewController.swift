@@ -13,20 +13,21 @@ import Whisper
 
 class WebPageViewController: UIViewController, WKNavigationDelegate {
     
-    var pageUrl: NSURL!
-    // Properties
+    static let UrlNotification:String = "YLZUrlNotification"
+    
+    var homePageUrl: NSURL!
     
     var homeUrl: NSURL! {
         set {
-            self.pageUrl = newValue;
+            self.homePageUrl = newValue;
             self.loadHomePage()
         }
         get {
-            return self.pageUrl
+            return self.homePageUrl
         }
     }
-    var pageTitle: String!
     
+    var pageTitle: String!
     var homeButton: UIBarButtonItem!
     var backButton: UIBarButtonItem!
     var forwardButton: UIBarButtonItem!
@@ -176,6 +177,15 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    func loadPage(requestUrl: NSURL) {
+        self.webView.stopLoading()
+        progressBar.setProgress(0, animated: false)
+        
+        let req = NSURLRequest(URL: requestUrl)
+        self.webView.loadRequest(req)
+        NSLog("Loading page: %@", requestUrl)
+    }
+    
     func shareButtonTouchUp() {
         if let requestUrl = self.webView.URL {
             let objectsToShare = [requestUrl]
@@ -257,6 +267,10 @@ class WebPageViewController: UIViewController, WKNavigationDelegate {
         
         self.backButton.enabled = webView.canGoBack
         self.forwardButton.enabled = webView.canGoForward
+        
+        // Post notification message that URL has been updated
+        NSNotificationCenter.defaultCenter().postNotificationName(WebPageViewController.UrlNotification, object: nil)
+
     }
     
     func webView(webView: WKWebView, navigation: WKNavigation, withError error: NSError) {

@@ -102,8 +102,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
-        print("In continueUserActivity")
-        
         if let window = self.window {
             window.rootViewController?.restoreUserActivityState(userActivity)
         }
