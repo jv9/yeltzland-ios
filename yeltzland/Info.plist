@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.15</string>
+	<string>1.16</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -78,6 +78,10 @@
 	<string>We want to show where you are on the map</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We want to show where you are on the map</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.bravelocation.yeltzland.currenttab</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
@@ -137,10 +141,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>com.bravelocation.yeltzland.currenttab</string>
 	</array>
 </dict>
 </plist>

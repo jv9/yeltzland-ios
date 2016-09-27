@@ -142,9 +142,10 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
                 gameDetails = indexPath.row == 0 ? GameSettings.instance.nextKickoffTime : nextFixtures[indexPath.row].fullKickoffTime
             }
         } else if (indexPath.section == 2) {
-            if (nextFixtures.count > indexPath.row){
-                opponent = nextFixtures[indexPath.row].displayOpponent
-                gameDetails = nextFixtures[indexPath.row].fullKickoffTime
+            // Need to ignore the current game
+            if (nextFixtures.count > indexPath.row + 1){
+                opponent = nextFixtures[indexPath.row + 1].displayOpponent
+                gameDetails = nextFixtures[indexPath.row + 1].fullKickoffTime
             }
         }
                 
