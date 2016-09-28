@@ -157,7 +157,7 @@ public class BaseSettings : NSObject {
             if (gameState == GameState.GameDayBefore || gameState == GameState.During)  {
                 formatter.dateFormat = "HHmm"
             } else {
-                formatter.dateFormat = "EEE d MMM"
+                formatter.dateFormat = "EEE dd MMM"
             }
         
             return formatter.stringFromDate(self.nextGameTime)
