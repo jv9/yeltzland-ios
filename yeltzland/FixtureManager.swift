@@ -86,8 +86,8 @@ public class FixtureManager {
                 
                 NSLog("Loaded fixtures from server")
                 
-                // Update game settings
-                GameSettings.instance.refreshFixtures()
+                // Post notification message
+                NSNotificationCenter.defaultCenter().postNotificationName(FixtureManager.FixturesNotification, object: nil)
             } catch {
                 NSLog("Error loading fixtures from server ...")
                 print(error)
@@ -203,10 +203,6 @@ public class FixtureManager {
         
         // Release lock on fixtures
         objc_sync_exit(self.fixtureList)
-
-        
-        // Post notification message
-        NSNotificationCenter.defaultCenter().postNotificationName(FixtureManager.FixturesNotification, object: nil)
     }
     
     private func moveSingleBundleFileToAppDirectory(fileName:String, fileType:String) {

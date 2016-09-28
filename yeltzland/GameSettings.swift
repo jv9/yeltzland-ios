@@ -12,11 +12,28 @@ import WatchConnectivity
 
 public class GameSettings : BaseSettings, WCSessionDelegate {
 
+    public static let GameSettingsNotification:String = "YLZGameSettingsNotification"
     private static let sharedInstance = GameSettings()
     class var instance:GameSettings {
         get {
             return sharedInstance
         }
+    }
+
+    public override init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.yeltzland") {
+        super.init(defaultPreferencesName: defaultPreferencesName, suiteName: suiteName)
+        self.setupNotificationWatchers()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("Removed notification handler in game settings")
+    }
+    
+    private func setupNotificationWatchers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameSettings.refreshFixtures), name: FixtureManager.FixturesNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameSettings.refreshGameScore), name: GameScoreManager.GameScoreNotification, object: nil)
+        print("Setup notification handlers for fixture or score updates in game settings")
     }
 
     func initialiseWatchSession() {
@@ -115,6 +132,8 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
         // If any values have been changed, push then to the watch
         if (updated) {
             self.pushAllSettingsToWatch(currentlyInGame)
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(GameSettings.GameSettingsNotification, object: nil)
         } else {
             NSLog("No fixture settings changed")
         }
@@ -149,6 +168,7 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
             // If any values have been changed, push then to the watch
             if (updated) {
                 self.pushAllSettingsToWatch(currentlyInGame)
+                NSNotificationCenter.defaultCenter().postNotificationName(GameSettings.GameSettingsNotification, object: nil)
             } else {
                 NSLog("No game settings changed")
             }

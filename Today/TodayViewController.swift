@@ -13,6 +13,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     
     let CellRowHeight:CGFloat = 22.0
     var inExpandedMode:Bool = false
+    let gameSettings = GameSettings.instance
     
     override init(style: UITableViewStyle) {
         super.init(style: style)
@@ -77,8 +78,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     private func setupNotificationWatchers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: FixtureManager.FixturesNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: GameScoreManager.GameScoreNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: GameSettings.GameSettingsNotification, object: nil)
         print("Setup notification handlers for fixture or score updates in today view")
     }
     
@@ -91,7 +91,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if (GameSettings.instance.gameScoreForCurrentGame) {
+        if (self.gameSettings.gameScoreForCurrentGame) {
             return 3
         }
         
@@ -103,7 +103,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         case 0:
             return 1
         case 1:
-            if (GameSettings.instance.gameScoreForCurrentGame) {
+            if (self.gameSettings.gameScoreForCurrentGame) {
                 return 1
             } else if (self.inExpandedMode) {
                 return 6
@@ -131,15 +131,15 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         var gameDetails = ""
         
         if (indexPath.section == 0) {
-            opponent = GameSettings.instance.displayLastOpponent
-            gameDetails = GameSettings.instance.lastScore
+            opponent = self.gameSettings.displayLastOpponent
+            gameDetails = self.gameSettings.lastScore
         } else if (indexPath.section == 1) {
-            if (GameSettings.instance.gameScoreForCurrentGame) {
-                opponent = GameSettings.instance.displayNextOpponent
-                gameDetails = GameSettings.instance.currentScore
+            if (self.gameSettings.gameScoreForCurrentGame) {
+                opponent = self.gameSettings.displayNextOpponent
+                gameDetails = self.gameSettings.currentScore
             } else if (nextFixtures.count > indexPath.row){
                 opponent = nextFixtures[indexPath.row].displayOpponent
-                gameDetails = indexPath.row == 0 ? GameSettings.instance.nextKickoffTime : nextFixtures[indexPath.row].fullKickoffTime
+                gameDetails = indexPath.row == 0 ? self.gameSettings.nextKickoffTime : nextFixtures[indexPath.row].fullKickoffTime
             }
         } else if (indexPath.section == 2) {
             // Need to ignore the current game
@@ -173,8 +173,8 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
             
         if (indexPath.section == 0 && opponent.characters.count > 0) {
             if (AppColors.isIos10AndAbove) {
-                let teamScore = GameSettings.instance.lastGameYeltzScore
-                let opponentScore  = GameSettings.instance.lastGameOpponentScore
+                let teamScore = self.gameSettings.lastGameYeltzScore
+                let opponentScore  = self.gameSettings.lastGameOpponentScore
                 
                 var resultColor = AppColors.TodayText
                 
@@ -210,7 +210,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         case 0:
             header.textLabel?.text = " Last game"
         case 1:
-            if (GameSettings.instance.gameScoreForCurrentGame) {
+            if (self.gameSettings.gameScoreForCurrentGame) {
                 header.textLabel?.text = " Current score"
             } else {
                 header.textLabel?.text = " Next fixtures"
@@ -235,7 +235,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         
         switch section {
         case 1:
-            if (GameSettings.instance.gameScoreForCurrentGame) {
+            if (self.gameSettings.gameScoreForCurrentGame) {
                 footer.textLabel?.text = "  (*best guess from Twitter)"
             } else {
                 footer.textLabel?.text = ""
@@ -254,7 +254,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if (section == 1 && GameSettings.instance.gameScoreForCurrentGame) {
+        if (section == 1 && self.gameSettings.gameScoreForCurrentGame) {
             return 20.0
         }
         

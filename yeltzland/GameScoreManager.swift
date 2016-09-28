@@ -93,8 +93,8 @@ public class GameScoreManager {
                 
                 NSLog("Loaded game score from server")
                 
-                // Update game settings
-                GameSettings.instance.refreshGameScore()
+                // Post notification message
+                NSNotificationCenter.defaultCenter().postNotificationName(GameScoreManager.GameScoreNotification, object: nil)
             } catch {
                 NSLog("Error loading game score from server ...")
                 print(error)
@@ -121,9 +121,6 @@ public class GameScoreManager {
         if let parsedOpponentScore = json["opponentScore"] as? String {
             self.opponentScore = Int(parsedOpponentScore)!
         }
-
-        // Post notification message
-        NSNotificationCenter.defaultCenter().postNotificationName(GameScoreManager.GameScoreNotification, object: nil)
     }
     
     private func moveSingleBundleFileToAppDirectory(fileName:String, fileType:String) {
