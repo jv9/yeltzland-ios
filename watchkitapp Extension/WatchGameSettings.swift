@@ -12,6 +12,13 @@ import ClockKit
 import WatchKit
 
 public class WatchGameSettings : BaseSettings, WCSessionDelegate {
+
+    private static let sharedInstance = WatchGameSettings()
+    class var instance:WatchGameSettings {
+        get {
+            return sharedInstance
+        }
+    }
     
     public override init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.yeltzland") {
         super.init(defaultPreferencesName: defaultPreferencesName, suiteName: suiteName)

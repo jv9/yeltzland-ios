@@ -24,7 +24,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         
-        let settings = self.settingsData()
+        let settings = WatchGameSettings.instance
         let now = NSDate()
         var entry : CLKComplicationTimelineEntry?
         
@@ -85,7 +85,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Update every 6 hours by default - the app will push in updates if they occur
         var minutesToNextUpdate = 360.0
         
-        let gameState = self.settingsData().currentGameState()
+        let gameState = WatchGameSettings.instance.currentGameState()
         if (gameState == BaseSettings.GameState.During || gameState == BaseSettings.GameState.DuringNoScore) {
             // During match, update every 15 minutes
             minutesToNextUpdate = 15.0
@@ -139,11 +139,5 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 template.tintColor = AppColors.WatchComplicationColor
                 handler(template)
         }
-    }
-    
-    // MARK: - Internal helper methods
-    private func settingsData() -> WatchGameSettings {
-        let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
-        return appDelegate.model
     }
 }

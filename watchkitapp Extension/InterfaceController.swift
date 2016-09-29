@@ -37,8 +37,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func updateViewData() {
-        let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
-        let gameSettings = appDelegate.model
+        let gameSettings = WatchGameSettings.instance
     
         // Setup colors
         self.topTeamLabel.setTextColor(AppColors.WatchTextColor)
