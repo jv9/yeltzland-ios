@@ -69,6 +69,8 @@
 		52E711A11D9CF5C90002446A /* FixtureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE71D17E4D3004903AB /* FixtureManager.swift */; };
 		52E711A31D9CF5EB0002446A /* GameScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */; };
 		52E711A41D9CF5F40002446A /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE51D17DFF8004903AB /* Fixture.swift */; };
+		52E711A51D9CFDD50002446A /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 52236AEA1D17ECB4004903AB /* matches.json */; };
+		52E711A61D9CFDD90002446A /* gamescore.json in Resources */ = {isa = PBXBuildFile; fileRef = 52176BAD1D4A1AF600B7EFAE /* gamescore.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,10 +283,10 @@
 				52176BCA1D4B6D5900B7EFAE /* InterfaceController.swift */,
 				52176BCC1D4B6D5900B7EFAE /* ExtensionDelegate.swift */,
 				52176BD01D4B6D5900B7EFAE /* ComplicationController.swift */,
+				52176BE31D4B6EF000B7EFAE /* WatchGameSettings.swift */,
 				52176BD21D4B6D5900B7EFAE /* Assets.xcassets */,
 				52176BD41D4B6D5900B7EFAE /* Info.plist */,
 				52176BC81D4B6D5900B7EFAE /* Supporting Files */,
-				52176BE31D4B6EF000B7EFAE /* WatchGameSettings.swift */,
 			);
 			path = "watchkitapp Extension";
 			sourceTree = "<group>";
@@ -618,8 +620,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C4DA891D4CA68A009AFD25 /* american_typewriter_regular.ttf in Resources */,
+				52E711A51D9CFDD50002446A /* matches.json in Resources */,
 				52176BD31D4B6D5900B7EFAE /* Assets.xcassets in Resources */,
 				52176BE51D4B73BA00B7EFAE /* DefaultPreferences.plist in Resources */,
+				52E711A61D9CFDD90002446A /* gamescore.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

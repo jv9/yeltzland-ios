@@ -13,7 +13,21 @@ import WatchKit
 
 public class WatchGameSettings : BaseSettings, WCSessionDelegate {
     
-    public static let UpdateSettingsNotification = "kYTZUserSettingsNotification"
+    public override init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.yeltzland") {
+        super.init(defaultPreferencesName: defaultPreferencesName, suiteName: suiteName)
+        self.setupNotificationWatchers()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("Removed notification handler in watch game settings")
+    }
+    
+    private func setupNotificationWatchers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WatchGameSettings.refreshFixtures), name: FixtureManager.FixturesNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WatchGameSettings.refreshGameScore), name: GameScoreManager.GameScoreNotification, object: nil)
+        print("Setup notification handlers for fixture or score updates in watch game settings")
+    }
 
     func initialiseWatchSession() {
         if (self.watchSessionInitialised) {
@@ -34,20 +48,6 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
         } else {
             NSLog("No watch session set up")
         }
-    }
-    
-    public func updateComplications() {
-        NSLog("Updating complications...")
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        let activeComplications = complicationServer.activeComplications
-        
-        if (activeComplications != nil) {
-            for complication in activeComplications! {
-                complicationServer.reloadTimelineForComplication(complication)
-            }
-        }
-        
-        NSLog("Complications updated")
     }
 
     // MARK:- WCSessionDelegate implementation - update local settings when transfered from phone
@@ -81,24 +81,8 @@ public class WatchGameSettings : BaseSettings, WCSessionDelegate {
         }
         
         // Send a notification for the view controllers to refresh
-        NSNotificationCenter.defaultCenter().postNotificationName(WatchGameSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(BaseSettings.SettingsUpdateNotification, object:nil, userInfo:nil)
         NSLog("Sent 'Update Settings' notification")
-        
-        // Refresh any complications
-        self.updateComplications()
-        
-        // Also schedule a snapshot for a few seconds time
-        self.scheduleSnapshot()
-    }
-    
-    private func scheduleSnapshot() {
-        // Let's update the snapshot if the view changed
-        print("Scheduling snapshot")
-        let soon =  NSCalendar.autoupdatingCurrentCalendar().dateByAddingUnit(.Second, value: 5, toDate: NSDate(), options: [])
-        WKExtension.sharedExtension().scheduleSnapshotRefreshWithPreferredDate(soon!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
-            if let error = error {
-                print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
-            }})
     }
 }
 
