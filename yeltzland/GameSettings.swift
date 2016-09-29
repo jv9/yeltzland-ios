@@ -12,7 +12,6 @@ import WatchConnectivity
 
 public class GameSettings : BaseSettings, WCSessionDelegate {
 
-    public static let GameSettingsNotification:String = "YLZGameSettingsNotification"
     private static let sharedInstance = GameSettings()
     class var instance:GameSettings {
         get {
@@ -57,131 +56,13 @@ public class GameSettings : BaseSettings, WCSessionDelegate {
         }
     }
     
-    public func refreshFixtures() {
-        NSLog("Updating game fixture settings ...")
-        
-        var updated = false
-        var lastGameTeam = ""
-        var lastGameYeltzScore = 0
-        var lastGameOpponentScore = 0
-        var lastGameHome = false
-        var lastGameTime:NSDate? = nil
-        
-        let gameState = self.currentGameState()
-        let currentlyInGame = (gameState == GameState.During || gameState == GameState.DuringNoScore)
-        
-        if let lastGame = FixtureManager.instance.getLastGame() {
-            lastGameTime = lastGame.fixtureDate
-            lastGameTeam = lastGame.opponent
-            lastGameYeltzScore = lastGame.teamScore!
-            lastGameOpponentScore = lastGame.opponentScore!
-            lastGameHome = lastGame.home
-        }
-        
-        if (lastGameTime != nil && self.lastGameTime.compare(lastGameTime!) != NSComparisonResult.OrderedSame) {
-            self.lastGameTime = lastGameTime!
-            updated = true
-        }
-        
-        if (self.lastGameTeam != lastGameTeam) {
-            self.lastGameTeam = lastGameTeam
-            updated = true
-        }
-        
-        if (self.lastGameYeltzScore != lastGameYeltzScore) {
-            self.lastGameYeltzScore = lastGameYeltzScore
-            updated = true
-        }
-        
-        if (self.lastGameOpponentScore != lastGameOpponentScore) {
-            self.lastGameOpponentScore = lastGameOpponentScore
-            updated = true
-        }
-        
-        if (self.lastGameHome != lastGameHome) {
-            self.lastGameHome = lastGameHome
-            updated = true
-        }
-        
-        
-        var nextGameTeam = ""
-        var nextGameHome = false
-        var nextGameTime:NSDate? = nil
-        
-        if let nextGame = FixtureManager.instance.getNextGame() {
-            nextGameTime = nextGame.fixtureDate
-            nextGameTeam = nextGame.opponent
-            nextGameHome = nextGame.home
-        }
-
-        if (nextGameTime != nil && self.nextGameTime.compare(nextGameTime!) != NSComparisonResult.OrderedSame) {
-            self.nextGameTime = nextGameTime!
-            updated = true
-        }
-        
-        if (self.nextGameTeam != nextGameTeam) {
-            self.nextGameTeam = nextGameTeam
-            updated = true
-        }
-        
-        if (self.nextGameHome != nextGameHome) {
-            self.nextGameHome = nextGameHome
-            updated = true
-        }
-
-        // If any values have been changed, push then to the watch
-        if (updated) {
-            self.pushAllSettingsToWatch(currentlyInGame)
-            
-            NSNotificationCenter.defaultCenter().postNotificationName(GameSettings.GameSettingsNotification, object: nil)
-        } else {
-            NSLog("No fixture settings changed")
-        }
-    }
-    
-    public func refreshGameScore() {
-        NSLog("Updating game score settings ...")
-        
-        let currentlyInGame = self.currentGameState() == GameState.During
-        
-        if let currentGameTime = GameScoreManager.instance.MatchDate {
-            var updated = false
-            
-            let currentGameYeltzScore = GameScoreManager.instance.YeltzScore
-            let currentGameOpponentScore = GameScoreManager.instance.OpponentScore
-            
-            if (self.currentGameTime.compare(currentGameTime) != NSComparisonResult.OrderedSame) {
-                self.currentGameTime = currentGameTime
-                updated = true
-            }
-            
-            if (self.currentGameYeltzScore != currentGameYeltzScore) {
-                self.currentGameYeltzScore = currentGameYeltzScore
-                updated = true
-            }
-            
-            if (self.currentGameOpponentScore != currentGameOpponentScore) {
-                self.currentGameOpponentScore = currentGameOpponentScore
-                updated = true
-            }
-            
-            // If any values have been changed, push then to the watch
-            if (updated) {
-                self.pushAllSettingsToWatch(currentlyInGame)
-                NSNotificationCenter.defaultCenter().postNotificationName(GameSettings.GameSettingsNotification, object: nil)
-            } else {
-                NSLog("No game settings changed")
-            }
-        }
-    }
-    
     // Update the watch in background
     public func forceBackgroundWatchUpdate() {
         self.pushAllSettingsToWatch(false)
     }
     
     /// Send initial settings to watch
-    private func pushAllSettingsToWatch(currentlyInGame:Bool) {
+    override public func pushAllSettingsToWatch(currentlyInGame:Bool) {
         self.initialiseWatchSession()
         
         if (WCSession.isSupported()) {

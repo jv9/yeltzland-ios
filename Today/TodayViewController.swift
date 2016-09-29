@@ -78,7 +78,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     private func setupNotificationWatchers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: GameSettings.GameSettingsNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.fixturesUpdated), name: BaseSettings.SettingsUpdateNotification, object: nil)
         print("Setup notification handlers for fixture or score updates in today view")
     }
     

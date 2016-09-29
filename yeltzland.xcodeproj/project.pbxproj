@@ -66,6 +66,9 @@
 		52E3DF791CD9FA78009F18BD /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3DF781CD9FA78009F18BD /* WebPageViewController.swift */; };
 		52E3DF7E1CD9FA78009F18BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E3DF7D1CD9FA78009F18BD /* Assets.xcassets */; };
 		52E3DF811CD9FA78009F18BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E3DF7F1CD9FA78009F18BD /* LaunchScreen.storyboard */; };
+		52E711A11D9CF5C90002446A /* FixtureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE71D17E4D3004903AB /* FixtureManager.swift */; };
+		52E711A31D9CF5EB0002446A /* GameScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52176BAF1D4A1B3200B7EFAE /* GameScoreManager.swift */; };
+		52E711A41D9CF5F40002446A /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52236AE51D17DFF8004903AB /* Fixture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -750,7 +753,10 @@
 			files = (
 				52176BE41D4B6EF000B7EFAE /* WatchGameSettings.swift in Sources */,
 				52176BD11D4B6D5900B7EFAE /* ComplicationController.swift in Sources */,
+				52E711A31D9CF5EB0002446A /* GameScoreManager.swift in Sources */,
+				52E711A11D9CF5C90002446A /* FixtureManager.swift in Sources */,
 				52176BCD1D4B6D5900B7EFAE /* ExtensionDelegate.swift in Sources */,
+				52E711A41D9CF5F40002446A /* Fixture.swift in Sources */,
 				52176BE71D4B7C4B00B7EFAE /* AppColors.swift in Sources */,
 				52176BE01D4B6D7300B7EFAE /* BaseSettings.swift in Sources */,
 				52176BCB1D4B6D5900B7EFAE /* InterfaceController.swift in Sources */,
